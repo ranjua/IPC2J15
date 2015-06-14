@@ -28,11 +28,10 @@ namespace Practica1IPC2_webservice_
         public string GetContact(string id)
         {
             var json = "";
-            var contact = "randy";
+            var contact = "randy"+id;
 
             JavaScriptSerializer jss = new JavaScriptSerializer();
             json = jss.Serialize(contact);
-            
 
             return json;
         }
