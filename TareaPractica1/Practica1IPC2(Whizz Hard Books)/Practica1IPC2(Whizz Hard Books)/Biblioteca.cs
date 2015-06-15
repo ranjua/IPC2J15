@@ -42,9 +42,28 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             for (int i = 0; i < num_cantidad.Value; i++ )
             {
                 int value = ((KeyValuePair<int, string>)Cmbx_Autores.SelectedItem).Key;
-                WSS.Agregar_Libro(cod_libro, value, txt_Titulo.Text, Convert.ToInt32(num_pag.Value.ToString()), txt_Tema.Text);
+                bool correcto = WSS.Agregar_Libro(cod_libro, value, txt_Titulo.Text, Convert.ToInt32(num_pag.Value.ToString()), txt_Tema.Text);
             }
         }
+
+        private void btn_Agregar_Autor_Click(object sender, EventArgs e)
+        {
+            WSS.Agregar_Autor(txt_nombre_autor.Text, txt_apellido_autor.Text); 
+        }
+
+        private void btn_Dev_Click(object sender, EventArgs e)
+        {
+            WSS.Devolucion(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_dev_carnet.Text), Convert.ToInt32(txt_dev_cod_reg_lib.Text));
+        }
+
+        private void btn_reg_Click(object sender, EventArgs e)
+        {
+            WSS.Agregar_Miembro(txt_reg_nombre.Text, Convert.ToInt32(txt_reg_dpi.Text), txt_reg_dir.Text, Convert.ToInt32(txt_reg_tel.Text));
+        }
+
+
+        
+
 
     }
 }

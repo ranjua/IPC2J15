@@ -30,7 +30,8 @@
         {
             this.Tbc_Biblioteca = new System.Windows.Forms.TabControl();
             this.Tbp_Libros_Nuevos = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_apellido_autor = new System.Windows.Forms.TextBox();
+            this.txt_nombre_autor = new System.Windows.Forms.TextBox();
             this.btn_Agregar_Autor = new System.Windows.Forms.Button();
             this.num_pag = new System.Windows.Forms.NumericUpDown();
             this.num_cantidad = new System.Windows.Forms.NumericUpDown();
@@ -46,13 +47,29 @@
             this.Tbp_Consulta = new System.Windows.Forms.TabPage();
             this.Tbp_Prestamo = new System.Windows.Forms.TabPage();
             this.Tbp_Devolucion = new System.Windows.Forms.TabPage();
+            this.btn_Dev = new System.Windows.Forms.Button();
+            this.txt_dev_carnet = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_dev_cod_reg_lib = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.Tbp_Registro = new System.Windows.Forms.TabPage();
             this.Tbp_Reportes = new System.Windows.Forms.TabPage();
             this.Tbp_Admin = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_reg_nombre = new System.Windows.Forms.TextBox();
+            this.txt_reg_dpi = new System.Windows.Forms.TextBox();
+            this.txt_reg_dir = new System.Windows.Forms.TextBox();
+            this.txt_reg_tel = new System.Windows.Forms.TextBox();
+            this.btn_reg = new System.Windows.Forms.Button();
             this.Tbc_Biblioteca.SuspendLayout();
             this.Tbp_Libros_Nuevos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_pag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_cantidad)).BeginInit();
+            this.Tbp_Devolucion.SuspendLayout();
+            this.Tbp_Registro.SuspendLayout();
             this.SuspendLayout();
             // 
             // Tbc_Biblioteca
@@ -72,7 +89,8 @@
             // 
             // Tbp_Libros_Nuevos
             // 
-            this.Tbp_Libros_Nuevos.Controls.Add(this.textBox2);
+            this.Tbp_Libros_Nuevos.Controls.Add(this.txt_apellido_autor);
+            this.Tbp_Libros_Nuevos.Controls.Add(this.txt_nombre_autor);
             this.Tbp_Libros_Nuevos.Controls.Add(this.btn_Agregar_Autor);
             this.Tbp_Libros_Nuevos.Controls.Add(this.num_pag);
             this.Tbp_Libros_Nuevos.Controls.Add(this.num_cantidad);
@@ -93,12 +111,19 @@
             this.Tbp_Libros_Nuevos.Text = "Libros Nuevos";
             this.Tbp_Libros_Nuevos.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txt_apellido_autor
             // 
-            this.textBox2.Location = new System.Drawing.Point(387, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 22);
-            this.textBox2.TabIndex = 13;
+            this.txt_apellido_autor.Location = new System.Drawing.Point(533, 35);
+            this.txt_apellido_autor.Name = "txt_apellido_autor";
+            this.txt_apellido_autor.Size = new System.Drawing.Size(140, 22);
+            this.txt_apellido_autor.TabIndex = 14;
+            // 
+            // txt_nombre_autor
+            // 
+            this.txt_nombre_autor.Location = new System.Drawing.Point(387, 35);
+            this.txt_nombre_autor.Name = "txt_nombre_autor";
+            this.txt_nombre_autor.Size = new System.Drawing.Size(140, 22);
+            this.txt_nombre_autor.TabIndex = 13;
             // 
             // btn_Agregar_Autor
             // 
@@ -110,6 +135,7 @@
             this.btn_Agregar_Autor.TabIndex = 12;
             this.btn_Agregar_Autor.Text = "Agregar";
             this.btn_Agregar_Autor.UseVisualStyleBackColor = true;
+            this.btn_Agregar_Autor.Click += new System.EventHandler(this.btn_Agregar_Autor_Click);
             // 
             // num_pag
             // 
@@ -225,6 +251,11 @@
             // 
             // Tbp_Devolucion
             // 
+            this.Tbp_Devolucion.Controls.Add(this.btn_Dev);
+            this.Tbp_Devolucion.Controls.Add(this.txt_dev_carnet);
+            this.Tbp_Devolucion.Controls.Add(this.label6);
+            this.Tbp_Devolucion.Controls.Add(this.txt_dev_cod_reg_lib);
+            this.Tbp_Devolucion.Controls.Add(this.label4);
             this.Tbp_Devolucion.Location = new System.Drawing.Point(4, 25);
             this.Tbp_Devolucion.Name = "Tbp_Devolucion";
             this.Tbp_Devolucion.Padding = new System.Windows.Forms.Padding(3);
@@ -233,8 +264,59 @@
             this.Tbp_Devolucion.Text = "Devolucion";
             this.Tbp_Devolucion.UseVisualStyleBackColor = true;
             // 
+            // btn_Dev
+            // 
+            this.btn_Dev.Location = new System.Drawing.Point(250, 144);
+            this.btn_Dev.Name = "btn_Dev";
+            this.btn_Dev.Size = new System.Drawing.Size(100, 32);
+            this.btn_Dev.TabIndex = 4;
+            this.btn_Dev.Text = "Devuelto";
+            this.btn_Dev.UseVisualStyleBackColor = true;
+            this.btn_Dev.Click += new System.EventHandler(this.btn_Dev_Click);
+            // 
+            // txt_dev_carnet
+            // 
+            this.txt_dev_carnet.Location = new System.Drawing.Point(250, 82);
+            this.txt_dev_carnet.Name = "txt_dev_carnet";
+            this.txt_dev_carnet.Size = new System.Drawing.Size(100, 22);
+            this.txt_dev_carnet.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 17);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Carnet Miembro";
+            // 
+            // txt_dev_cod_reg_lib
+            // 
+            this.txt_dev_cod_reg_lib.Location = new System.Drawing.Point(250, 33);
+            this.txt_dev_cod_reg_lib.Name = "txt_dev_cod_reg_lib";
+            this.txt_dev_cod_reg_lib.Size = new System.Drawing.Size(100, 22);
+            this.txt_dev_cod_reg_lib.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Codigo registro de libro";
+            // 
             // Tbp_Registro
             // 
+            this.Tbp_Registro.Controls.Add(this.btn_reg);
+            this.Tbp_Registro.Controls.Add(this.txt_reg_tel);
+            this.Tbp_Registro.Controls.Add(this.txt_reg_dir);
+            this.Tbp_Registro.Controls.Add(this.txt_reg_dpi);
+            this.Tbp_Registro.Controls.Add(this.txt_reg_nombre);
+            this.Tbp_Registro.Controls.Add(this.label10);
+            this.Tbp_Registro.Controls.Add(this.label9);
+            this.Tbp_Registro.Controls.Add(this.label8);
+            this.Tbp_Registro.Controls.Add(this.label7);
             this.Tbp_Registro.Location = new System.Drawing.Point(4, 25);
             this.Tbp_Registro.Name = "Tbp_Registro";
             this.Tbp_Registro.Padding = new System.Windows.Forms.Padding(3);
@@ -263,6 +345,80 @@
             this.Tbp_Admin.Text = "Administracion";
             this.Tbp_Admin.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(62, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Nombre";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(62, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 17);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "DPI";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(62, 125);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 17);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Direccion";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(62, 168);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Telefono";
+            // 
+            // txt_reg_nombre
+            // 
+            this.txt_reg_nombre.Location = new System.Drawing.Point(243, 32);
+            this.txt_reg_nombre.Name = "txt_reg_nombre";
+            this.txt_reg_nombre.Size = new System.Drawing.Size(100, 22);
+            this.txt_reg_nombre.TabIndex = 4;
+            // 
+            // txt_reg_dpi
+            // 
+            this.txt_reg_dpi.Location = new System.Drawing.Point(243, 76);
+            this.txt_reg_dpi.Name = "txt_reg_dpi";
+            this.txt_reg_dpi.Size = new System.Drawing.Size(100, 22);
+            this.txt_reg_dpi.TabIndex = 5;
+            // 
+            // txt_reg_dir
+            // 
+            this.txt_reg_dir.Location = new System.Drawing.Point(243, 125);
+            this.txt_reg_dir.Name = "txt_reg_dir";
+            this.txt_reg_dir.Size = new System.Drawing.Size(100, 22);
+            this.txt_reg_dir.TabIndex = 6;
+            // 
+            // txt_reg_tel
+            // 
+            this.txt_reg_tel.Location = new System.Drawing.Point(243, 168);
+            this.txt_reg_tel.Name = "txt_reg_tel";
+            this.txt_reg_tel.Size = new System.Drawing.Size(100, 22);
+            this.txt_reg_tel.TabIndex = 7;
+            // 
+            // btn_reg
+            // 
+            this.btn_reg.Location = new System.Drawing.Point(243, 228);
+            this.btn_reg.Name = "btn_reg";
+            this.btn_reg.Size = new System.Drawing.Size(100, 38);
+            this.btn_reg.TabIndex = 8;
+            this.btn_reg.Text = "Registrar";
+            this.btn_reg.UseVisualStyleBackColor = true;
+            this.btn_reg.Click += new System.EventHandler(this.btn_reg_Click);
+            // 
             // Biblioteca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,6 +432,10 @@
             this.Tbp_Libros_Nuevos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_pag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_cantidad)).EndInit();
+            this.Tbp_Devolucion.ResumeLayout(false);
+            this.Tbp_Devolucion.PerformLayout();
+            this.Tbp_Registro.ResumeLayout(false);
+            this.Tbp_Registro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -302,6 +462,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_nombre_autor;
+        private System.Windows.Forms.TextBox txt_apellido_autor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_Dev;
+        private System.Windows.Forms.TextBox txt_dev_carnet;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_dev_cod_reg_lib;
+        private System.Windows.Forms.Button btn_reg;
+        private System.Windows.Forms.TextBox txt_reg_tel;
+        private System.Windows.Forms.TextBox txt_reg_dir;
+        private System.Windows.Forms.TextBox txt_reg_dpi;
+        private System.Windows.Forms.TextBox txt_reg_nombre;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

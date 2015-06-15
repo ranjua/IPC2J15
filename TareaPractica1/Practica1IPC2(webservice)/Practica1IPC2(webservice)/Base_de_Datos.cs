@@ -102,7 +102,7 @@ namespace Practica1IPC2_webservice_
         }
 
         //Update_New_Delete statment
-        public void Upd_New_DelUnValorQry(string pQuery)
+        public Boolean Upd_New_DelUnValorQry(string pQuery)
         {
             try
             {
@@ -123,9 +123,10 @@ namespace Practica1IPC2_webservice_
                 }
                 catch (Exception ex)
                 {
-                    HttpContext.Current.Session["Error"] = ex.Message;
+                    return false;
                 }
             }
+            return true;
         }
         //Verificar existencia de dato en Base de Datos
         public bool Verify_Query(string pQuery)

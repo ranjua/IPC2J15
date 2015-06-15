@@ -34,6 +34,69 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Agregar_Autor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_AutorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Agregar_AutorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_Miembro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DPI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefono" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_MiembroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Agregar_MiembroResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_Reserva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_miembro" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_libro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_ReservaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Agregar_ReservaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_prestamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_miembro" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_registro_libro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_prestamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Agregar_prestamoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Lista_Autores">
         <s:complexType />
       </s:element>
@@ -54,6 +117,36 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Devolucion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_miembro" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_registro_libro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolucionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolucionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetContactSoapIn">
@@ -68,6 +161,30 @@
   <wsdl:message name="Agregar_LibroSoapOut">
     <wsdl:part name="parameters" element="tns:Agregar_LibroResponse" />
   </wsdl:message>
+  <wsdl:message name="Agregar_AutorSoapIn">
+    <wsdl:part name="parameters" element="tns:Agregar_Autor" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_AutorSoapOut">
+    <wsdl:part name="parameters" element="tns:Agregar_AutorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_MiembroSoapIn">
+    <wsdl:part name="parameters" element="tns:Agregar_Miembro" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_MiembroSoapOut">
+    <wsdl:part name="parameters" element="tns:Agregar_MiembroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_ReservaSoapIn">
+    <wsdl:part name="parameters" element="tns:Agregar_Reserva" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_ReservaSoapOut">
+    <wsdl:part name="parameters" element="tns:Agregar_ReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_prestamoSoapIn">
+    <wsdl:part name="parameters" element="tns:Agregar_prestamo" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_prestamoSoapOut">
+    <wsdl:part name="parameters" element="tns:Agregar_prestamoResponse" />
+  </wsdl:message>
   <wsdl:message name="Lista_AutoresSoapIn">
     <wsdl:part name="parameters" element="tns:Lista_Autores" />
   </wsdl:message>
@@ -80,6 +197,18 @@
   <wsdl:message name="Max_Lista_librosSoapOut">
     <wsdl:part name="parameters" element="tns:Max_Lista_librosResponse" />
   </wsdl:message>
+  <wsdl:message name="ConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:Consulta" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolucionSoapIn">
+    <wsdl:part name="parameters" element="tns:Devolucion" />
+  </wsdl:message>
+  <wsdl:message name="DevolucionSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolucionResponse" />
+  </wsdl:message>
   <wsdl:portType name="ConsultasBibliotecaSoap">
     <wsdl:operation name="GetContact">
       <wsdl:input message="tns:GetContactSoapIn" />
@@ -89,6 +218,22 @@
       <wsdl:input message="tns:Agregar_LibroSoapIn" />
       <wsdl:output message="tns:Agregar_LibroSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Agregar_Autor">
+      <wsdl:input message="tns:Agregar_AutorSoapIn" />
+      <wsdl:output message="tns:Agregar_AutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_Miembro">
+      <wsdl:input message="tns:Agregar_MiembroSoapIn" />
+      <wsdl:output message="tns:Agregar_MiembroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_Reserva">
+      <wsdl:input message="tns:Agregar_ReservaSoapIn" />
+      <wsdl:output message="tns:Agregar_ReservaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_prestamo">
+      <wsdl:input message="tns:Agregar_prestamoSoapIn" />
+      <wsdl:output message="tns:Agregar_prestamoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Lista_Autores">
       <wsdl:input message="tns:Lista_AutoresSoapIn" />
       <wsdl:output message="tns:Lista_AutoresSoapOut" />
@@ -96,6 +241,14 @@
     <wsdl:operation name="Max_Lista_libros">
       <wsdl:input message="tns:Max_Lista_librosSoapIn" />
       <wsdl:output message="tns:Max_Lista_librosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <wsdl:input message="tns:ConsultaSoapIn" />
+      <wsdl:output message="tns:ConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Devolucion">
+      <wsdl:input message="tns:DevolucionSoapIn" />
+      <wsdl:output message="tns:DevolucionSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ConsultasBibliotecaSoap" type="tns:ConsultasBibliotecaSoap">
@@ -118,6 +271,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Agregar_Autor">
+      <soap:operation soapAction="http://tempuri.org/Agregar_Autor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_Miembro">
+      <soap:operation soapAction="http://tempuri.org/Agregar_Miembro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_Reserva">
+      <soap:operation soapAction="http://tempuri.org/Agregar_Reserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_prestamo">
+      <soap:operation soapAction="http://tempuri.org/Agregar_prestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Lista_Autores">
       <soap:operation soapAction="http://tempuri.org/Lista_Autores" style="document" />
       <wsdl:input>
@@ -129,6 +318,24 @@
     </wsdl:operation>
     <wsdl:operation name="Max_Lista_libros">
       <soap:operation soapAction="http://tempuri.org/Max_Lista_libros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <soap:operation soapAction="http://tempuri.org/Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Devolucion">
+      <soap:operation soapAction="http://tempuri.org/Devolucion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -157,6 +364,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Agregar_Autor">
+      <soap12:operation soapAction="http://tempuri.org/Agregar_Autor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_Miembro">
+      <soap12:operation soapAction="http://tempuri.org/Agregar_Miembro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_Reserva">
+      <soap12:operation soapAction="http://tempuri.org/Agregar_Reserva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar_prestamo">
+      <soap12:operation soapAction="http://tempuri.org/Agregar_prestamo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Lista_Autores">
       <soap12:operation soapAction="http://tempuri.org/Lista_Autores" style="document" />
       <wsdl:input>
@@ -168,6 +411,24 @@
     </wsdl:operation>
     <wsdl:operation name="Max_Lista_libros">
       <soap12:operation soapAction="http://tempuri.org/Max_Lista_libros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <soap12:operation soapAction="http://tempuri.org/Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Devolucion">
+      <soap12:operation soapAction="http://tempuri.org/Devolucion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

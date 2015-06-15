@@ -5,6 +5,7 @@
    <object objectType="Table" objectID="C1A57B32-0149-A944-017C-42584D6B4C4F" name="LIBRO" seqName="seg_0"/>
    <object objectType="Table" objectID="A8055C9B-4FE4-8DA2-9B07-F16C83945E8E" name="PRESTAMO" seqName="seg_0"/>
    <object objectType="Table" objectID="CDF0112B-AF99-3275-3156-77F77B22581A" name="RESERVA" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="8FDDA6DC-BC1E-E9CB-4ECC-4A3038A16A59" name="cod_cliente_FKv2" seqName="seg_0" containerID="CDF0112B-AF99-3275-3156-77F77B22581A" refContainerID="72A83F6A-1F43-6879-1B9F-8D61A01D66B8"/>
    <object objectType="FKIndexAssociation" objectID="805E4ADD-2D71-4E90-84B2-201744E50771" name="cod_autor_FK" seqName="seg_0" containerID="C1A57B32-0149-A944-017C-42584D6B4C4F" refContainerID="417B5CE4-C86C-0C18-2922-A518612C648E"/>
    <object objectType="FKIndexAssociation" objectID="F0C6759A-9B95-E9DD-4375-7CAFADE56C40" name="cod_cliente_FK" seqName="seg_0" containerID="A8055C9B-4FE4-8DA2-9B07-F16C83945E8E" refContainerID="72A83F6A-1F43-6879-1B9F-8D61A01D66B8"/>
    <object objectType="FKIndexAssociation" objectID="E0CDF4A9-FC8E-0798-0AFE-2B5F4FB2D5CC" name="cod_libro_FK" seqName="seg_0" containerID="CDF0112B-AF99-3275-3156-77F77B22581A" refContainerID="C1A57B32-0149-A944-017C-42584D6B4C4F"/>

@@ -35,21 +35,45 @@ namespace Practica1IPC2_webservice_
         public Boolean Agregar_Libro(int cod_libro, int cod_autor,string titulo,int pags,string tema)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.libros (cod_libro, nombre, paginas, tema, estado, cod_autor) " +
-                " values (" + cod_libro + ",'" + titulo + "'," + pags + ", '" + tema + "','biblioteca'," + cod_autor + ") ");
-            if (Session["Error"] != null)
-            {
-                if (Session["Error"].ToString() != "")
-                {
-                    return true;
-                }
-                else { return false; }
-            }
-            else
-            {
-                return false;
-            }
+            return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.libros (cod_libro, nombre, paginas, tema, estado, cod_autor) " +
+                " values (" + cod_libro + ",'" + titulo + "'," + pags + ", '" + tema + "','Disponible'," + cod_autor + ") ");
+            
         }
+        [WebMethod]
+        public Boolean Agregar_Autor(string nombre, string apellido)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.autores (nombre, apellido) " +
+                " values ('" + nombre + "', '" + apellido + "') ");
+        }
+        [WebMethod]
+        public Boolean Agregar_Miembro(string nombre, int DPI, string direccion, int telefono)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.libros (nombre, DPI, direccion, telefono) " +
+                " values ('" + nombre + "'," + DPI + ", '" + direccion + "', " + telefono + ") ");
+
+        }
+        [WebMethod]
+        public Boolean Agregar_Reserva(int cod_miembro, int cod_libro)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.reservas (cod_libro, cod_cliente) " +
+                " values (" + cod_libro + ", " + cod_miembro + ") ");
+        }
+        [WebMethod]
+        public Boolean Agregar_prestamo(string fecha, int cod_miembro, int cod_registro_libro)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.prestamos (fecha_prestamo, cod_cliente, cod_registro_libro, devuelto) " +
+                " values ('" + fecha + "', " + cod_miembro + ", " + cod_registro_libro + ", false) ");
+            if(correcto)
+            {
+                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = Prestado where cod_registro = " + cod_registro_libro);
+            }
+            return false;
+        }
+
         [WebMethod]
         public string Lista_Autores()
         {
@@ -57,8 +81,6 @@ namespace Practica1IPC2_webservice_
             DataTable tabla = base_de_Datos.FillTableData(" Select * from Practica1IPC2.dbo.autores");
             return DataTableToJSON(tabla);
         }
-
-
         [WebMethod]
         public int Max_Lista_libros()
         {
@@ -77,9 +99,25 @@ namespace Practica1IPC2_webservice_
             }
             return 0;
         }
-
-
-
+        [WebMethod]
+        public string Consulta(String nombre)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = base_de_Datos.FillTableData(" ");
+            return DataTableToJSON(tabla);
+        }
+        [WebMethod]
+        public Boolean Devolucion(string fecha, int cod_miembro, int cod_registro_libro)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = Disponible where cod_registro = " + cod_registro_libro);
+            if(correcto)
+            {
+                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.prestamos set devuelto = true, fecha_entrega=" + fecha + 
+                    " where  cod_cliente = " + cod_miembro + " and cod_registro_libro = " + cod_registro_libro);
+            }
+            return false;
+        }
 
 
         private string DataTableToJSON(DataTable table)

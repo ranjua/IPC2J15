@@ -33,9 +33,21 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         private System.Threading.SendOrPostCallback Agregar_LibroOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Agregar_AutorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Agregar_MiembroOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Agregar_ReservaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Agregar_prestamoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Lista_AutoresOperationCompleted;
         
         private System.Threading.SendOrPostCallback Max_Lista_librosOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ConsultaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DevolucionOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -82,10 +94,28 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         public event Agregar_LibroCompletedEventHandler Agregar_LibroCompleted;
         
         /// <remarks/>
+        public event Agregar_AutorCompletedEventHandler Agregar_AutorCompleted;
+        
+        /// <remarks/>
+        public event Agregar_MiembroCompletedEventHandler Agregar_MiembroCompleted;
+        
+        /// <remarks/>
+        public event Agregar_ReservaCompletedEventHandler Agregar_ReservaCompleted;
+        
+        /// <remarks/>
+        public event Agregar_prestamoCompletedEventHandler Agregar_prestamoCompleted;
+        
+        /// <remarks/>
         public event Lista_AutoresCompletedEventHandler Lista_AutoresCompleted;
         
         /// <remarks/>
         public event Max_Lista_librosCompletedEventHandler Max_Lista_librosCompleted;
+        
+        /// <remarks/>
+        public event ConsultaCompletedEventHandler ConsultaCompleted;
+        
+        /// <remarks/>
+        public event DevolucionCompletedEventHandler DevolucionCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetContact", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -154,6 +184,136 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Agregar_Autor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Agregar_Autor(string nombre, string apellido) {
+            object[] results = this.Invoke("Agregar_Autor", new object[] {
+                        nombre,
+                        apellido});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Agregar_AutorAsync(string nombre, string apellido) {
+            this.Agregar_AutorAsync(nombre, apellido, null);
+        }
+        
+        /// <remarks/>
+        public void Agregar_AutorAsync(string nombre, string apellido, object userState) {
+            if ((this.Agregar_AutorOperationCompleted == null)) {
+                this.Agregar_AutorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregar_AutorOperationCompleted);
+            }
+            this.InvokeAsync("Agregar_Autor", new object[] {
+                        nombre,
+                        apellido}, this.Agregar_AutorOperationCompleted, userState);
+        }
+        
+        private void OnAgregar_AutorOperationCompleted(object arg) {
+            if ((this.Agregar_AutorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Agregar_AutorCompleted(this, new Agregar_AutorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Agregar_Miembro", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Agregar_Miembro(string nombre, int DPI, string direccion, int telefono) {
+            object[] results = this.Invoke("Agregar_Miembro", new object[] {
+                        nombre,
+                        DPI,
+                        direccion,
+                        telefono});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Agregar_MiembroAsync(string nombre, int DPI, string direccion, int telefono) {
+            this.Agregar_MiembroAsync(nombre, DPI, direccion, telefono, null);
+        }
+        
+        /// <remarks/>
+        public void Agregar_MiembroAsync(string nombre, int DPI, string direccion, int telefono, object userState) {
+            if ((this.Agregar_MiembroOperationCompleted == null)) {
+                this.Agregar_MiembroOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregar_MiembroOperationCompleted);
+            }
+            this.InvokeAsync("Agregar_Miembro", new object[] {
+                        nombre,
+                        DPI,
+                        direccion,
+                        telefono}, this.Agregar_MiembroOperationCompleted, userState);
+        }
+        
+        private void OnAgregar_MiembroOperationCompleted(object arg) {
+            if ((this.Agregar_MiembroCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Agregar_MiembroCompleted(this, new Agregar_MiembroCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Agregar_Reserva", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Agregar_Reserva(int cod_miembro, int cod_libro) {
+            object[] results = this.Invoke("Agregar_Reserva", new object[] {
+                        cod_miembro,
+                        cod_libro});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Agregar_ReservaAsync(int cod_miembro, int cod_libro) {
+            this.Agregar_ReservaAsync(cod_miembro, cod_libro, null);
+        }
+        
+        /// <remarks/>
+        public void Agregar_ReservaAsync(int cod_miembro, int cod_libro, object userState) {
+            if ((this.Agregar_ReservaOperationCompleted == null)) {
+                this.Agregar_ReservaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregar_ReservaOperationCompleted);
+            }
+            this.InvokeAsync("Agregar_Reserva", new object[] {
+                        cod_miembro,
+                        cod_libro}, this.Agregar_ReservaOperationCompleted, userState);
+        }
+        
+        private void OnAgregar_ReservaOperationCompleted(object arg) {
+            if ((this.Agregar_ReservaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Agregar_ReservaCompleted(this, new Agregar_ReservaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Agregar_prestamo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Agregar_prestamo(string fecha, int cod_miembro, int cod_registro_libro) {
+            object[] results = this.Invoke("Agregar_prestamo", new object[] {
+                        fecha,
+                        cod_miembro,
+                        cod_registro_libro});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Agregar_prestamoAsync(string fecha, int cod_miembro, int cod_registro_libro) {
+            this.Agregar_prestamoAsync(fecha, cod_miembro, cod_registro_libro, null);
+        }
+        
+        /// <remarks/>
+        public void Agregar_prestamoAsync(string fecha, int cod_miembro, int cod_registro_libro, object userState) {
+            if ((this.Agregar_prestamoOperationCompleted == null)) {
+                this.Agregar_prestamoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregar_prestamoOperationCompleted);
+            }
+            this.InvokeAsync("Agregar_prestamo", new object[] {
+                        fecha,
+                        cod_miembro,
+                        cod_registro_libro}, this.Agregar_prestamoOperationCompleted, userState);
+        }
+        
+        private void OnAgregar_prestamoOperationCompleted(object arg) {
+            if ((this.Agregar_prestamoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Agregar_prestamoCompleted(this, new Agregar_prestamoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Lista_Autores", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string Lista_Autores() {
             object[] results = this.Invoke("Lista_Autores", new object[0]);
@@ -204,6 +364,68 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
             if ((this.Max_Lista_librosCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Max_Lista_librosCompleted(this, new Max_Lista_librosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Consulta", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Consulta(string nombre) {
+            object[] results = this.Invoke("Consulta", new object[] {
+                        nombre});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConsultaAsync(string nombre) {
+            this.ConsultaAsync(nombre, null);
+        }
+        
+        /// <remarks/>
+        public void ConsultaAsync(string nombre, object userState) {
+            if ((this.ConsultaOperationCompleted == null)) {
+                this.ConsultaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConsultaOperationCompleted);
+            }
+            this.InvokeAsync("Consulta", new object[] {
+                        nombre}, this.ConsultaOperationCompleted, userState);
+        }
+        
+        private void OnConsultaOperationCompleted(object arg) {
+            if ((this.ConsultaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConsultaCompleted(this, new ConsultaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Devolucion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Devolucion(string fecha, int cod_miembro, int cod_registro_libro) {
+            object[] results = this.Invoke("Devolucion", new object[] {
+                        fecha,
+                        cod_miembro,
+                        cod_registro_libro});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DevolucionAsync(string fecha, int cod_miembro, int cod_registro_libro) {
+            this.DevolucionAsync(fecha, cod_miembro, cod_registro_libro, null);
+        }
+        
+        /// <remarks/>
+        public void DevolucionAsync(string fecha, int cod_miembro, int cod_registro_libro, object userState) {
+            if ((this.DevolucionOperationCompleted == null)) {
+                this.DevolucionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDevolucionOperationCompleted);
+            }
+            this.InvokeAsync("Devolucion", new object[] {
+                        fecha,
+                        cod_miembro,
+                        cod_registro_libro}, this.DevolucionOperationCompleted, userState);
+        }
+        
+        private void OnDevolucionOperationCompleted(object arg) {
+            if ((this.DevolucionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DevolucionCompleted(this, new DevolucionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -280,6 +502,110 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Agregar_AutorCompletedEventHandler(object sender, Agregar_AutorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Agregar_AutorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Agregar_AutorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Agregar_MiembroCompletedEventHandler(object sender, Agregar_MiembroCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Agregar_MiembroCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Agregar_MiembroCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Agregar_ReservaCompletedEventHandler(object sender, Agregar_ReservaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Agregar_ReservaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Agregar_ReservaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Agregar_prestamoCompletedEventHandler(object sender, Agregar_prestamoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Agregar_prestamoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Agregar_prestamoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     public delegate void Lista_AutoresCompletedEventHandler(object sender, Lista_AutoresCompletedEventArgs e);
     
     /// <remarks/>
@@ -326,6 +652,58 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void ConsultaCompletedEventHandler(object sender, ConsultaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConsultaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConsultaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void DevolucionCompletedEventHandler(object sender, DevolucionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DevolucionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DevolucionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
