@@ -19,12 +19,6 @@ namespace Practica1IPC2_webservice_
     {
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
         public string GetContact(string id)
         {
             var json = "";
@@ -36,5 +30,7 @@ namespace Practica1IPC2_webservice_
             return json;
         }
 
+        [WebMethod]
+        public 
     }
 }
