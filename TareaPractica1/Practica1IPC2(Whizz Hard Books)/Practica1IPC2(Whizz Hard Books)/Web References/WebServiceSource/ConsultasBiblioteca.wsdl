@@ -107,6 +107,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Lista_libros_disponibles">
+        <s:complexType />
+      </s:element>
+      <s:element name="Lista_libros_disponiblesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lista_libros_disponiblesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lista_libros_Prestados">
+        <s:complexType />
+      </s:element>
+      <s:element name="Lista_libros_PrestadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lista_libros_PrestadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Max_Lista_libros">
         <s:complexType />
       </s:element>
@@ -191,6 +211,18 @@
   <wsdl:message name="Lista_AutoresSoapOut">
     <wsdl:part name="parameters" element="tns:Lista_AutoresResponse" />
   </wsdl:message>
+  <wsdl:message name="Lista_libros_disponiblesSoapIn">
+    <wsdl:part name="parameters" element="tns:Lista_libros_disponibles" />
+  </wsdl:message>
+  <wsdl:message name="Lista_libros_disponiblesSoapOut">
+    <wsdl:part name="parameters" element="tns:Lista_libros_disponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lista_libros_PrestadosSoapIn">
+    <wsdl:part name="parameters" element="tns:Lista_libros_Prestados" />
+  </wsdl:message>
+  <wsdl:message name="Lista_libros_PrestadosSoapOut">
+    <wsdl:part name="parameters" element="tns:Lista_libros_PrestadosResponse" />
+  </wsdl:message>
   <wsdl:message name="Max_Lista_librosSoapIn">
     <wsdl:part name="parameters" element="tns:Max_Lista_libros" />
   </wsdl:message>
@@ -237,6 +269,14 @@
     <wsdl:operation name="Lista_Autores">
       <wsdl:input message="tns:Lista_AutoresSoapIn" />
       <wsdl:output message="tns:Lista_AutoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lista_libros_disponibles">
+      <wsdl:input message="tns:Lista_libros_disponiblesSoapIn" />
+      <wsdl:output message="tns:Lista_libros_disponiblesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lista_libros_Prestados">
+      <wsdl:input message="tns:Lista_libros_PrestadosSoapIn" />
+      <wsdl:output message="tns:Lista_libros_PrestadosSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Max_Lista_libros">
       <wsdl:input message="tns:Max_Lista_librosSoapIn" />
@@ -309,6 +349,24 @@
     </wsdl:operation>
     <wsdl:operation name="Lista_Autores">
       <soap:operation soapAction="http://tempuri.org/Lista_Autores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista_libros_disponibles">
+      <soap:operation soapAction="http://tempuri.org/Lista_libros_disponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista_libros_Prestados">
+      <soap:operation soapAction="http://tempuri.org/Lista_libros_Prestados" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -402,6 +460,24 @@
     </wsdl:operation>
     <wsdl:operation name="Lista_Autores">
       <soap12:operation soapAction="http://tempuri.org/Lista_Autores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista_libros_disponibles">
+      <soap12:operation soapAction="http://tempuri.org/Lista_libros_disponibles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista_libros_Prestados">
+      <soap12:operation soapAction="http://tempuri.org/Lista_libros_Prestados" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

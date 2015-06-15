@@ -66,10 +66,10 @@ namespace Practica1IPC2_webservice_
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             bool correcto = base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.prestamos (fecha_prestamo, cod_cliente, cod_registro_libro, devuelto) " +
-                " values ('" + fecha + "', " + cod_miembro + ", " + cod_registro_libro + ", false) ");
+                " values ('" + fecha + "', " + cod_miembro + ", " + cod_registro_libro + ", 0) ");
             if(correcto)
             {
-                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = Prestado where cod_registro = " + cod_registro_libro);
+                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = 'Prestado' where cod_registro = " + cod_registro_libro);
             }
             return false;
         }
@@ -79,6 +79,20 @@ namespace Practica1IPC2_webservice_
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             DataTable tabla = base_de_Datos.FillTableData(" Select * from Practica1IPC2.dbo.autores");
+            return DataTableToJSON(tabla);
+        }
+        [WebMethod]
+        public string Lista_libros_disponibles()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = base_de_Datos.FillTableData(" Select * from Practica1IPC2.dbo.libros where estado = 'Disponible'");
+            return DataTableToJSON(tabla);
+        }
+        [WebMethod]
+        public string Lista_libros_Prestados()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = base_de_Datos.FillTableData(" Select * from Practica1IPC2.dbo.libros where estado = 'Prestado'");
             return DataTableToJSON(tabla);
         }
         [WebMethod]
@@ -103,17 +117,22 @@ namespace Practica1IPC2_webservice_
         public string Consulta(String nombre)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            DataTable tabla = base_de_Datos.FillTableData(" ");
+            DataTable tabla = base_de_Datos.FillTableData("Select Top 1 lm.nombre as Titulo_de_Libro, (a.nombre + a.apellido) as Autor, " + 
+            " (Select COUNT(l.estado) from Practica1IPC2.dbo.libros l where l.estado = 'Disponible' and lm.cod_libro=l.cod_libro) as Disponibles , "+
+            " (Select COUNT(l.estado) from Practica1IPC2.dbo.libros l where l.estado = 'Prestado' and lm.cod_libro=l.cod_libro) as Prestados, "+
+            " (Select COUNT(r.cod_libro) from Practica1IPC2.dbo.reservas r " +
+            " where r.cod_libro = lm.cod_libro)  as Reservados " +
+            " from Practica1IPC2.dbo.autores a, Practica1IPC2.dbo.libros lm where a.cod_autor=lm.cod_autor and lm.nombre = '" + nombre + "' ");
             return DataTableToJSON(tabla);
         }
         [WebMethod]
         public Boolean Devolucion(string fecha, int cod_miembro, int cod_registro_libro)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = Disponible where cod_registro = " + cod_registro_libro);
+            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = 'Disponible' where cod_registro = " + cod_registro_libro);
             if(correcto)
             {
-                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.prestamos set devuelto = true, fecha_entrega=" + fecha + 
+                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.prestamos set devuelto = 1, fecha_entrega=" + fecha + 
                     " where  cod_cliente = " + cod_miembro + " and cod_registro_libro = " + cod_registro_libro);
             }
             return false;

@@ -43,6 +43,10 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         private System.Threading.SendOrPostCallback Lista_AutoresOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Lista_libros_disponiblesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Lista_libros_PrestadosOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Max_Lista_librosOperationCompleted;
         
         private System.Threading.SendOrPostCallback ConsultaOperationCompleted;
@@ -107,6 +111,12 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         /// <remarks/>
         public event Lista_AutoresCompletedEventHandler Lista_AutoresCompleted;
+        
+        /// <remarks/>
+        public event Lista_libros_disponiblesCompletedEventHandler Lista_libros_disponiblesCompleted;
+        
+        /// <remarks/>
+        public event Lista_libros_PrestadosCompletedEventHandler Lista_libros_PrestadosCompleted;
         
         /// <remarks/>
         public event Max_Lista_librosCompletedEventHandler Max_Lista_librosCompleted;
@@ -337,6 +347,60 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
             if ((this.Lista_AutoresCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Lista_AutoresCompleted(this, new Lista_AutoresCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Lista_libros_disponibles", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Lista_libros_disponibles() {
+            object[] results = this.Invoke("Lista_libros_disponibles", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Lista_libros_disponiblesAsync() {
+            this.Lista_libros_disponiblesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void Lista_libros_disponiblesAsync(object userState) {
+            if ((this.Lista_libros_disponiblesOperationCompleted == null)) {
+                this.Lista_libros_disponiblesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLista_libros_disponiblesOperationCompleted);
+            }
+            this.InvokeAsync("Lista_libros_disponibles", new object[0], this.Lista_libros_disponiblesOperationCompleted, userState);
+        }
+        
+        private void OnLista_libros_disponiblesOperationCompleted(object arg) {
+            if ((this.Lista_libros_disponiblesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Lista_libros_disponiblesCompleted(this, new Lista_libros_disponiblesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Lista_libros_Prestados", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Lista_libros_Prestados() {
+            object[] results = this.Invoke("Lista_libros_Prestados", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Lista_libros_PrestadosAsync() {
+            this.Lista_libros_PrestadosAsync(null);
+        }
+        
+        /// <remarks/>
+        public void Lista_libros_PrestadosAsync(object userState) {
+            if ((this.Lista_libros_PrestadosOperationCompleted == null)) {
+                this.Lista_libros_PrestadosOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLista_libros_PrestadosOperationCompleted);
+            }
+            this.InvokeAsync("Lista_libros_Prestados", new object[0], this.Lista_libros_PrestadosOperationCompleted, userState);
+        }
+        
+        private void OnLista_libros_PrestadosOperationCompleted(object arg) {
+            if ((this.Lista_libros_PrestadosCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Lista_libros_PrestadosCompleted(this, new Lista_libros_PrestadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -617,6 +681,58 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         private object[] results;
         
         internal Lista_AutoresCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Lista_libros_disponiblesCompletedEventHandler(object sender, Lista_libros_disponiblesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Lista_libros_disponiblesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Lista_libros_disponiblesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Lista_libros_PrestadosCompletedEventHandler(object sender, Lista_libros_PrestadosCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Lista_libros_PrestadosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Lista_libros_PrestadosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
