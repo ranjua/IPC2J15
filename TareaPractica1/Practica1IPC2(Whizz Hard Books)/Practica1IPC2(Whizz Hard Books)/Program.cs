@@ -16,7 +16,7 @@ namespace Practica1IPC2_Whizz_Hard_Books_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Biblioteca());
         }
     }
 }

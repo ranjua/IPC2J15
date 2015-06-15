@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1A57B32-0149-A944-017C-42584D6B4C4F" name="LIBRO">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:11:04 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_registro" id="448BC439-1C09-8579-15DA-EEF675A098C9">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:14:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cod_libro" id="18580876-DD56-105F-0F03-E5F6AE143C81">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:14:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="0FEBE8B2-3B71-CA46-0DFD-06D7F3979647">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:14:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="paginas" id="58F607B1-742B-9DE2-F117-C153340101DC">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:14:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tema" id="17479633-A4E6-75DF-4F05-2E04C7284C9A">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:14:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTOR_cod_autor" id="94DFFD52-3377-813F-3431-6C96C68A4C4B">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:16:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="805E4ADD-2D71-4E90-84B2-201744E50771" referredColumn="7A33D285-76E7-2F54-F7AE-4F0BD534C85F"/>
+</associations>
+</Column>
+<Column name="estado" id="86F52EB2-E4B2-F724-1E53-4B98098B86E3">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:31:28 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FD056E7F-1C0F-8313-0633-0FD94C52C147" name="LIBRO_PK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:14:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="448BC439-1C09-8579-15DA-EEF675A098C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38735A30-C950-78F4-ED1E-364D03EBC037" name="cod_autor_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:16:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94DFFD52-3377-813F-3431-6C96C68A4C4B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

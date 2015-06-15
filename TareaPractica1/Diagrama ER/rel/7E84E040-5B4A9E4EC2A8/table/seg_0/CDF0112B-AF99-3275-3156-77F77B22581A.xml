@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CDF0112B-AF99-3275-3156-77F77B22581A" name="RESERVA">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:22:25 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_reserva" id="FE021812-5506-01A0-34DE-1F7CA713F284">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:26:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIBRO_cod_libro" id="5B1B538D-9BA8-8B68-AEA5-2120F6C5A48E">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:26:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0CDF4A9-FC8E-0798-0AFE-2B5F4FB2D5CC" referredColumn="448BC439-1C09-8579-15DA-EEF675A098C9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C27C3230-5D9A-62AA-5AEE-6D55A6D0D690" name="RESERVA_PK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:26:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FE021812-5506-01A0-34DE-1F7CA713F284"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D4BEFF68-0F6C-8428-1DAD-ABBBD0399B63" name="cod_libro_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-15 02:26:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B1B538D-9BA8-8B68-AEA5-2120F6C5A48E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

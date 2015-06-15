@@ -61,6 +61,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base_de_Datos.cs" />
     <Compile Include="ConsultasBiblioteca.asmx.cs">
       <DependentUpon>ConsultasBiblioteca.asmx</DependentUpon>
       <SubType>Component</SubType>

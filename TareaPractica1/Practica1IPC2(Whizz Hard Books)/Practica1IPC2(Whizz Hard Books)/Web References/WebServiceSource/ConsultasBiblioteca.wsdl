@@ -2,16 +2,6 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetContact">
         <s:complexType>
           <s:sequence>
@@ -26,34 +16,92 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Agregar_Libro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_libro" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_autor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="titulo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tema" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agregar_LibroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Agregar_LibroResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lista_Autores">
+        <s:complexType />
+      </s:element>
+      <s:element name="Lista_AutoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lista_AutoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Max_Lista_libros">
+        <s:complexType />
+      </s:element>
+      <s:element name="Max_Lista_librosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Max_Lista_librosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
   <wsdl:message name="GetContactSoapIn">
     <wsdl:part name="parameters" element="tns:GetContact" />
   </wsdl:message>
   <wsdl:message name="GetContactSoapOut">
     <wsdl:part name="parameters" element="tns:GetContactResponse" />
   </wsdl:message>
+  <wsdl:message name="Agregar_LibroSoapIn">
+    <wsdl:part name="parameters" element="tns:Agregar_Libro" />
+  </wsdl:message>
+  <wsdl:message name="Agregar_LibroSoapOut">
+    <wsdl:part name="parameters" element="tns:Agregar_LibroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lista_AutoresSoapIn">
+    <wsdl:part name="parameters" element="tns:Lista_Autores" />
+  </wsdl:message>
+  <wsdl:message name="Lista_AutoresSoapOut">
+    <wsdl:part name="parameters" element="tns:Lista_AutoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="Max_Lista_librosSoapIn">
+    <wsdl:part name="parameters" element="tns:Max_Lista_libros" />
+  </wsdl:message>
+  <wsdl:message name="Max_Lista_librosSoapOut">
+    <wsdl:part name="parameters" element="tns:Max_Lista_librosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ConsultasBibliotecaSoap">
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetContact">
       <wsdl:input message="tns:GetContactSoapIn" />
       <wsdl:output message="tns:GetContactSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Agregar_Libro">
+      <wsdl:input message="tns:Agregar_LibroSoapIn" />
+      <wsdl:output message="tns:Agregar_LibroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lista_Autores">
+      <wsdl:input message="tns:Lista_AutoresSoapIn" />
+      <wsdl:output message="tns:Lista_AutoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Max_Lista_libros">
+      <wsdl:input message="tns:Max_Lista_librosSoapIn" />
+      <wsdl:output message="tns:Max_Lista_librosSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ConsultasBibliotecaSoap" type="tns:ConsultasBibliotecaSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+    <wsdl:operation name="GetContact">
+      <soap:operation soapAction="http://tempuri.org/GetContact" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -61,8 +109,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetContact">
-      <soap:operation soapAction="http://tempuri.org/GetContact" style="document" />
+    <wsdl:operation name="Agregar_Libro">
+      <soap:operation soapAction="http://tempuri.org/Agregar_Libro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista_Autores">
+      <soap:operation soapAction="http://tempuri.org/Lista_Autores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Max_Lista_libros">
+      <soap:operation soapAction="http://tempuri.org/Max_Lista_libros" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -73,8 +139,8 @@
   </wsdl:binding>
   <wsdl:binding name="ConsultasBibliotecaSoap12" type="tns:ConsultasBibliotecaSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+    <wsdl:operation name="GetContact">
+      <soap12:operation soapAction="http://tempuri.org/GetContact" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -82,8 +148,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetContact">
-      <soap12:operation soapAction="http://tempuri.org/GetContact" style="document" />
+    <wsdl:operation name="Agregar_Libro">
+      <soap12:operation soapAction="http://tempuri.org/Agregar_Libro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista_Autores">
+      <soap12:operation soapAction="http://tempuri.org/Lista_Autores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Max_Lista_libros">
+      <soap12:operation soapAction="http://tempuri.org/Max_Lista_libros" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
