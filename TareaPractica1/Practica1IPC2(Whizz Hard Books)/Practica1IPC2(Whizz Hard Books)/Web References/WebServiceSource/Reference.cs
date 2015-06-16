@@ -51,6 +51,8 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         private System.Threading.SendOrPostCallback ConsultaOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ReporteOperationCompleted;
+        
         private System.Threading.SendOrPostCallback DevolucionOperationCompleted;
         
         private System.Threading.SendOrPostCallback Max_MiembroOperationCompleted;
@@ -125,6 +127,9 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         /// <remarks/>
         public event ConsultaCompletedEventHandler ConsultaCompleted;
+        
+        /// <remarks/>
+        public event ReporteCompletedEventHandler ReporteCompleted;
         
         /// <remarks/>
         public event DevolucionCompletedEventHandler DevolucionCompleted;
@@ -462,6 +467,33 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
             if ((this.ConsultaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ConsultaCompleted(this, new ConsultaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Reporte", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Reporte() {
+            object[] results = this.Invoke("Reporte", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ReporteAsync() {
+            this.ReporteAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ReporteAsync(object userState) {
+            if ((this.ReporteOperationCompleted == null)) {
+                this.ReporteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReporteOperationCompleted);
+            }
+            this.InvokeAsync("Reporte", new object[0], this.ReporteOperationCompleted, userState);
+        }
+        
+        private void OnReporteOperationCompleted(object arg) {
+            if ((this.ReporteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ReporteCompleted(this, new ReporteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -819,6 +851,32 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         private object[] results;
         
         internal ConsultaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void ReporteCompletedEventHandler(object sender, ReporteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReporteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReporteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

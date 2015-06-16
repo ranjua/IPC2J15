@@ -21,6 +21,7 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             Llenar_lista_Autores();
             Llenar_lista_libros_disponibles();
             Llenar_lista_libros_prestados();
+            Llenar_Grd_Reporte();
         }
 
         private void Llenar_lista_Autores()
@@ -35,7 +36,16 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             }
             Cmbx_Autores.DataSource = new BindingSource(comboSource, null);
             Cmbx_Autores.DisplayMember = "Value";
-            Cmbx_Autores.ValueMember = "Key";
+            try
+            {
+                Cmbx_Autores.ValueMember = "Key";
+                
+            }
+            catch
+            {
+                Cmbx_Autores.DataSource = null;
+                
+            }
         }
 
         private void Llenar_lista_libros_disponibles()
@@ -45,12 +55,22 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             foreach (DataRow drtabla in tabla.Rows)
             {
 
-                comboSource.Add(Convert.ToInt32(drtabla[0].ToString()), drtabla[1].ToString() + " " + drtabla[2].ToString());
+                comboSource.Add(Convert.ToInt32(drtabla[0].ToString()), drtabla[0].ToString() + " - " + drtabla[2].ToString());
 
             }
             Cmbx_libros_disponibles.DataSource = new BindingSource(comboSource, null);
             Cmbx_libros_disponibles.DisplayMember = "Value";
-            Cmbx_libros_disponibles.ValueMember = "Key";
+            try
+            {
+                Cmbx_libros_disponibles.ValueMember = "Key";
+                btn_Prestamo.Visible = true;
+            }
+            catch
+            {
+                Cmbx_libros_disponibles.DataSource = null;
+                btn_Prestamo.Visible = false;
+                
+            }
         }
         private void Llenar_lista_libros_prestados()
         {
@@ -59,7 +79,7 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             foreach (DataRow drtabla in tabla.Rows)
             {
 
-                comboSource.Add(Convert.ToInt32(drtabla[0].ToString()), drtabla[1].ToString() + " " + drtabla[2].ToString());
+                comboSource.Add(Convert.ToInt32(drtabla[0].ToString()), drtabla[0].ToString() + " - " + drtabla[2].ToString());
 
             }
             cmbx_prestados.DataSource = new BindingSource(comboSource, null);
@@ -67,10 +87,12 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             try
             {
                 cmbx_prestados.ValueMember = "Key";
+                btn_Dev.Visible = true;
             }
             catch 
             {
-
+                cmbx_prestados.DataSource = null;
+                btn_Dev.Visible = false;
             }
         }
 
@@ -101,12 +123,20 @@ namespace Practica1IPC2_Whizz_Hard_Books_
         {
             Form form = new Form();
             form.Visible = true;
+            form.Size = new System.Drawing.Size(400, 100);
             Label lbl_mensaje = new Label();
             lbl_mensaje.Text = mensaje;
+            lbl_mensaje.Location = new System.Drawing.Point();
+            lbl_mensaje.Size = new System.Drawing.Size(100, 30);
             form.Controls.Add(lbl_mensaje);
         }
 
-
+        private void Llenar_Grd_Reporte()
+        {
+            DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Reporte(), (typeof(DataTable)));
+            Grv_Mas_Prestado.DataSource = tabla;
+        }
+        
         private void btn_Agregar_Libro_Click(object sender, EventArgs e)
         {
             int cod_libro = 1 + WSS.Max_Lista_libros();
@@ -132,9 +162,17 @@ namespace Practica1IPC2_Whizz_Hard_Books_
         private void btn_Dev_Click(object sender, EventArgs e)
         {
             int value = ((KeyValuePair<int, string>)cmbx_prestados.SelectedItem).Key;
-            WSS.Devolucion(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_dev_carnet.Text), value);
-            Llenar_lista_libros_disponibles();
-            Llenar_lista_libros_prestados();
+            bool correcto = WSS.Devolucion(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_dev_carnet.Text), value);
+            if (correcto)
+            {
+                Llenar_lista_libros_disponibles();
+                Llenar_lista_libros_prestados();
+                Mostrar_Mensaje("Libro Devuelto");
+            }
+            else
+            {
+                Mostrar_Mensaje("El miembro no coincide con el registro de prestamo del libro");
+            }
         }
 
         private void btn_reg_Click(object sender, EventArgs e)
@@ -153,14 +191,25 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             if(Comprobar_Maximo_Miembro(Convert.ToInt32(txt_pres_carnet.Text)))
             {
                 int value = ((KeyValuePair<int, string>)Cmbx_libros_disponibles.SelectedItem).Key;
-                WSS.Agregar_prestamo(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_pres_carnet.Text), value);
-                Llenar_lista_libros_disponibles();
-                Llenar_lista_libros_prestados();
+                bool correcto = WSS.Agregar_prestamo(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_pres_carnet.Text), value);
+                if (correcto)
+                {
+                    Llenar_lista_libros_disponibles();
+                    Llenar_lista_libros_prestados();
+                    Llenar_Grd_Reporte();
+                    Mostrar_Mensaje("Libro Prestado");
+                }
+                else
+                {
+                    Mostrar_Mensaje("El miembro no existe, registre a la persona");
+                }
             }
             else
             {
-                Mostrar_Mensaje("Ya tiene el maximo de libros prestados y reservados");
+                Mostrar_Mensaje("Verifique que el carnet este correcto, sino ya adquirio el maximo de libros prestados y reservados");
             }
+
+
         }
 
         private void btn_Reservar_Click(object sender, EventArgs e)
@@ -176,7 +225,7 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             }
             else
             {
-                Mostrar_Mensaje("Ya tiene el maximo de libros prestados y reservados");
+                Mostrar_Mensaje("Verifique que el carnet este correcto, sino ya adquirio el maximo de libros prestados y reservados");
             }
         }
 

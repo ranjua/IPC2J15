@@ -61,19 +61,29 @@ namespace Practica1IPC2_webservice_
         [WebMethod]
         public Boolean Agregar_Reserva(int cod_miembro, int cod_libro)
         {
-            Base_de_Datos base_de_Datos = new Base_de_Datos();
-            return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.reservas (cod_libro, cod_cliente) " +
-                " values (" + cod_libro + ", " + cod_miembro + ") ");
+            if (Miembro_Exist(cod_miembro))
+            {
+                Base_de_Datos base_de_Datos = new Base_de_Datos();
+                return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.reservas (cod_libro, cod_cliente) " +
+                    " values (" + cod_libro + ", " + cod_miembro + ") ");
+            }
+            return false;
         }
         [WebMethod]
         public Boolean Agregar_prestamo(string fecha, int cod_miembro, int cod_registro_libro)
         {
-            Base_de_Datos base_de_Datos = new Base_de_Datos();
-            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.prestamos (fecha_prestamo, cod_cliente, cod_registro_libro, devuelto) " +
-                " values ('" + fecha + "', " + cod_miembro + ", " + cod_registro_libro + ", 0) ");
-            if(correcto)
+            if (Miembro_Exist(cod_miembro))
             {
-                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = 'Prestado' where cod_registro = " + cod_registro_libro);
+                Base_de_Datos base_de_Datos = new Base_de_Datos();
+                bool correcto = base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.prestamos (fecha_prestamo, cod_cliente, cod_registro_libro, devuelto) " +
+                    " values ('" + fecha + "', " + cod_miembro + ", " + cod_registro_libro + ", 0) ");
+                if (correcto)
+                {
+                    base_de_Datos.Upd_New_DelUnValorQry("Delete from Practica1IPC2.dbo.reservas where cod_cliente = " + cod_miembro + " and cod_libro= " + 
+                        base_de_Datos.SelectUnValorQry("select cod_libro from Practica1IPC2.dbo.libros where cod_registro = "+ cod_registro_libro) );
+                    return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = 'Prestado' where cod_registro = " + cod_registro_libro);
+                }
+                return false;
             }
             return false;
         }
@@ -129,6 +139,14 @@ namespace Practica1IPC2_webservice_
             return DataTableToJSON(tabla);
         }
         [WebMethod]
+        public string Reporte()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = base_de_Datos.FillTableData("Select cod_libro as Codigo, nombre as Titulo, COUNT(cod_libro) as Cantidad from Practica1IPC2.dbo.prestamos p, Practica1IPC2.dbo.libros l " +
+            " where l.cod_registro=p.cod_registro_libro  group by l.cod_libro, l.nombre order by Cantidad desc");
+            return DataTableToJSON(tabla);
+        }
+        [WebMethod]
         public Boolean Devolucion(string fecha, int cod_miembro, int cod_registro_libro)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
@@ -149,13 +167,18 @@ namespace Practica1IPC2_webservice_
         [WebMethod]
         public Boolean Max_Miembro(int cod_miembro)
         {
-            Base_de_Datos base_de_Datos = new Base_de_Datos();
-            int cantidad = Convert.ToInt32(base_de_Datos.SelectUnValorQry("select (COUNT(cod_cliente) + (select COUNT(cod_cliente) from Practica1IPC2.dbo.prestamos where  cod_cliente = " + cod_miembro + ")) from Practica1IPC2.dbo.reservas where cod_cliente = " + cod_miembro));
-            if(cantidad == 5 )
+            if (Miembro_Exist(cod_miembro))
             {
-                return false;
+                Base_de_Datos base_de_Datos = new Base_de_Datos();
+                int cantidad = Convert.ToInt32(base_de_Datos.SelectUnValorQry("select (COUNT(cod_cliente) + (select COUNT(cod_cliente) from Practica1IPC2.dbo.prestamos "+
+                    " where  cod_cliente = " + cod_miembro + " and devuelto = 'false')) from Practica1IPC2.dbo.reservas where cod_cliente = " + cod_miembro));
+                if (cantidad == 5)
+                {
+                    return false;
+                }
+                return true;
             }
-            return true;
+            return false;
         }
 
         private string DataTableToJSON(DataTable table)
@@ -175,7 +198,19 @@ namespace Practica1IPC2_webservice_
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             return serializer.Serialize(list);
         }
-
+        private bool Miembro_Exist(int cod_miembro)
+        {
+            try
+            {
+                Base_de_Datos base_de_Datos = new Base_de_Datos();
+                base_de_Datos.SelectUnValorQry("select carnet from Practica1IPC2.dbo.clientes where carnet= " + cod_miembro);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 
