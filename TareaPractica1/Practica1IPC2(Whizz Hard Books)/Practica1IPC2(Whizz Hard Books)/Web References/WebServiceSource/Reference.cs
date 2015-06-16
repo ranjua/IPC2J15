@@ -53,6 +53,8 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         private System.Threading.SendOrPostCallback DevolucionOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Max_MiembroOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -126,6 +128,9 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         /// <remarks/>
         public event DevolucionCompletedEventHandler DevolucionCompleted;
+        
+        /// <remarks/>
+        public event Max_MiembroCompletedEventHandler Max_MiembroCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetContact", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -226,22 +231,22 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Agregar_Miembro", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Agregar_Miembro(string nombre, int DPI, string direccion, int telefono) {
+        public long Agregar_Miembro(string nombre, long DPI, string direccion, long telefono) {
             object[] results = this.Invoke("Agregar_Miembro", new object[] {
                         nombre,
                         DPI,
                         direccion,
                         telefono});
-            return ((bool)(results[0]));
+            return ((long)(results[0]));
         }
         
         /// <remarks/>
-        public void Agregar_MiembroAsync(string nombre, int DPI, string direccion, int telefono) {
+        public void Agregar_MiembroAsync(string nombre, long DPI, string direccion, long telefono) {
             this.Agregar_MiembroAsync(nombre, DPI, direccion, telefono, null);
         }
         
         /// <remarks/>
-        public void Agregar_MiembroAsync(string nombre, int DPI, string direccion, int telefono, object userState) {
+        public void Agregar_MiembroAsync(string nombre, long DPI, string direccion, long telefono, object userState) {
             if ((this.Agregar_MiembroOperationCompleted == null)) {
                 this.Agregar_MiembroOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregar_MiembroOperationCompleted);
             }
@@ -494,6 +499,35 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Max_Miembro", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Max_Miembro(int cod_miembro) {
+            object[] results = this.Invoke("Max_Miembro", new object[] {
+                        cod_miembro});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Max_MiembroAsync(int cod_miembro) {
+            this.Max_MiembroAsync(cod_miembro, null);
+        }
+        
+        /// <remarks/>
+        public void Max_MiembroAsync(int cod_miembro, object userState) {
+            if ((this.Max_MiembroOperationCompleted == null)) {
+                this.Max_MiembroOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMax_MiembroOperationCompleted);
+            }
+            this.InvokeAsync("Max_Miembro", new object[] {
+                        cod_miembro}, this.Max_MiembroOperationCompleted, userState);
+        }
+        
+        private void OnMax_MiembroOperationCompleted(object arg) {
+            if ((this.Max_MiembroCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Max_MiembroCompleted(this, new Max_MiembroCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -608,10 +642,10 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         }
         
         /// <remarks/>
-        public bool Result {
+        public long Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((long)(this.results[0]));
             }
         }
     }
@@ -811,6 +845,32 @@ namespace Practica1IPC2_Whizz_Hard_Books_.WebServiceSource {
         private object[] results;
         
         internal DevolucionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Max_MiembroCompletedEventHandler(object sender, Max_MiembroCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Max_MiembroCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Max_MiembroCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

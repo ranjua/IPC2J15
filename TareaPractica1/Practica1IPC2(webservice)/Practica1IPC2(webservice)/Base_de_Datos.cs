@@ -128,6 +128,7 @@ namespace Practica1IPC2_webservice_
             }
             return true;
         }
+
         //Verificar existencia de dato en Base de Datos
         public bool Verify_Query(string pQuery)
         {

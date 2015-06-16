@@ -45,21 +45,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Tbp_Consulta = new System.Windows.Forms.TabPage();
+            this.pnl_Reserva = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.txt_cons_reg_lib = new System.Windows.Forms.TextBox();
             this.txt_res_carnet = new System.Windows.Forms.TextBox();
             this.btn_Reservar = new System.Windows.Forms.Button();
+            this.txt_bus_titulo = new System.Windows.Forms.TextBox();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.Grd_Consulta = new System.Windows.Forms.DataGridView();
             this.Tbp_Prestamo = new System.Windows.Forms.TabPage();
+            this.Cmbx_libros_disponibles = new System.Windows.Forms.ComboBox();
             this.btn_Prestamo = new System.Windows.Forms.Button();
             this.txt_pres_carnet = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.Tbp_Devolucion = new System.Windows.Forms.TabPage();
+            this.cmbx_prestados = new System.Windows.Forms.ComboBox();
             this.btn_Dev = new System.Windows.Forms.Button();
             this.txt_dev_carnet = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Tbp_Registro = new System.Windows.Forms.TabPage();
+            this.lbl_carnet_asignado_info = new System.Windows.Forms.Label();
+            this.lbl_carnet_asignado = new System.Windows.Forms.Label();
             this.btn_reg = new System.Windows.Forms.Button();
             this.txt_reg_tel = new System.Windows.Forms.TextBox();
             this.txt_reg_dir = new System.Windows.Forms.TextBox();
@@ -72,16 +81,12 @@
             this.Tbp_Reportes = new System.Windows.Forms.TabPage();
             this.Grv_Mas_Prestado = new System.Windows.Forms.DataGridView();
             this.Tbp_Admin = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.txt_bus_titulo = new System.Windows.Forms.TextBox();
-            this.Cmbx_libros_disponibles = new System.Windows.Forms.ComboBox();
-            this.cmbx_prestados = new System.Windows.Forms.ComboBox();
             this.Tbc_Biblioteca.SuspendLayout();
             this.Tbp_Libros_Nuevos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_pag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_cantidad)).BeginInit();
             this.Tbp_Consulta.SuspendLayout();
+            this.pnl_Reserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Consulta)).BeginInit();
             this.Tbp_Prestamo.SuspendLayout();
             this.Tbp_Devolucion.SuspendLayout();
@@ -249,12 +254,10 @@
             // 
             // Tbp_Consulta
             // 
+            this.Tbp_Consulta.Controls.Add(this.pnl_Reserva);
             this.Tbp_Consulta.Controls.Add(this.txt_bus_titulo);
             this.Tbp_Consulta.Controls.Add(this.btn_Buscar);
             this.Tbp_Consulta.Controls.Add(this.label14);
-            this.Tbp_Consulta.Controls.Add(this.label11);
-            this.Tbp_Consulta.Controls.Add(this.txt_res_carnet);
-            this.Tbp_Consulta.Controls.Add(this.btn_Reservar);
             this.Tbp_Consulta.Controls.Add(this.Grd_Consulta);
             this.Tbp_Consulta.Location = new System.Drawing.Point(4, 25);
             this.Tbp_Consulta.Name = "Tbp_Consulta";
@@ -264,39 +267,83 @@
             this.Tbp_Consulta.Text = "Consulta de Libros";
             this.Tbp_Consulta.UseVisualStyleBackColor = true;
             // 
+            // pnl_Reserva
+            // 
+            this.pnl_Reserva.Controls.Add(this.label11);
+            this.pnl_Reserva.Controls.Add(this.txt_cons_reg_lib);
+            this.pnl_Reserva.Controls.Add(this.txt_res_carnet);
+            this.pnl_Reserva.Controls.Add(this.btn_Reservar);
+            this.pnl_Reserva.Location = new System.Drawing.Point(572, 335);
+            this.pnl_Reserva.Name = "pnl_Reserva";
+            this.pnl_Reserva.Size = new System.Drawing.Size(348, 156);
+            this.pnl_Reserva.TabIndex = 8;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(73, 344);
+            this.label11.Location = new System.Drawing.Point(3, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(128, 17);
             this.label11.TabIndex = 3;
             this.label11.Text = "Carnet de Miembro";
             // 
+            // txt_cons_reg_lib
+            // 
+            this.txt_cons_reg_lib.Location = new System.Drawing.Point(265, 9);
+            this.txt_cons_reg_lib.Name = "txt_cons_reg_lib";
+            this.txt_cons_reg_lib.Size = new System.Drawing.Size(68, 22);
+            this.txt_cons_reg_lib.TabIndex = 7;
+            // 
             // txt_res_carnet
             // 
-            this.txt_res_carnet.Location = new System.Drawing.Point(213, 344);
+            this.txt_res_carnet.Location = new System.Drawing.Point(147, 9);
             this.txt_res_carnet.Name = "txt_res_carnet";
             this.txt_res_carnet.Size = new System.Drawing.Size(100, 22);
             this.txt_res_carnet.TabIndex = 2;
             // 
             // btn_Reservar
             // 
-            this.btn_Reservar.Location = new System.Drawing.Point(213, 386);
+            this.btn_Reservar.Location = new System.Drawing.Point(147, 54);
             this.btn_Reservar.Name = "btn_Reservar";
-            this.btn_Reservar.Size = new System.Drawing.Size(100, 33);
+            this.btn_Reservar.Size = new System.Drawing.Size(186, 34);
             this.btn_Reservar.TabIndex = 1;
             this.btn_Reservar.Text = "Reservar";
             this.btn_Reservar.UseVisualStyleBackColor = true;
             this.btn_Reservar.Click += new System.EventHandler(this.btn_Reservar_Click);
             // 
+            // txt_bus_titulo
+            // 
+            this.txt_bus_titulo.Location = new System.Drawing.Point(76, 87);
+            this.txt_bus_titulo.Name = "txt_bus_titulo";
+            this.txt_bus_titulo.Size = new System.Drawing.Size(156, 22);
+            this.txt_bus_titulo.TabIndex = 6;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.Location = new System.Drawing.Point(238, 87);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Buscar.TabIndex = 5;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(73, 54);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 17);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Buscar por Titulo";
+            // 
             // Grd_Consulta
             // 
             this.Grd_Consulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grd_Consulta.Location = new System.Drawing.Point(76, 198);
+            this.Grd_Consulta.Location = new System.Drawing.Point(27, 198);
             this.Grd_Consulta.Name = "Grd_Consulta";
             this.Grd_Consulta.RowTemplate.Height = 24;
-            this.Grd_Consulta.Size = new System.Drawing.Size(827, 77);
+            this.Grd_Consulta.Size = new System.Drawing.Size(893, 77);
             this.Grd_Consulta.TabIndex = 0;
             // 
             // Tbp_Prestamo
@@ -313,6 +360,14 @@
             this.Tbp_Prestamo.TabIndex = 2;
             this.Tbp_Prestamo.Text = "Prestamo";
             this.Tbp_Prestamo.UseVisualStyleBackColor = true;
+            // 
+            // Cmbx_libros_disponibles
+            // 
+            this.Cmbx_libros_disponibles.FormattingEnabled = true;
+            this.Cmbx_libros_disponibles.Location = new System.Drawing.Point(247, 83);
+            this.Cmbx_libros_disponibles.Name = "Cmbx_libros_disponibles";
+            this.Cmbx_libros_disponibles.Size = new System.Drawing.Size(121, 24);
+            this.Cmbx_libros_disponibles.TabIndex = 7;
             // 
             // btn_Prestamo
             // 
@@ -364,6 +419,14 @@
             this.Tbp_Devolucion.Text = "Devolucion";
             this.Tbp_Devolucion.UseVisualStyleBackColor = true;
             // 
+            // cmbx_prestados
+            // 
+            this.cmbx_prestados.FormattingEnabled = true;
+            this.cmbx_prestados.Location = new System.Drawing.Point(250, 87);
+            this.cmbx_prestados.Name = "cmbx_prestados";
+            this.cmbx_prestados.Size = new System.Drawing.Size(121, 24);
+            this.cmbx_prestados.TabIndex = 5;
+            // 
             // btn_Dev
             // 
             this.btn_Dev.Location = new System.Drawing.Point(250, 144);
@@ -401,6 +464,8 @@
             // 
             // Tbp_Registro
             // 
+            this.Tbp_Registro.Controls.Add(this.lbl_carnet_asignado_info);
+            this.Tbp_Registro.Controls.Add(this.lbl_carnet_asignado);
             this.Tbp_Registro.Controls.Add(this.btn_reg);
             this.Tbp_Registro.Controls.Add(this.txt_reg_tel);
             this.Tbp_Registro.Controls.Add(this.txt_reg_dir);
@@ -417,6 +482,26 @@
             this.Tbp_Registro.TabIndex = 4;
             this.Tbp_Registro.Text = "Registro de Miembros";
             this.Tbp_Registro.UseVisualStyleBackColor = true;
+            // 
+            // lbl_carnet_asignado_info
+            // 
+            this.lbl_carnet_asignado_info.AutoSize = true;
+            this.lbl_carnet_asignado_info.Location = new System.Drawing.Point(62, 311);
+            this.lbl_carnet_asignado_info.Name = "lbl_carnet_asignado_info";
+            this.lbl_carnet_asignado_info.Size = new System.Drawing.Size(183, 17);
+            this.lbl_carnet_asignado_info.TabIndex = 10;
+            this.lbl_carnet_asignado_info.Text = "Carnet Asignado a miembro";
+            this.lbl_carnet_asignado_info.Visible = false;
+            // 
+            // lbl_carnet_asignado
+            // 
+            this.lbl_carnet_asignado.AutoSize = true;
+            this.lbl_carnet_asignado.Location = new System.Drawing.Point(251, 311);
+            this.lbl_carnet_asignado.Name = "lbl_carnet_asignado";
+            this.lbl_carnet_asignado.Size = new System.Drawing.Size(104, 17);
+            this.lbl_carnet_asignado.TabIndex = 9;
+            this.lbl_carnet_asignado.Text = "520351654642";
+            this.lbl_carnet_asignado.Visible = false;
             // 
             // btn_reg
             // 
@@ -522,48 +607,6 @@
             this.Tbp_Admin.Text = "Administracion";
             this.Tbp_Admin.UseVisualStyleBackColor = true;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(73, 54);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 17);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Buscar por Titulo";
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.Location = new System.Drawing.Point(238, 87);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Buscar.TabIndex = 5;
-            this.btn_Buscar.Text = "Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
-            // txt_bus_titulo
-            // 
-            this.txt_bus_titulo.Location = new System.Drawing.Point(76, 87);
-            this.txt_bus_titulo.Name = "txt_bus_titulo";
-            this.txt_bus_titulo.Size = new System.Drawing.Size(156, 22);
-            this.txt_bus_titulo.TabIndex = 6;
-            // 
-            // Cmbx_libros_disponibles
-            // 
-            this.Cmbx_libros_disponibles.FormattingEnabled = true;
-            this.Cmbx_libros_disponibles.Location = new System.Drawing.Point(247, 83);
-            this.Cmbx_libros_disponibles.Name = "Cmbx_libros_disponibles";
-            this.Cmbx_libros_disponibles.Size = new System.Drawing.Size(121, 24);
-            this.Cmbx_libros_disponibles.TabIndex = 7;
-            // 
-            // cmbx_prestados
-            // 
-            this.cmbx_prestados.FormattingEnabled = true;
-            this.cmbx_prestados.Location = new System.Drawing.Point(250, 87);
-            this.cmbx_prestados.Name = "cmbx_prestados";
-            this.cmbx_prestados.Size = new System.Drawing.Size(121, 24);
-            this.cmbx_prestados.TabIndex = 5;
-            // 
             // Biblioteca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -579,6 +622,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_cantidad)).EndInit();
             this.Tbp_Consulta.ResumeLayout(false);
             this.Tbp_Consulta.PerformLayout();
+            this.pnl_Reserva.ResumeLayout(false);
+            this.pnl_Reserva.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Consulta)).EndInit();
             this.Tbp_Prestamo.ResumeLayout(false);
             this.Tbp_Prestamo.PerformLayout();
@@ -643,5 +688,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox Cmbx_libros_disponibles;
         private System.Windows.Forms.ComboBox cmbx_prestados;
+        private System.Windows.Forms.TextBox txt_cons_reg_lib;
+        private System.Windows.Forms.Label lbl_carnet_asignado_info;
+        private System.Windows.Forms.Label lbl_carnet_asignado;
+        private System.Windows.Forms.Panel pnl_Reserva;
     }
 }

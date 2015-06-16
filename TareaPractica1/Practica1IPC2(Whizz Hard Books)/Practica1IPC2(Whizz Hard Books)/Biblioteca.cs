@@ -76,14 +76,36 @@ namespace Practica1IPC2_Whizz_Hard_Books_
 
         private bool Comprobar_Maximo_Miembro(int cod_Miembro)
         {
-            return false;
+            return WSS.Max_Miembro(cod_Miembro);
         }
 
         private void Llenar_Grd_Consulta(string nombre)
         {
             DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Consulta(nombre), (typeof(DataTable)));
+            foreach(DataRow drtabla in tabla.Rows)
+            {
+                txt_cons_reg_lib.Text = drtabla[0].ToString();
+                if(drtabla[3].ToString()=="0")
+                {
+                    pnl_Reserva.Visible = true;
+                }
+                else
+                {
+                    pnl_Reserva.Visible = false;
+                }
+            }
             Grd_Consulta.DataSource = tabla;
         }
+
+        private void Mostrar_Mensaje(string mensaje)
+        {
+            Form form = new Form();
+            form.Visible = true;
+            Label lbl_mensaje = new Label();
+            lbl_mensaje.Text = mensaje;
+            form.Controls.Add(lbl_mensaje);
+        }
+
 
         private void btn_Agregar_Libro_Click(object sender, EventArgs e)
         {
@@ -92,6 +114,12 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             {
                 int value = ((KeyValuePair<int, string>)Cmbx_Autores.SelectedItem).Key;
                 bool correcto = WSS.Agregar_Libro(cod_libro, value, txt_Titulo.Text, Convert.ToInt32(num_pag.Value.ToString()), txt_Tema.Text);
+                if(correcto)
+                {
+                    Mostrar_Mensaje("Libro agregado");
+                    Llenar_lista_libros_disponibles();
+                    Llenar_lista_libros_prestados();
+                }
             }
         }
 
@@ -111,21 +139,45 @@ namespace Practica1IPC2_Whizz_Hard_Books_
 
         private void btn_reg_Click(object sender, EventArgs e)
         {
-            WSS.Agregar_Miembro(txt_reg_nombre.Text, Convert.ToInt32(txt_reg_dpi.Text), txt_reg_dir.Text, Convert.ToInt32(txt_reg_tel.Text));
+           long carnet = WSS.Agregar_Miembro(txt_reg_nombre.Text, Convert.ToInt64(txt_reg_dpi.Text), txt_reg_dir.Text, Convert.ToInt64(txt_reg_tel.Text));
+           if(carnet != -1 )
+           {
+               lbl_carnet_asignado_info.Visible = true;
+               lbl_carnet_asignado.Visible = true;
+               lbl_carnet_asignado.Text = carnet + "";
+           }
         }
 
         private void btn_Prestamo_Click(object sender, EventArgs e)
         {
-            int value = ((KeyValuePair<int, string>)Cmbx_libros_disponibles.SelectedItem).Key;
-            WSS.Agregar_prestamo(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_pres_carnet.Text), value);
-            Llenar_lista_libros_disponibles();
-            Llenar_lista_libros_prestados();
+            if(Comprobar_Maximo_Miembro(Convert.ToInt32(txt_pres_carnet.Text)))
+            {
+                int value = ((KeyValuePair<int, string>)Cmbx_libros_disponibles.SelectedItem).Key;
+                WSS.Agregar_prestamo(DateTime.Now.Date.ToString(), Convert.ToInt32(txt_pres_carnet.Text), value);
+                Llenar_lista_libros_disponibles();
+                Llenar_lista_libros_prestados();
+            }
+            else
+            {
+                Mostrar_Mensaje("Ya tiene el maximo de libros prestados y reservados");
+            }
         }
 
         private void btn_Reservar_Click(object sender, EventArgs e)
         {
-            
-            WSS.Agregar_Reserva(Convert.ToInt32(txt_res_carnet.Text),0);
+            if (Comprobar_Maximo_Miembro(Convert.ToInt32(txt_res_carnet.Text)))
+            {   
+                bool correcto = WSS.Agregar_Reserva(Convert.ToInt32(txt_res_carnet.Text), Convert.ToInt32(txt_cons_reg_lib.Text));
+                if(correcto)
+                {
+                    Mostrar_Mensaje("Reserva Realizada");
+                    Llenar_Grd_Consulta(txt_bus_titulo.Text);
+                }
+            }
+            else
+            {
+                Mostrar_Mensaje("Ya tiene el maximo de libros prestados y reservados");
+            }
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -133,6 +185,5 @@ namespace Practica1IPC2_Whizz_Hard_Books_
             Llenar_Grd_Consulta(txt_bus_titulo.Text);
         }
 
-      
     }
 }

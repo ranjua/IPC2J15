@@ -47,12 +47,16 @@ namespace Practica1IPC2_webservice_
                 " values ('" + nombre + "', '" + apellido + "') ");
         }
         [WebMethod]
-        public Boolean Agregar_Miembro(string nombre, int DPI, string direccion, int telefono)
+        public long Agregar_Miembro(string nombre, long DPI, string direccion, long telefono)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            return base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.libros (nombre, DPI, direccion, telefono) " +
+            Boolean correcto = base_de_Datos.Upd_New_DelUnValorQry("Insert into Practica1IPC2.dbo.clientes (nombre, DPI, direccion, telefono) " +
                 " values ('" + nombre + "'," + DPI + ", '" + direccion + "', " + telefono + ") ");
-
+            if(correcto)
+            {
+                return Convert.ToInt64(base_de_Datos.SelectUnValorQry("select carnet from Practica1IPC2.dbo.clientes where DPI = " + DPI + " and nombre = '" + nombre + "'"));
+            }
+            return -1;
         }
         [WebMethod]
         public Boolean Agregar_Reserva(int cod_miembro, int cod_libro)
@@ -73,7 +77,6 @@ namespace Practica1IPC2_webservice_
             }
             return false;
         }
-
         [WebMethod]
         public string Lista_Autores()
         {
@@ -117,7 +120,7 @@ namespace Practica1IPC2_webservice_
         public string Consulta(String nombre)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            DataTable tabla = base_de_Datos.FillTableData("Select Top 1 lm.nombre as Titulo_de_Libro, (a.nombre + a.apellido) as Autor, " + 
+            DataTable tabla = base_de_Datos.FillTableData("Select Top 1 lm.cod_libro, lm.nombre as Titulo_de_Libro, (a.nombre + a.apellido) as Autor, " + 
             " (Select COUNT(l.estado) from Practica1IPC2.dbo.libros l where l.estado = 'Disponible' and lm.cod_libro=l.cod_libro) as Disponibles , "+
             " (Select COUNT(l.estado) from Practica1IPC2.dbo.libros l where l.estado = 'Prestado' and lm.cod_libro=l.cod_libro) as Prestados, "+
             " (Select COUNT(r.cod_libro) from Practica1IPC2.dbo.reservas r " +
@@ -129,15 +132,31 @@ namespace Practica1IPC2_webservice_
         public Boolean Devolucion(string fecha, int cod_miembro, int cod_registro_libro)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = 'Disponible' where cod_registro = " + cod_registro_libro);
+            string cod_miembro_real = base_de_Datos.SelectUnValorQry("Select cod_cliente from Practica1IPC2.dbo.prestamos where cod_registro_libro=" + cod_registro_libro + " and devuelto='False';");
+            if(cod_miembro_real!=cod_miembro.ToString())
+            {
+                return false;
+            }
+            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.libros set estado = 'Disponible'"+
+                " where cod_registro = " + cod_registro_libro);
             if(correcto)
             {
-                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.prestamos set devuelto = 1, fecha_entrega=" + fecha + 
-                    " where  cod_cliente = " + cod_miembro + " and cod_registro_libro = " + cod_registro_libro);
+                return base_de_Datos.Upd_New_DelUnValorQry("update Practica1IPC2.dbo.prestamos set devuelto = 'True', fecha_entrega='" + fecha + 
+                    "' where  cod_cliente = " + cod_miembro + " and cod_registro_libro = " + cod_registro_libro);
             }
             return false;
         }
-
+        [WebMethod]
+        public Boolean Max_Miembro(int cod_miembro)
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            int cantidad = Convert.ToInt32(base_de_Datos.SelectUnValorQry("select (COUNT(cod_cliente) + (select COUNT(cod_cliente) from Practica1IPC2.dbo.prestamos where  cod_cliente = " + cod_miembro + ")) from Practica1IPC2.dbo.reservas where cod_cliente = " + cod_miembro));
+            if(cantidad == 5 )
+            {
+                return false;
+            }
+            return true;
+        }
 
         private string DataTableToJSON(DataTable table)
         {
