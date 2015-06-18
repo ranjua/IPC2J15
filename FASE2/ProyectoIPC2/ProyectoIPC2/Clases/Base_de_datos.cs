@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace ProyectoIPC2.Clases
 {
-    public class Base_de_datos
+    public class Base_de_Datos
     {
 
         public SqlConnection connection;

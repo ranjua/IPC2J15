@@ -1,0 +1,859 @@
+﻿/* line 24, ../scss/partials/_buttons.scss */
+.button {
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  background-color: #eeeeee;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fbfbfb), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, #fbfbfb, #e1e1e1);
+  background: -moz-linear-gradient(top, #fbfbfb, #e1e1e1);
+  background: -o-linear-gradient(top, #fbfbfb, #e1e1e1);
+  background: linear-gradient(top, #fbfbfb, #e1e1e1);
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  border: 1px solid #d4d4d4;
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 25.6px;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+  color: #666666;
+  text-shadow: 0 1px 1px white;
+  margin: 0;
+  text-decoration: none;
+  text-align: center; }
+  /* line 42, ../scss/partials/_buttons.scss */
+  .button:hover {
+    background-color: #eeeeee;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dcdcdc));
+    background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+    background: -moz-linear-gradient(top, #ffffff, #dcdcdc);
+    background: -o-linear-gradient(top, #ffffff, #dcdcdc);
+    background: linear-gradient(top, #ffffff, #dcdcdc); }
+  /* line 46, ../scss/partials/_buttons.scss */
+  .button:active {
+    -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+    background: #eeeeee;
+    color: #bbbbbb; }
+  /* line 52, ../scss/partials/_buttons.scss */
+  .button:focus {
+    outline: none; }
+
+/* line 58, ../scss/partials/_buttons.scss */
+input.button, button.button {
+  height: 34px;
+  cursor: pointer;
+  -webkit-appearance: none; }
+
+/* line 65, ../scss/partials/_buttons.scss */
+.button-block {
+  display: block; }
+
+/* line 74, ../scss/partials/_buttons.scss */
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:active,
+input.button:disabled,
+button.button:disabled {
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  background: #EEE;
+  border: 1px solid #DDD;
+  text-shadow: 0 1px 1px white;
+  color: #CCC;
+  cursor: default;
+  -webkit-appearance: none; }
+
+/* line 86, ../scss/partials/_buttons.scss */
+.button-wrap {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f2f2f2));
+  background: -webkit-linear-gradient(top, #e3e3e3, #f2f2f2);
+  background: -moz-linear-gradient(top, #e3e3e3, #f2f2f2);
+  background: -o-linear-gradient(top, #e3e3e3, #f2f2f2);
+  background: linear-gradient(top, #e3e3e3, #f2f2f2);
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 10px;
+  display: inline-block; }
+
+/* line 96, ../scss/partials/_buttons.scss */
+.button-flat {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background: #eeeeee;
+  border: none;
+  text-shadow: none; }
+  /* line 105, ../scss/partials/_buttons.scss */
+  .button-flat:hover {
+    background: #fbfbfb; }
+  /* line 108, ../scss/partials/_buttons.scss */
+  .button-flat:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: #eeeeee;
+    color: #bbbbbb; }
+  /* line 113, ../scss/partials/_buttons.scss */
+  .button-flat.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 123, ../scss/partials/_buttons.scss */
+.button-border {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #666666;
+  border: 2px solid #666666;
+  background: none;
+  text-shadow: none; }
+  /* line 132, ../scss/partials/_buttons.scss */
+  .button-border:hover {
+    background: none;
+    color: gray;
+    border: 2px solid gray; }
+  /* line 137, ../scss/partials/_buttons.scss */
+  .button-border:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: none;
+    color: #4d4d4d;
+    border: 2px solid #4d4d4d; }
+  /* line 143, ../scss/partials/_buttons.scss */
+  .button-border.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 226, ../scss/partials/_buttons.scss */
+.button-primary {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00b5e5), color-stop(100%, #008db2));
+  background: -webkit-linear-gradient(top, #00b5e5, #008db2);
+  background: -moz-linear-gradient(top, #00b5e5, #008db2);
+  background: -o-linear-gradient(top, #00b5e5, #008db2);
+  background: linear-gradient(top, #00b5e5, #008db2);
+  background-color: #00a1cb;
+  border-color: #007998;
+  color: white;
+  text-shadow: 0 -1px 1px rgba(0, 40, 50, 0.35); }
+  /* line 233, ../scss/partials/_buttons.scss */
+  .button-primary:hover {
+    background-color: #00a1cb;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00c9fe), color-stop(100%, #008db2));
+    background: -webkit-linear-gradient(top, #00c9fe, #008db2);
+    background: -moz-linear-gradient(top, #00c9fe, #008db2);
+    background: -o-linear-gradient(top, #00c9fe, #008db2);
+    background: linear-gradient(top, #00c9fe, #008db2); }
+  /* line 237, ../scss/partials/_buttons.scss */
+  .button-primary:active {
+    background: #1495b7;
+    color: #005065; }
+
+/* line 321, ../scss/partials/_buttons.scss */
+.button-flat-primary {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background: #00a1cb;
+  color: white;
+  text-shadow: none;
+  border: none; }
+  /* line 330, ../scss/partials/_buttons.scss */
+  .button-flat-primary:hover {
+    background: #00b5e5; }
+  /* line 333, ../scss/partials/_buttons.scss */
+  .button-flat-primary:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: #1495b7;
+    color: #00647f; }
+  /* line 338, ../scss/partials/_buttons.scss */
+  .button-flat-primary.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 226, ../scss/partials/_buttons.scss */
+.button-action {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8fcf00), color-stop(100%, #6b9c00));
+  background: -webkit-linear-gradient(top, #8fcf00, #6b9c00);
+  background: -moz-linear-gradient(top, #8fcf00, #6b9c00);
+  background: -o-linear-gradient(top, #8fcf00, #6b9c00);
+  background: linear-gradient(top, #8fcf00, #6b9c00);
+  background-color: #7db500;
+  border-color: #5a8200;
+  color: white;
+  text-shadow: 0 -1px 1px rgba(19, 28, 0, 0.35); }
+  /* line 233, ../scss/partials/_buttons.scss */
+  .button-action:hover {
+    background-color: #7db500;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a0e800), color-stop(100%, #6b9c00));
+    background: -webkit-linear-gradient(top, #a0e800, #6b9c00);
+    background: -moz-linear-gradient(top, #a0e800, #6b9c00);
+    background: -o-linear-gradient(top, #a0e800, #6b9c00);
+    background: linear-gradient(top, #a0e800, #6b9c00); }
+  /* line 237, ../scss/partials/_buttons.scss */
+  .button-action:active {
+    background: #76a312;
+    color: #374f00; }
+
+/* line 321, ../scss/partials/_buttons.scss */
+.button-flat-action 
+{
+    font: 13pt Arial; 
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background: #7db500;
+  color: white;
+  text-shadow: none;
+  border:thick none White;
+    margin-left: 0px;
+}
+  /* line 330, ../scss/partials/_buttons.scss */
+  .button-flat-action:hover {
+    background: #8fcf00; }
+  /* line 333, ../scss/partials/_buttons.scss */
+  .button-flat-action:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: #76a312;
+    color: #486900; }
+  /* line 338, ../scss/partials/_buttons.scss */
+  .button-flat-action.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 226, ../scss/partials/_buttons.scss */
+.button-highlight {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fa9915), color-stop(100%, #d87e04));
+  background: -webkit-linear-gradient(top, #fa9915, #d87e04);
+  background: -moz-linear-gradient(top, #fa9915, #d87e04);
+  background: -o-linear-gradient(top, #fa9915, #d87e04);
+  background: linear-gradient(top, #fa9915, #d87e04);
+  background-color: #f18d05;
+  border-color: #bf7004;
+  color: white;
+  text-shadow: 0 -1px 1px rgba(91, 53, 2, 0.35); }
+  /* line 233, ../scss/partials/_buttons.scss */
+  .button-highlight:hover {
+    background-color: #f18d05;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fba42e), color-stop(100%, #d87e04));
+    background: -webkit-linear-gradient(top, #fba42e, #d87e04);
+    background: -moz-linear-gradient(top, #fba42e, #d87e04);
+    background: -o-linear-gradient(top, #fba42e, #d87e04);
+    background: linear-gradient(top, #fba42e, #d87e04); }
+  /* line 237, ../scss/partials/_buttons.scss */
+  .button-highlight:active {
+    background: #d8891e;
+    color: #8d5303; }
+
+/* line 321, ../scss/partials/_buttons.scss */
+.button-flat-highlight 
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    font: 13pt Arial;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition-property: background;
+    -moz-transition-property: background;
+    -o-transition-property: background;
+    transition-property: background;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    background: #f18d05;
+    color: white;
+    text-shadow: none;
+}
+  /* line 330, ../scss/partials/_buttons.scss */
+  .button-flat-highlight:hover {
+    background: #fa9915; }
+  /* line 333, ../scss/partials/_buttons.scss */
+  .button-flat-highlight:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: #d8891e;
+    color: #a66103; }
+  /* line 338, ../scss/partials/_buttons.scss */
+  .button-flat-highlight.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 226, ../scss/partials/_buttons.scss */
+.button-caution 
+{
+  font: 13pt Arial; 
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8543f), color-stop(100%, #d9331a));
+  background: -webkit-linear-gradient(top, #e8543f, #d9331a);
+  background: -moz-linear-gradient(top, #e8543f, #d9331a);
+  background: -o-linear-gradient(top, #e8543f, #d9331a);
+  background: linear-gradient(top, #e8543f, #d9331a);
+  background-color: #e54028;
+  border-color: #c22d18;
+  color: white;
+  text-shadow: 0 -1px 1px rgba(103, 24, 13, 0.35); }
+  /* line 233, ../scss/partials/_buttons.scss */
+  .button-caution:hover {
+    background-color: #e54028;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eb6855), color-stop(100%, #d9331a));
+    background: -webkit-linear-gradient(top, #eb6855, #d9331a);
+    background: -moz-linear-gradient(top, #eb6855, #d9331a);
+    background: -o-linear-gradient(top, #eb6855, #d9331a);
+    background: linear-gradient(top, #eb6855, #d9331a); }
+  /* line 237, ../scss/partials/_buttons.scss */
+  .button-caution:active {
+    background: #cd5240;
+    color: #952312; }
+
+/* line 321, ../scss/partials/_buttons.scss */
+.button-flat-caution 
+{
+    font: 13pt Arial; 
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background: #e54028;
+  color: white;
+  text-shadow: none;
+  border: none; }
+  /* line 330, ../scss/partials/_buttons.scss */
+  .button-flat-caution:hover {
+    background: #e8543f; }
+  /* line 333, ../scss/partials/_buttons.scss */
+  .button-flat-caution:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: #cd5240;
+    color: #ac2815; }
+  /* line 338, ../scss/partials/_buttons.scss */
+  .button-flat-caution.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 226, ../scss/partials/_buttons.scss */
+.button-royal {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #99389f), color-stop(100%, #752a79));
+  background: -webkit-linear-gradient(top, #99389f, #752a79);
+  background: -moz-linear-gradient(top, #99389f, #752a79);
+  background: -o-linear-gradient(top, #99389f, #752a79);
+  background: linear-gradient(top, #99389f, #752a79);
+  background-color: #87318c;
+  border-color: #632466;
+  color: white;
+  text-shadow: 0 -1px 1px rgba(26, 9, 27, 0.35); }
+  /* line 233, ../scss/partials/_buttons.scss */
+  .button-royal:hover {
+    background-color: #87318c;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ab3eb2), color-stop(100%, #752a79));
+    background: -webkit-linear-gradient(top, #ab3eb2, #752a79);
+    background: -moz-linear-gradient(top, #ab3eb2, #752a79);
+    background: -o-linear-gradient(top, #ab3eb2, #752a79);
+    background: linear-gradient(top, #ab3eb2, #752a79); }
+  /* line 237, ../scss/partials/_buttons.scss */
+  .button-royal:active {
+    background: #764479;
+    color: #3e1740; }
+
+/* line 321, ../scss/partials/_buttons.scss */
+.button-flat-royal {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background: #87318c;
+  color: white;
+  text-shadow: none;
+  border: none; }
+  /* line 330, ../scss/partials/_buttons.scss */
+  .button-flat-royal:hover {
+    background: #99389f; }
+  /* line 333, ../scss/partials/_buttons.scss */
+  .button-flat-royal:active {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    background: #764479;
+    color: #501d53; }
+  /* line 338, ../scss/partials/_buttons.scss */
+  .button-flat-royal.disabled {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+/* line 358, ../scss/partials/_buttons.scss */
+.button-jumbo {
+  font-size: 24px;
+  line-height: 51.2px;
+  padding: 0px 40.96px; }
+
+/* line 358, ../scss/partials/_buttons.scss */
+.button-large {
+  font-size: 19px;
+  height: 38.4px;
+  line-height: 38.4px;
+  padding: 0px 30.72px; }
+
+/* line 389, ../scss/partials/_buttons.scss */
+input.button-large, button.button-large {
+  height: 40.4px; }
+
+/* line 358, ../scss/partials/_buttons.scss */
+.button-small {
+  font-size: 15px;
+  height: 25.6px;
+  line-height: 25.6px;
+  padding: 0px 20.48px; }
+
+/* line 389, ../scss/partials/_buttons.scss */
+input.button-small, button.button-small {
+  height: 27.6px; }
+
+/* line 358, ../scss/partials/_buttons.scss */
+.button-tiny {
+  font-size: 12px;
+  height: 22.4px;
+  line-height: 22.4px;
+  padding: 0px 17.92px; }
+
+/* line 389, ../scss/partials/_buttons.scss */
+input.button-tiny, button.button-tiny {
+  height: 24.4px; }
+
+/* line 358, ../scss/partials/_buttons.scss */
+.LetraVerde {
+  font: 12.5pt Arial;
+  color:#7db500;
+  }
+
+.TLetraVerde {
+  font: 32pt Arial;
+  color:White;
+  background:#7db500;
+}
+.PanelVerde
+{
+    background:#7db500;
+    font: 14pt Arial;
+    color:white;
+    padding: 2px, 2px, 2px, 2px;
+    align-content: center;
+
+    -webkit-transition-duration: 5s;
+    -moz-transition-duration: 5s;
+    -o-transition-duration: 5s;
+    transition-duration: 5s;
+}
+.Titulo
+{
+    background:#f18d05;
+    font: 32pt Arial;
+    color:white;
+    position: relative;
+    top:0px;
+    width: 100%;
+    left: 0px;
+    height: 45px;
+}
+
+
+.fixed {
+	position: fixed;
+	top: -5px;
+    left: 0;
+    width: 100%;
+	box-shadow: 0 0 20px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+    background-color:whitesmoke;
+    z-index:2;
+    height: 112px;
+}
+
+.fixedM {
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:130px;
+    left:1px;
+    right:1px;
+    z-index:1;
+    background-color:whitesmoke;
+}
+.fixedD
+{
+    background-color:#000000;
+    color:white;
+    position:fixed;
+    left:0;
+    bottom:-1px;
+}
+.TxtCod
+{
+   font: 18pt Arial;
+   text-align:center;
+   width: 50px;
+}
+.TituloTablaG 
+{
+    background:#1495b7;
+    font: 20pt Arial;
+    color:white;
+}
+.TxtGen
+{
+    font: 12pt Arial;
+    text-align:center;
+    
+}
+.grid-view
+{
+    border-color: black;
+    padding:50px;
+}
+.grid-view tr.header
+{
+    font-size: 18px;
+}
+.grid-view tr.normal
+{
+    font-size: 16px;
+}
+.grid-view tr.alternate
+{
+    font-size: 16px;
+}
+.grid-view tr.normal:hover, .grid-view tr.alternate:hover
+{
+   border-color:black;
+   background-color: white;
+   color: black;
+   font-weight: bold;
+   font-size:18px;
+}
+.LetraRojo {
+    margin:auto;
+    width:10em;
+    font-family:Tahoma;
+    font-size:1.5em; 
+    font-weight:500;
+    border-color:#E60000;
+    font-style:normal;
+    background-color:#FF6666;
+    color:white;
+    border-style:solid;
+}
+.LetraVerdePnl
+{
+    font: 13.5pt Arial bold; 
+    font-weight:500;
+    border-color:#29A629;
+    font-style:normal;
+    background-color:#7BD582;
+    color:white;
+    border-width:5px;
+    border-style:solid;
+    border-spacing:50px;
+}
+.LetraNaranjaPnl
+{
+    font: 13.5pt Arial bold; 
+    font-weight:500;
+    border-color:#ff6500;
+    font-style:normal;
+    background-color:#ee9e5a;
+    color:white;
+    border-width:5px;
+    border-spacing:50px;
+    box-shadow: 0 0 20px #222;
+	-webkit-box-shadow: 0 0 20px #222;
+	-moz-box-shadow: 0 0 20px #222;
+    border-radius: 15px;
+}
+.LetraNaranjaPnl2
+{
+    font: 13.5pt Arial bold; 
+    font-weight:500;
+    border-color:#ff6500;
+    font-style:normal;
+    background-color:#ee9e5a;
+    color:white;
+    border-width:5px;
+    box-shadow: 0 0 10px #222;
+	-webkit-box-shadow: 0 0 10px #222;
+	-moz-box-shadow: 0 0 10px #222;
+    border-radius: 20px;
+}
+.Pnl_Principal
+{
+    border: 7px solid #eeeeee;
+    position:absolute;
+    top: 90px;
+    left: 478px;
+    width: 556px;
+    height: 819px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 20px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+    border-radius: 15px;
+    
+}
+.Pnl_Externo
+{
+    background-color: #eeeeee;
+    height: 1021px;
+}
+.Pnl_Principal2
+{
+    position:absolute;
+    left:430px;
+    top:60px;
+    border: 7px solid #eeeeee;
+    width: 556px;
+    height: 2730px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 20px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+    border-radius: 15px;
+    
+}
+.Pnl_Externo2
+{
+    background-color: #eeeeee;
+    height: 2800px;
+}
+.Tip
+{
+    font-size:23px;
+    color:#29A629;
+    font-family:Tahoma;
+}
+
+
+
+/* Bienvenida.aspx*/
+.Bienvenida-Pnl_BSYS
+{
+    font-size:50px;
+    color:#29A629;
+}
+.Pasos
+{
+    font-size:25px;
+    color:red;
+}
+.Instrucciones
+{
+    font-size:18px;
+    border-width:5px;
+    border-color:#ff9605;
+    font-style:normal;
+    background-color:#eeeeee;
+    border-width:5px;
+    border-style:solid;
+    border-spacing:50px;
+    border-radius: 15px;
+
+}
+.Lbl_Suerte
+{
+    font-size:25px;
+    color:blueviolet;
+}
+.tooltipDemo
+{          
+    position: relative;
+    display: inline;
+    text-decoration: none;
+    left: 5px;
+    top: 0px;   
+    font-size:13px; 
+}
+.tooltipDemo:hover:before
+{
+    border: solid;
+    border-color: transparent #FF8F35;
+    border-width: 6px 6px 6px 0px;
+    bottom: 21px;
+    content: "";
+    left: 155px;
+    top: 5px;
+    position: absolute;
+    z-index: 95;         
+}
+.tooltipDemo:hover:after
+{
+    background: #FF8F35;
+    background: rgb(255, 143, 53);
+    border-radius: 5px;
+    color: #fff;
+    width: 160px;
+    left: 160px;
+    top: -5px;          
+    content: attr(alt);
+    position: absolute;          
+    padding: 5px 15px;         
+    z-index: 95;          
+}
+
+/*body {
+	background: #efefef;	
+    color: #222;
+}*/
+
+/*Push Menu*/
+.menu {
+  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  top: -30px;  /* start off behind the scenes */
+  height: 30px; 
+  position: fixed;
+  width: 100%;
+}
+
+.icon-menu {
+  cursor:pointer;
+  font-family: 'Open Sans', sans-serif;
+    width: 178px;
+}
+.icon-close {
+  cursor:pointer;
+  font-family: 'Open Sans', sans-serif;
+  text-align:left;
+  text-decoration-style:wavy;
+    width: 21px;
+    height: 32px;
+}
+
+/*SysIntercambios*/
+.Login{
+    text-align:center;
+    position: absolute;
+		/*nos posicionamos en el centro del navegador*/
+		top:50%;
+		left:50%;
+		width:300px;
+		/*indicamos que el margen izquierdo, es la mitad de la anchura*/
+		margin-left:-200px;
+		/*determinamos una altura*/
+		
+		margin-top:-150px;
+		border:1px solid #808080;
+		padding:5px;
+        background-color:whitesmoke;
+}
+.Registro{
+    text-align:center;
+    position: absolute;
+		/*nos posicionamos en el centro del navegador*/
+		top:75%;
+		left:50%;
+		width:300px;
+		/*indicamos que el margen izquierdo, es la mitad de la anchura*/
+		margin-left:-200px;
+		/*determinamos una altura*/
+		
+		margin-top:-150px;
+		border:1px solid #808080;
+		padding:5px;
+        background-color:whitesmoke;
+}
+.ButtonLogout
+{
+    float:left;
+    Color:black;
+    background-color:White;
+}

@@ -4,9 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title><%: Page.Title %> - Quetzal Express
+    </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="~/Sysintercambio.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="CSS/botones.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstilosG.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="Frm_Menu_Encabezado" runat="server">

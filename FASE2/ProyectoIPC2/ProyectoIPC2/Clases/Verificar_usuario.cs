@@ -22,7 +22,7 @@ namespace ProyectoIPC2.Clases
                 if (tabla.Rows.Count == 1)
                 {
                     Cifrado Contraseña = new Cifrado();
-                    string ArrarB = Contraseña.StringB(Contraseña.Encriptar(password, "Webapptyson11"));
+                    string ArrarB = Contraseña.StringB(Contraseña.Encriptar(password, "IPC2PROYECTO"));
                     DataRow rtabla = tabla.Rows[0];
                     string ArrayA = rtabla[0].ToString();
                     Sesion_aceptada = Contraseña.CompareByteArray(ArrayA, ArrarB);
@@ -81,17 +81,6 @@ namespace ProyectoIPC2.Clases
             registro.Upd_New_DelUnValorQry("Insert into quinielas.dbo.ControlUsuarios (cod_Usuario, estatus, fechahora, IPCliente) values( " +
                     HttpContext.Current.Session["Cod_Usuario"] + ", 'Activo', '" + DateTime.Now.ToString() + "', '" + HttpContext.Current.Request.UserHostAddress + "' )");
         }
-        //Obtener nombre Quiniela
-        public void ObtenerNQuiniela(int cod)
-        {
-            Base_de_Datos registro = new Base_de_Datos();
-            DataTable tabla = new DataTable();
-            tabla = registro.FillTableData("Select nombre from quinielas.dbo.quinielas where cod_quiniela=" + cod);
-            foreach (DataRow drtabla in tabla.Rows)
-            {
-                HttpContext.Current.Session["NQuiniela"] = drtabla[0].ToString();
-            }
-        }
         //Crea password con el usuario
         public string CreaPassword(string nombre)
         {
@@ -109,24 +98,7 @@ namespace ProyectoIPC2.Clases
             }
             return clave;
         }
-        //Crea Usuario aleatorio
-        public string CreaUsuario()
-        {
-            string Usuario = "";
-            Base_de_Datos busca = new Base_de_Datos();
-            DataTable tabla = new DataTable();
-            Random ran = new Random();
-            //Crea usuario
-            Usuario = ran.Next(100000) + "UsuarioSYS" + ran.Next(200000);
-            //Busca si ya existe
-            tabla = busca.FillTableData("Select cod_usuario from quinielas.dbo.usuarios where usuario = '" + Usuario + "'");
-            //Si Existe Crea usuario de nuevo
-            if (tabla.Rows.Count >= 1)
-            {
-                CreaUsuario();
-            }
-            return Usuario;
-        }
+
 
         //Registra el Logout del usuario
         public void Logout()
