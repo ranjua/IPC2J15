@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoIPC2.Administrador {
+namespace ProyectoIPC2.Director {
     
     
-    public partial class Carga_Masiva {
+    public partial class Consultar_Equipo {
         
         /// <summary>
-        /// Flu_CSV control.
+        /// Ddl_Departamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Flu_CSV;
+        protected global::System.Web.UI.WebControls.DropDownList Ddl_Departamento;
         
         /// <summary>
-        /// Ddl_Tipo_Carga control.
+        /// Btn_Ver_Todos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Ddl_Tipo_Carga;
+        protected global::System.Web.UI.WebControls.Button Btn_Ver_Todos;
         
         /// <summary>
-        /// Btn_Procesar control.
+        /// Grd_Empleados control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Procesar;
-        
-        /// <summary>
-        /// Lbl_Mensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Mensaje;
+        protected global::System.Web.UI.WebControls.GridView Grd_Empleados;
     }
 }

@@ -62,6 +62,7 @@
     <Content Include="Administrador\Gestion_Cobros.aspx" />
     <Content Include="CSSG\Botones.css" />
     <Content Include="CSSG\EstilosG.css" />
+    <Content Include="Director\Consultar_Equipo.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -74,6 +75,7 @@
       <DependentUpon>Carga_Masiva.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Clases\Cobro.cs" />
+    <Compile Include="Administrador\Clases\Comision_Libra.cs" />
     <Compile Include="Administrador\Clases\Impuesto.cs" />
     <Compile Include="Administrador\Gestion_Cobros.aspx.cs">
       <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
@@ -85,6 +87,14 @@
     <Compile Include="Clases\Base_de_Datos.cs" />
     <Compile Include="Clases\Cifrado.cs" />
     <Compile Include="Clases\Verificar_usuario.cs" />
+    <Compile Include="Director\Consultar_Equipo.aspx.cs">
+      <DependentUpon>Consultar_Equipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director\Consultar_Equipo.aspx.designer.cs">
+      <DependentUpon>Consultar_Equipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Director\Empleado.cs" />
     <Compile Include="Empleado\Empleado.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -101,6 +111,7 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Principal.Master" />
@@ -112,6 +123,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Archivos\" />
     <Folder Include="Cliente\CSS\" />
     <Folder Include="Director\CSS\" />
     <Folder Include="Empleado\CSS\" />

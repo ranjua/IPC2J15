@@ -148,13 +148,13 @@ namespace ProyectoIPC2.Administrador {
         protected global::System.Web.UI.WebControls.TextBox Txt_Nombre_Impuesto;
         
         /// <summary>
-        /// Txt_Porcentaje_Impuesto control.
+        /// Txt_Porcentaje_Nuevo_Impuesto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_Porcentaje_Impuesto;
+        protected global::System.Web.UI.WebControls.TextBox Txt_Porcentaje_Nuevo_Impuesto;
         
         /// <summary>
         /// Btn_Agregar_Impuesto control.

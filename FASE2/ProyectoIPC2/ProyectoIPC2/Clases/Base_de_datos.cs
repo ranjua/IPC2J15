@@ -168,6 +168,10 @@ namespace ProyectoIPC2.Clases
             return resultado;
         }
 
-
+        //Limpar Consulta SQLInjection
+        public string Limpiar(string query )
+        {
+            return query.ToString().Trim(new Char[] { ';', '%' });
+        }
     }
 }

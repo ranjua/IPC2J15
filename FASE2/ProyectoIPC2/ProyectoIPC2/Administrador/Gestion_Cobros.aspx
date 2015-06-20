@@ -36,9 +36,9 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:DropDownList ID="Ddl_Tipo_Impuesto" runat="server"></asp:DropDownList></td>
+                            <asp:DropDownList ID="Ddl_Tipo_Impuesto" runat="server" OnSelectedIndexChanged="Ddl_Tipo_Impuesto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList></td>
                         <td>
-                            <asp:TextBox ID="Txt_Impuesto_Porcentaje" runat="server" placeholder="Porcentaje de Impuesto"></asp:TextBox></td>
+                            <asp:TextBox ID="Txt_Impuesto_Porcentaje" runat="server" TextMode="Number" placeholder="Porcentaje de Impuesto"></asp:TextBox></td>
                         <td>
                             <asp:CheckBox ID="Cbx_Impuesto_DHab" runat="server"  /></td>
                     </tr>
@@ -46,7 +46,7 @@
                         <td>
                             <asp:Label ID="Label5" runat="server" Text="Cobro por Libra"></asp:Label></td>
                         <td>
-                            <asp:TextBox ID="Txt_Peso_Cobro" runat="server" placeholder="Cobro por Libra"></asp:TextBox></td>
+                            <asp:TextBox ID="Txt_Peso_Cobro" runat="server" TextMode="Number" placeholder="Cobro por Libra"></asp:TextBox></td>
                         <td>
                             <asp:CheckBox ID="Cbx_Peso_DHab" runat="server"  /></td>
                     </tr>
@@ -54,7 +54,7 @@
                         <td>
                             <asp:Label ID="Label6" runat="server" Text="Comision"></asp:Label></td>
                         <td>
-                            <asp:TextBox ID="Txt_Comision_Porcentaje" runat="server" placeholder="Porcentaje de Comision"></asp:TextBox></td>
+                            <asp:TextBox ID="Txt_Comision_Porcentaje" runat="server" TextMode="Number" placeholder="Porcentaje de Comision"></asp:TextBox></td>
                         <td>
                             <asp:CheckBox ID="Cbx_Comision_DHab" runat="server"  /></td>
                     </tr>
@@ -76,7 +76,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:TextBox ID="Txt_Porcentaje_Impuesto" runat="server" TextMode="Number" placeholder="Porcentaje %"></asp:TextBox></td>
+                            <asp:TextBox ID="Txt_Porcentaje_Nuevo_Impuesto" runat="server" TextMode="Number" placeholder="Porcentaje %"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td>
