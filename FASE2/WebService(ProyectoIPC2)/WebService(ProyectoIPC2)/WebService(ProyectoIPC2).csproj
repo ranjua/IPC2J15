@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4A7DD51F-BAA5-4629-A4FA-E86A60EF8A39}</ProjectGuid>
+    <ProjectGuid>{1A1BA5DD-6298-4BC9-88B6-87C01B072188}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProyectoIPC2</RootNamespace>
-    <AssemblyName>ProyectoIPC2</AssemblyName>
+    <RootNamespace>WebService_ProyectoIPC2_</RootNamespace>
+    <AssemblyName>WebService%28ProyectoIPC2%29</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,115 +57,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Administrador\Carga_Masiva.aspx" />
-    <Content Include="Administrador\CSS\Admin.css" />
-    <Content Include="Administrador\Gestion_Cobros.aspx" />
-    <Content Include="CSSG\Botones.css" />
-    <Content Include="CSSG\EstilosG.css" />
-    <Content Include="Director\Consultar_Equipo.aspx" />
-    <Content Include="Login.aspx" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\ProyectoIPC2\ProyectoIPC2.disco" />
+    <Content Include="ProyectoIPC2.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador\Carga_Masiva.aspx.cs">
-      <DependentUpon>Carga_Masiva.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\Carga_Masiva.aspx.designer.cs">
-      <DependentUpon>Carga_Masiva.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\Clases\Cobro.cs" />
-    <Compile Include="Administrador\Clases\Comision_Libra.cs" />
-    <Compile Include="Administrador\Clases\Impuesto.cs" />
-    <Compile Include="Administrador\Gestion_Cobros.aspx.cs">
-      <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\Gestion_Cobros.aspx.designer.cs">
-      <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Clases\Base_de_Datos.cs" />
-    <Compile Include="Clases\Cifrado.cs" />
-    <Compile Include="Clases\Verificar_usuario.cs" />
-    <Compile Include="Director\Consultar_Equipo.aspx.cs">
-      <DependentUpon>Consultar_Equipo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Director\Consultar_Equipo.aspx.designer.cs">
-      <DependentUpon>Consultar_Equipo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Director\Empleado.cs" />
-    <Compile Include="Empleado\Empleado.cs" />
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Principal.Master.cs">
-      <DependentUpon>Principal.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Principal.Master.designer.cs">
-      <DependentUpon>Principal.Master</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario.cs" />
-    <Compile Include="Web References\ProyectoIPC2\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
+    <Compile Include="ProyectoIPC2.asmx.cs">
+      <DependentUpon>ProyectoIPC2.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Principal.Master" />
-    <None Include="Web References\ProyectoIPC2\ProyectoIPC2.wsdl" />
-    <Content Include="Web References\ProyectoIPC2\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Archivos\" />
-    <Folder Include="Cliente\CSS\" />
-    <Folder Include="Director\CSS\" />
-    <Folder Include="Empleado\CSS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:54210/ProyectoIPC2.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\ProyectoIPC2\</RelPath>
-      <UpdateFromURL>http://localhost:54210/ProyectoIPC2.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>ProyectoIPC2_ProyectoIPC2_ProyectoIPC2</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -180,9 +88,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59696</DevelopmentServerPort>
+          <DevelopmentServerPort>54210</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59696/</IISUrl>
+          <IISUrl>http://localhost:54210/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

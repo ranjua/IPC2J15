@@ -1,0 +1,164 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E" name="PAQUETE">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 05:48:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_paquete" id="DDE61B78-011E-799B-DFB7-B98F81A4C377">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:09:32 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="libras" id="633D53B1-E251-8665-0FE4-CED5FADF0050">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:09:32 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="35E7192B-1374-26DA-005A-0A08A222D5B3">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:12:50 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENTE_DPI" id="F694B250-0454-62F3-69B3-2649A27509C0">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:14:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EEB7A1FC-2596-8069-394F-C12CC58124BB" referredColumn="6A2B3635-AEC4-965E-F17C-8DF1B54E2216"/>
+</associations>
+</Column>
+<Column name="EMPLEADO_cod_empleado" id="6DB7A870-197E-F80A-6069-844F0F29054E">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:18:36 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="946CC68C-BBFB-BD5E-85AD-A2E89FA18C01" referredColumn="DE568BFA-FBF3-9ACE-02A5-E17ED1392908"/>
+</associations>
+</Column>
+<Column name="IMPUESTO_cod_impuesto" id="B0D11D19-7CF5-0EAC-AF47-3A76597FAA58">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:55:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2377B354-8037-C485-0E65-4B55CB8484BC" referredColumn="B1EB2AD4-DA97-CE33-362F-815CED56F485"/>
+</associations>
+</Column>
+<Column name="PEDIDO_cod_pedido" id="88A81D8F-7609-0535-7A10-2F5A4C1ACB0B">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:08:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C25D70F-F1F5-1A93-D2DE-C570448DD0F7" referredColumn="8FF8E774-28E7-4297-43CD-6381A5F7FA60"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D20FC9E3-9125-2D01-6427-1C8A4EC36B77" name="PAQUETE_PK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:09:32 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDE61B78-011E-799B-DFB7-B98F81A4C377"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23A291AC-E4FB-A364-2308-9AF3C3BBA7BE" name="cod_cliente_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:14:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F694B250-0454-62F3-69B3-2649A27509C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D37BBA7-15E4-FABE-B17D-44B14E3C9452" name="cod_empleado_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:18:36 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DB7A870-197E-F80A-6069-844F0F29054E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B80E4F13-D395-474E-5098-77EA035F642E" name="cod_impuesto_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:55:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0D11D19-7CF5-0EAC-AF47-3A76597FAA58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27EF1863-ACC6-9FA5-96EE-F3F38BE7608D" name="cod_pedido_FKv1">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:08:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88A81D8F-7609-0535-7A10-2F5A4C1ACB0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

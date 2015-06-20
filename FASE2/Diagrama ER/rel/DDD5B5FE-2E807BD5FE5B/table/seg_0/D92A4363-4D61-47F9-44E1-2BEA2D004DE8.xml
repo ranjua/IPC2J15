@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D92A4363-4D61-47F9-44E1-2BEA2D004DE8" name="HISTORIAL">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 05:48:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_historial" id="7C93D34F-1D21-A24E-4571-A1F53C548619">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:52:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PAQUETE_cod_paquete" id="A5C2A402-58C3-ACE8-4936-EDFDD9D606FA">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:53:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64D339E4-A77D-0F07-0905-3609D7250527" referredColumn="DDE61B78-011E-799B-DFB7-B98F81A4C377"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6C424192-7CA4-6680-AFA6-0B59104136B5" name="HISTORIAL_PK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:52:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C93D34F-1D21-A24E-4571-A1F53C548619"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1DEC802-71FE-322D-C209-F5CD94AFF041" name="cod_paquete_FKv2">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:53:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5C2A402-58C3-ACE8-4936-EDFDD9D606FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

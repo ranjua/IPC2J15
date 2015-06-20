@@ -55,9 +55,12 @@ namespace ProyectoIPC2.Director
         public bool actualizarEmpleado(int cod_empleado, string puesto, double sueldo, int cod_Departamento, int cod_Sucursal)
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            int cod_Suc_Dep = Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_Suc_Dep from ProyectoIPC2.dbo.SucDep," +
+            int cod_Suc_Dep = Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_suc_dep from ProyectoIPC2.dbo.SucDep," +
                 "  where cod_sucursal= " + cod_Sucursal + " and cod_departamento=" + cod_Departamento));
-            base_de_datos.Upd_New_DelUnValorQry("insert in");
+            base_de_datos.Upd_New_DelUnValorQry("Update ProyectoIPC2.dbo.SucDep set cod_sucursal =" + cod_Sucursal +
+                ", cod_departamento=" + cod_Departamento + " where cod_empleado = " + cod_empleado);
+            base_de_datos.Upd_New_DelUnValorQry("Update ProyectoIPC2.dbo.Empleado set puesto = " + puesto +
+                ", sueldo=" + sueldo + " where cod_empleado = " + cod_empleado);
             return true;
         }
 
