@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoIPC2.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,7 +28,18 @@ namespace ProyectoIPC2.Administrador
                 {
                     Flu_CSV.PostedFile.SaveAs(SaveLocation);
                     Lbl_Mensaje.Text = "El archivo se ha cargado.";
-                    Cobro cobro = new Cobro(SaveLocation);
+                    if (Ddl_Tipo_Carga.SelectedValue == "1")
+                    {
+                        Cobro cobro = new Cobro(SaveLocation);
+                    }
+                    else
+                    {
+                        Empleado empleado = new Empleado();
+                        if(!empleado.CSVEmpleado(SaveLocation))
+                        {
+                            Lbl_Mensaje.Text = "El archivo tiene datos inexistentes";
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {

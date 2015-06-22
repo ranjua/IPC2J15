@@ -17,7 +17,7 @@ namespace ProyectoIPC2.Clases
         public void Initialize()
         {
 
-            string connectionString = ConfigurationManager.ConnectionStrings["MySql_sisquinielas"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Conexion_SQL"].ConnectionString;
             connection = new SqlConnection(connectionString);
 
         }
@@ -98,7 +98,7 @@ namespace ProyectoIPC2.Clases
         }
 
         //Update_New_Delete statment
-        public void Upd_New_DelUnValorQry(string pQuery)
+        public Boolean Upd_New_DelUnValorQry(string pQuery)
         {
             try
             {
@@ -119,10 +119,12 @@ namespace ProyectoIPC2.Clases
                 }
                 catch (Exception ex)
                 {
-                    HttpContext.Current.Session["Error"] = ex.Message;
+                    return false;
                 }
             }
+            return true;
         }
+
         //Verificar existencia de dato en Base de Datos
         public bool Verify_Query(string pQuery)
         {

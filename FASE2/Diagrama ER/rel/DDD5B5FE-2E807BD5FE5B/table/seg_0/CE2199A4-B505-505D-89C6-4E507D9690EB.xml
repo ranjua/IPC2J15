@@ -20,17 +20,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="puesto" id="5264D1FA-D696-18DE-CD10-0095D00D3C9D">
-<createdBy>randyfernando</createdBy>
-<createdTime>2015-06-20 06:02:47 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Diagrama ER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="sueldo" id="E1AB8473-5159-8FDD-7E68-5603AC1724FC">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 06:02:47 UTC</createdTime>

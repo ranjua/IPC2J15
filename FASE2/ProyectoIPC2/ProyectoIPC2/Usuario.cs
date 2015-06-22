@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIPC2
 {
-    interface Usuario
+    public abstract class Usuario
     {
         public int cod_usuario { get; set; }
         public string usuario { get; set; }
@@ -14,8 +14,8 @@ namespace ProyectoIPC2
         public string nombre { get; set; }
         public string apellido { get; set; }
         public long telefono { get; set; }
-        public string correo  { get; set; }
-        public string domicilio  { get; set; }
+        public string correo { get; set; }
+        public string domicilio { get; set; }
         public int rol { get; set; }
 
 

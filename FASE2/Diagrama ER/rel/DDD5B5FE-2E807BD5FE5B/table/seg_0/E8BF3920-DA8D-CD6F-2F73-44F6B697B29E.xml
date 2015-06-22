@@ -20,6 +20,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="costo" id="910D6A30-59AE-BCBD-454A-BB47A7B0BAC4">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 18:20:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="libras" id="633D53B1-E251-8665-0FE4-CED5FADF0050">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 06:09:32 UTC</createdTime>

@@ -42,6 +42,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="habilitado" id="68ECC463-8782-57E7-4F6C-FFDC4497B459">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-21 06:35:08 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="7601DA32-87E3-3D53-C8F1-D6008A9430E5" name="IMPUESTO_PK">

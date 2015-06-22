@@ -12,10 +12,10 @@ namespace ProyectoIPC2.Administrador
     public class Cobro
     {
         public List<Impuesto> lista_Impuesto { get; set; }
-        public double cobro_Libra { get; set; }
-        public double comision {get;set;}
+        public Comision_Libra cobro_Libra { get; set; }
+        public Comision_Libra comision { get; set; }
 
-        public Cobro (List<Impuesto> lista_Impuesto, double cobro_Libra, double comision )
+        public Cobro(List<Impuesto> lista_Impuesto, Comision_Libra cobro_Libra, Comision_Libra comision)
         {
             this.lista_Impuesto = lista_Impuesto;
             this.cobro_Libra = cobro_Libra;
@@ -24,22 +24,19 @@ namespace ProyectoIPC2.Administrador
 
         public Cobro()
         {
-           
+            this.lista_Impuesto = new List<Impuesto>();
         }
         public Cobro(string ruta)
         {
             StreamReader streamreader = new StreamReader(ruta);
             while (!streamreader.EndOfStream)
             {
-                string rstreamreader = streamreader.ReadLine().Trim();
-                if (rstreamreader.Length > 0)
-                {
-                    string porcentaje = rstreamreader[1].ToString().Trim(new Char[] { ' ', '%'});
-                    Impuesto impuesto = new Impuesto(rstreamreader[0].ToString(),
-                        Convert.ToDouble(porcentaje)/100.00  );
-                    Agregar_Impuestos(impuesto);
-
-                }
+                var line = streamreader.ReadLine();
+                var values = line.Split(',');
+                string porcentaje = values[1].Trim(new Char[] { ' ', '%'});
+                Impuesto impuesto = new Impuesto(values[0],
+                    Convert.ToDouble(porcentaje)/100.00);
+                Agregar_Impuestos(impuesto);
             }
         }
 
@@ -47,16 +44,17 @@ namespace ProyectoIPC2.Administrador
         {
             Base_de_Datos base_De_Datos = new Base_de_Datos();
             DataTable tabla = new DataTable();
-            tabla = base_De_Datos.FillTableData("");
+            tabla = base_De_Datos.FillTableData("select cod_impuesto, categoria, porcentaje, habilitado from ProyectoIPC2.dbo.Impuestos");
             foreach (DataRow drtabla in tabla.Rows)
             {
-                Impuesto impuesto = new Impuesto(Convert.ToInt32(drtabla[0]), drtabla[1].ToString(), Convert.ToDouble(drtabla[2].ToString()));
+                Impuesto impuesto = new Impuesto(Convert.ToInt32(drtabla[0]), drtabla[1].ToString(), 
+                    Convert.ToDouble(drtabla[2].ToString()),Convert.ToBoolean(drtabla[3].ToString()) );
                 this.lista_Impuesto.Add(impuesto);
             }
-            tabla = base_De_Datos.FillTableData("");
+            tabla = base_De_Datos.FillTableData("Select costo_lb, hcosto_lb, comision, hcomision from ProyectoIPC2.dbo.Sucursales");
             DataRow dtrtabla = tabla.Rows[0];
-            this.cobro_Libra = Convert.ToDouble(dtrtabla[0].ToString());
-            this.comision = Convert.ToDouble(dtrtabla[1].ToString());
+            this.cobro_Libra = new Comision_Libra(Convert.ToDouble(dtrtabla[0].ToString()), Convert.ToBoolean(dtrtabla[1].ToString()));
+            this.comision = new Comision_Libra(Convert.ToDouble(dtrtabla[2].ToString()), Convert.ToBoolean(dtrtabla[3].ToString()));
         }
 
         /// <summary>
@@ -70,16 +68,17 @@ namespace ProyectoIPC2.Administrador
         {
             Base_de_Datos base_De_Datos = new Base_de_Datos();
             //Actualiza impuestos
-            base_De_Datos.Upd_New_DelUnValorQry("");
+            base_De_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Impuestos set porcentaje = '" + impuesto.porcentaje + "', habilitado = '" + impuesto.habilitado + 
+                "' where cod_impuesto = " + impuesto.cod_impuesto + "");
             //Actuliza Comision y Cobro por libra
-            base_De_Datos.Upd_New_DelUnValorQry("");
-            return true;
+            return base_De_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Sucursales set comision = '" + comision.porcentaje + 
+                "', costo_lb = '" + cobro_Libra.porcentaje + "', hcomision = '" + comision.habilitado+ "', hcosto_lb = '" + cobro_Libra.habilitado+"'");
         }
 
         public bool Agregar_Impuestos(Impuesto impuesto)
         {
             Base_de_Datos base_De_Datos = new Base_de_Datos();
-            base_De_Datos.Upd_New_DelUnValorQry("Insert into ProyectoIPC2.dbo.impuestos values( '"+impuesto.nombre+"', " + impuesto.porcentaje + " )");
+            base_De_Datos.Upd_New_DelUnValorQry("Insert into ProyectoIPC2.dbo.Impuestos values( '" + impuesto.nombre + "', '" + impuesto.porcentaje + "','True' )");
             return true;
         }
 

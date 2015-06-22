@@ -20,6 +20,41 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="fecha_salida" id="B5BDEE8C-DD43-A9C2-CE58-C119F68D2536">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 18:19:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_aduana" id="667639EB-BFCC-1C8F-B9AD-D3BCFAA8A421">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 18:19:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_llegada" id="262F7078-B0B6-E9AF-538E-AC751846BF71">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 18:19:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="SUCURSAL_cod_sucursal" id="CE43CD99-1059-6E9E-36A1-ADC836C23B3B">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 06:55:22 UTC</createdTime>

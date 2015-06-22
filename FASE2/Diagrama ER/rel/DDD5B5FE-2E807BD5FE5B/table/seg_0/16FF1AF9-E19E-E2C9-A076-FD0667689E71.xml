@@ -42,6 +42,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="impuesto" id="748A5388-2FBF-2C4D-DFAC-D13DDE54DB87">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-21 02:15:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="fecha" id="53ABC311-FE0E-220C-5465-1855D399B682">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 06:23:19 UTC</createdTime>

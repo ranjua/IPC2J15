@@ -1,0 +1,246 @@
+﻿body{
+
+}
+.Div
+{
+    text-align:center;
+}
+#General
+{
+    margin:auto;
+    width:100%;
+    height:33em;
+}
+#Cambio_Pass
+{
+    margin:auto;
+    width:100%;
+    height:33em;
+}
+#Panel
+{
+    position:relative;
+    width:30%;
+    float:right;
+    top:200px;
+
+        background: rgba(255,255,255,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
+}
+
+#Perfil 
+{
+    position:relative;
+    width:60%;
+    float:left;
+    top:70px;
+    height:auto;
+        background: rgba(255,255,255,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
+}
+#SubPerfil{
+    width:30em;
+    margin:auto;
+    position:relative;
+}
+#Usuario 
+{
+    position:relative;
+    margin:auto;
+    top:0.8em;
+    background-color: black;
+    color: white;
+}
+#InfoActualizable 
+{
+    position:relative;
+    margin:auto;
+    top:1em;
+}
+#Nombre 
+{
+     background-color: white;
+     position:relative;
+    margin:auto;
+    top:1.2em;
+}
+#Apellido 
+{
+    background-color: white;
+    position:relative;
+    margin:auto;
+    top:1.6em;
+}
+#Correo 
+{
+     background-color: white;
+    position:relative;
+    margin:auto;
+    top:2em;
+}
+#Telefono 
+{
+     background-color: white;
+    position:relative;
+    margin:auto;
+    top:2.4em;
+}
+#Datos{
+    position:relative;
+    top:4em;
+}
+#Botones 
+{
+    position:relative;
+    top:4.3em;
+}
+#BL_Actualizar 
+{
+
+}
+.Actualizar
+{
+    text-align:center;
+    display:none;
+}
+.Activo 
+{
+   display:block;
+}
+.slide
+{
+    visibility:hidden;
+}
+.active_slide
+{
+    visibility:visible;
+}
+#div_Mensaje{
+    font-size:2.1em;
+    width:100%;
+}
+
+
+/*Div Pass*/
+#Panel_Pass{
+    margin:auto;
+    position:relative;
+    top:10em;
+    height:22em;
+    width:25em;
+}
+#SubPanel_Pass{
+    position:relative;
+    margin:auto;
+    width:25em;
+    height:22em;
+    background: rgba(255,255,255,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
+}
+#Mensajes_Pass{
+    position:relative;
+    margin:auto;
+    top:1em;
+}
+#div_Txt_Pass{
+    position:relative;
+    margin:auto;
+    top:2em;
+    width:92%;
+}
+#Btn_Pass{
+    position:relative;
+    margin:auto;
+    top:3em;
+    width:92%;
+}
+#Cancelar_Cambiar_Pass{
+    position:relative;
+    margin:auto;
+    top:0.2em;
+}
+
+
+/*Labels, Texts, Buttons*/
+.Lbl_info 
+{
+    text-align:center;
+    font-family:Tahoma;
+    font-size:2em;
+    width:98%;
+    height:1.5em;
+}
+.Txt_info 
+{
+    margin:auto;
+    text-align:center;
+    font-family:Tahoma;
+    font-size:2em;
+    }
+.Txt_Pass
+{
+    text-align:center;
+    font-family:Tahoma;
+    font-size:2em;
+    width:98%;
+    height:1.5em;
+}
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
+ div.social-wrap button {
+    padding-right: 45px;
+    background: none;
+    border: none;
+    background-size: 35px 35px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    color: white;
+    font-family:"Merriweather Sans", sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 2px -2px gray;
+    text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+    text-align:center;
+    width:20em;
+    height:45px;
+}
+#Content_facebook{
+    border-color: #2d5073;
+    background-color: #3b5998;
+    background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+    
+}
+#Content_Dfacebook{
+    border-color: #2d5073;
+    background-color: #3b5998;
+    background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+    
+}

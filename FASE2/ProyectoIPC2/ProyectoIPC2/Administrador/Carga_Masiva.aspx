@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Carga_Masiva.aspx.cs" Inherits="ProyectoIPC2.Administrador.Carga_Masiva" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 33px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width: 100%;">
@@ -16,9 +21,14 @@
             <td></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td><asp:DropDownList ID="Ddl_Tipo_Carga" runat="server"></asp:DropDownList></td>
-            <td>&nbsp;</td>
+            <td class="auto-style1"></td>
+            <td class="auto-style1">
+                <asp:DropDownList ID="Ddl_Tipo_Carga" runat="server">
+                    <asp:ListItem Value="1">Impuestos</asp:ListItem>
+                    <asp:ListItem Value="2">Empleados</asp:ListItem>
+                </asp:DropDownList>
+            </td>
+            <td class="auto-style1"></td>
         </tr>
         <tr>
             <td>&nbsp;</td>

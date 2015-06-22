@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D92A4363-4D61-47F9-44E1-2BEA2D004DE8" name="HISTORIAL">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D92A4363-4D61-47F9-44E1-2BEA2D004DE8" name="PERDIDO">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 05:48:42 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
@@ -9,7 +9,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cod_historial" id="7C93D34F-1D21-A24E-4571-A1F53C548619">
+<Column name="cod_perdido" id="7C93D34F-1D21-A24E-4571-A1F53C548619">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 06:52:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
@@ -35,9 +35,24 @@
 <colAssociation fkAssociation="64D339E4-A77D-0F07-0905-3609D7250527" referredColumn="DDE61B78-011E-799B-DFB7-B98F81A4C377"/>
 </associations>
 </Column>
+<Column name="LOTE_cod_lote" id="74F557F4-B71A-89C2-07E6-474BC9280C9F">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-21 05:15:50 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="220907A0-01AD-0DC0-6089-02C3175D7D36" referredColumn="2F20922D-B7CD-D1C6-EF32-0FE18D6C06E9"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="6C424192-7CA4-6680-AFA6-0B59104136B5" name="HISTORIAL_PK">
+<ind_PK_UK id="6C424192-7CA4-6680-AFA6-0B59104136B5" name="PERDIDO_PK">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 06:52:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
@@ -58,6 +73,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A5C2A402-58C3-ACE8-4936-EDFDD9D606FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05CEFA57-A96D-CDDD-4F3E-68BF763C8766" name="cod_lote_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-21 05:15:50 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="74F557F4-B71A-89C2-07E6-474BC9280C9F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

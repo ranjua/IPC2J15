@@ -9,16 +9,78 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="~/Sysintercambio.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="CSS/botones.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/EstilosG.css" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/Botones.css" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/EstilosG.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 244px;
+        }
+    </style>
 </head>
-<body>
-    <form id="Frm_Menu_Encabezado" runat="server"  enctype="multipart/form-data">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+<body style="height:100%;">
+    <form id="form1" style="height:100%;" runat="server">
+    <div style="height:100%; text-align: center; margin-top: 0px;">
+        <div class="fixed" >
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="3">
+                    <div >
+                    <asp:Menu ID="Mnu_P" runat="server" BackColor="#7db500"
+                            DynamicHorizontalOffset="2" ForeColor="white" StaticSubMenuIndent="10px" Orientation="Horizontal" Font-Names="Tahoma" Font-Size="16pt">
+                            <DynamicHoverStyle BackColor="#A5DF27" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="10px" />
+                            <DynamicMenuStyle BackColor="#7db500" />
+                            <DynamicSelectedStyle BackColor="#A5DF27" />
+                            <StaticHoverStyle BackColor="#A5DF27" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#A5DF27" />
+                        </asp:Menu>
+                        </div>
+                </td>
+            </tr>
+            <tr>
+            <td class="auto-style1" >
+                <div class="icon-menu">
+                    <asp:Label ID="Lbl_Usuario" runat="server" Text="Usuario " Font-Size="15px"
+                        CssClass="LetraVerde">
+                </asp:Label></div>
+                    
+                </td>
+                <td align="center" class="auto-style2"  >
+                <asp:Label ID="Label1" runat="server" Text="BIENVENIDO A QUETZAL EXPRESS" Font-Bold="true" Font-Size="20px" 
+                        CssClass="LetraVerde"></asp:Label>
+                    
+                </td>
+                <td align="right" class="auto-style2">
+                    
+                    <asp:Button ID="Btn_Login_out" runat="server" Text="Login" 
+                        onclick="Btn_Login_out_Click" CssClass="button-flat-action" Height="38px" 
+                        Width="84px" />
+                </td>
+            </tr>
+             <tr>
+            <td colspan="4">
+                &nbsp;</td>
+            </tr>
+            </table>
+        </div>
         
+        <div class="fixedM">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-    </div>
+
+            <div class="fixedD" style="width: 100%;>
+            <table style="width: 100%;">
+                <tr>
+                    <td align="left">
+            Desarrollado por RandyJuarez.N&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+     </div>
     </form>
 </body>
 </html>

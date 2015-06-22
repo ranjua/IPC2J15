@@ -13,6 +13,15 @@ namespace ProyectoIPC2.Director {
     public partial class Consultar_Equipo {
         
         /// <summary>
+        /// Txt_Cod_Empleado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_Cod_Empleado;
+        
+        /// <summary>
         /// Ddl_Departamento control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,41 @@ namespace ProyectoIPC2.Director {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Grd_Empleados;
+        
+        /// <summary>
+        /// Ddl_Suc_Dep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Ddl_Suc_Dep;
+        
+        /// <summary>
+        /// Txt_Sueldo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_Sueldo;
+        
+        /// <summary>
+        /// Btn_Modificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Modificar;
+        
+        /// <summary>
+        /// Btn_Despedir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Despedir;
     }
 }

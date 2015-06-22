@@ -60,9 +60,17 @@
     <Content Include="Administrador\Carga_Masiva.aspx" />
     <Content Include="Administrador\CSS\Admin.css" />
     <Content Include="Administrador\Gestion_Cobros.aspx" />
-    <Content Include="CSSG\Botones.css" />
-    <Content Include="CSSG\EstilosG.css" />
+    <Content Include="Cliente\Cotizacion.aspx" />
+    <Content Include="Cliente\CSS\Perfil.css" />
+    <Content Include="Cliente\Info_Paquetes.aspx" />
+    <Content Include="Cliente\Perfil_Cliente.aspx" />
+    <Content Include="CSS\Botones.css" />
+    <Content Include="CSS\EstilosG.css" />
+    <Content Include="CSS\Login.css" />
     <Content Include="Director\Consultar_Equipo.aspx" />
+    <Content Include="Director\Contratacion.aspx" />
+    <Content Include="Empleados\Facturacion.aspx" />
+    <Content Include="JS\Login.js" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,8 +98,30 @@
       <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Base_de_Datos.cs" />
-    <Compile Include="Clases\Cifrado.cs" />
+    <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Verificar_usuario.cs" />
+    <Compile Include="Cliente\Cliente.cs" />
+    <Compile Include="Cliente\Cotizacion.aspx.cs">
+      <DependentUpon>Cotizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\Cotizacion.aspx.designer.cs">
+      <DependentUpon>Cotizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Info_Paquetes.aspx.cs">
+      <DependentUpon>Info_Paquetes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\Info_Paquetes.aspx.designer.cs">
+      <DependentUpon>Info_Paquetes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Perfil_Cliente.aspx.cs">
+      <DependentUpon>Perfil_Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\Perfil_Cliente.aspx.designer.cs">
+      <DependentUpon>Perfil_Cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Director\Consultar_Equipo.aspx.cs">
       <DependentUpon>Consultar_Equipo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,8 +129,20 @@
     <Compile Include="Director\Consultar_Equipo.aspx.designer.cs">
       <DependentUpon>Consultar_Equipo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Director\Empleado.cs" />
-    <Compile Include="Empleado\Empleado.cs" />
+    <Compile Include="Director\Contratacion.aspx.cs">
+      <DependentUpon>Contratacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director\Contratacion.aspx.designer.cs">
+      <DependentUpon>Contratacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Facturacion.aspx.cs">
+      <DependentUpon>Facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Facturacion.aspx.designer.cs">
+      <DependentUpon>Facturacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -144,9 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archivos\" />
-    <Folder Include="Cliente\CSS\" />
     <Folder Include="Director\CSS\" />
-    <Folder Include="Empleado\CSS\" />
+    <Folder Include="Empleados\CSS\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

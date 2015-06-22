@@ -551,7 +551,6 @@ input.button-tiny, button.button-tiny {
 
 .fixed {
 	position: fixed;
-	top: -5px;
     left: 0;
     width: 100%;
 	box-shadow: 0 0 20px #222;
@@ -559,14 +558,13 @@ input.button-tiny, button.button-tiny {
 	-moz-box-shadow: 0 0 40px #222;
     background-color:whitesmoke;
     z-index:2;
-    height: 112px;
 }
 
 .fixedM {
     height:100%;
     width:100%;
     position:absolute;
-    top:130px;
+    top:110px;
     left:1px;
     right:1px;
     z-index:1;
@@ -723,100 +721,6 @@ input.button-tiny, button.button-tiny {
     font-family:Tahoma;
 }
 
-
-
-/* Bienvenida.aspx*/
-.Bienvenida-Pnl_BSYS
-{
-    font-size:50px;
-    color:#29A629;
-}
-.Pasos
-{
-    font-size:25px;
-    color:red;
-}
-.Instrucciones
-{
-    font-size:18px;
-    border-width:5px;
-    border-color:#ff9605;
-    font-style:normal;
-    background-color:#eeeeee;
-    border-width:5px;
-    border-style:solid;
-    border-spacing:50px;
-    border-radius: 15px;
-
-}
-.Lbl_Suerte
-{
-    font-size:25px;
-    color:blueviolet;
-}
-.tooltipDemo
-{          
-    position: relative;
-    display: inline;
-    text-decoration: none;
-    left: 5px;
-    top: 0px;   
-    font-size:13px; 
-}
-.tooltipDemo:hover:before
-{
-    border: solid;
-    border-color: transparent #FF8F35;
-    border-width: 6px 6px 6px 0px;
-    bottom: 21px;
-    content: "";
-    left: 155px;
-    top: 5px;
-    position: absolute;
-    z-index: 95;         
-}
-.tooltipDemo:hover:after
-{
-    background: #FF8F35;
-    background: rgb(255, 143, 53);
-    border-radius: 5px;
-    color: #fff;
-    width: 160px;
-    left: 160px;
-    top: -5px;          
-    content: attr(alt);
-    position: absolute;          
-    padding: 5px 15px;         
-    z-index: 95;          
-}
-
-/*body {
-	background: #efefef;	
-    color: #222;
-}*/
-
-/*Push Menu*/
-.menu {
-  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  top: -30px;  /* start off behind the scenes */
-  height: 30px; 
-  position: fixed;
-  width: 100%;
-}
-
-.icon-menu {
-  cursor:pointer;
-  font-family: 'Open Sans', sans-serif;
-    width: 178px;
-}
-.icon-close {
-  cursor:pointer;
-  font-family: 'Open Sans', sans-serif;
-  text-align:left;
-  text-decoration-style:wavy;
-    width: 21px;
-    height: 32px;
-}
 
 /*SysIntercambios*/
 .Login{
