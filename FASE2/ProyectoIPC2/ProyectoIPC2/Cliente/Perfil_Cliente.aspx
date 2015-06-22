@@ -6,11 +6,26 @@
         .auto-style1 {
             height: 54px;
         }
+        .auto-style2 {
+            width: 246px;
+        }
+        .auto-style3 {
+            height: 54px;
+            width: 819px;
+        }
+        .auto-style4 {
+            width: 819px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   
     <table style="width:100%;text-align:center;">
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td>&nbsp;</td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
             <td>
@@ -25,7 +40,7 @@
             <td>
                 <table style="width:100%; text-align:center;">
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_NIT" runat="server" CssClass="Txt_info" placeholder="NIT"></asp:TextBox></td>
                         <td rowspan="9">
                             <asp:Panel ID="Panel1" runat="server">
@@ -60,38 +75,38 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_Tarjeta" runat="server" CssClass="Txt_info"  placeholder="Tarjeta"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_DPI_Entrega" runat="server" CssClass="Txt_info"  placeholder="DPI Entrega"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_Nombre" runat="server" CssClass="Txt_info"  placeholder="Nombre"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_Apellido" runat="server" CssClass="Txt_info"  placeholder="Apellido"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_Telefono" runat="server" CssClass="Txt_info"  placeholder="Telefono" ></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_correo" runat="server" CssClass="Txt_info"  placeholder="Correo" ></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style4">
                             <asp:TextBox ID="Txt_Domicilio" runat="server" CssClass="Txt_info"  placeholder="Domicilio" ></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td><asp:DropDownList ID="Ddl_Sucursal" CssClass="Txt_info" runat="server" Height="96px"></asp:DropDownList></td>
+                        <td class="auto-style4"><asp:DropDownList ID="Ddl_Sucursal" CssClass="Txt_info" runat="server" Height="96px"></asp:DropDownList></td>
                     </tr>
                     <tr>
-                        <td class="auto-style1">
+                        <td class="auto-style3">
                             <asp:Button ID="Btn_Actualizar" runat="server" CssClass="Txt_info button-jumbo button-flat-primary " Text="Actualizar" Height="54px" OnClick="Btn_Actualizar_Click" /></td>
                     </tr>
                 </table>

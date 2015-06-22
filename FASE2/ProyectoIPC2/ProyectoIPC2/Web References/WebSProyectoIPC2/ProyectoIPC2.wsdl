@@ -12,6 +12,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Fecha">
+        <s:complexType />
+      </s:element>
+      <s:element name="FechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -20,10 +30,20 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
+  <wsdl:message name="FechaSoapIn">
+    <wsdl:part name="parameters" element="tns:Fecha" />
+  </wsdl:message>
+  <wsdl:message name="FechaSoapOut">
+    <wsdl:part name="parameters" element="tns:FechaResponse" />
+  </wsdl:message>
   <wsdl:portType name="ProyectoIPC2Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fecha">
+      <wsdl:input message="tns:FechaSoapIn" />
+      <wsdl:output message="tns:FechaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ProyectoIPC2Soap" type="tns:ProyectoIPC2Soap">
@@ -37,11 +57,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Fecha">
+      <soap:operation soapAction="http://tempuri.org/Fecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ProyectoIPC2Soap12" type="tns:ProyectoIPC2Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fecha">
+      <soap12:operation soapAction="http://tempuri.org/Fecha" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

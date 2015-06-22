@@ -42,7 +42,7 @@ namespace ProyectoIPC2.Empleados
                     Ddl_Tipo_Impuesto.Items.Add(Newitem);
                 }
             }
-            catch (Exception e)
+            catch
             { }
         }
 
@@ -57,10 +57,14 @@ namespace ProyectoIPC2.Empleados
         {
 
             Paquete paquete = new Paquete();
-            if (paquete.Registrar(Convert.ToInt32(Txt_Precio.Text), Convert.ToInt32(Txt_Casilla.Text), 
-                Convert.ToDouble(Txt_Libras.Text), Convert.ToDouble(Ddl_Tipo_Impuesto.SelectedValue)))
+            if (paquete.Registrar(Convert.ToInt32(Ddl_Tipo_Impuesto.SelectedValue), Convert.ToInt32(Txt_Casilla.Text),
+                Convert.ToDouble(Txt_Libras.Text), Convert.ToDouble(Txt_Precio.Text)))
             {
                 Lbl_Mensaje.Text = "Registro Exitoso";
+            }
+            else
+            {
+                Lbl_Mensaje.Text = "Registro Incorrecto";
             }
         }
 
@@ -78,9 +82,9 @@ namespace ProyectoIPC2.Empleados
                     Lbl_Mensaje.Text = "El archivo tiene datos inexistentes";
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                Lbl_Mensaje.Text = "Error : " + ex.Message;
+                Lbl_Mensaje.Text = "Error : Archivo no encontrado";
                 //Nota: Exception.Message devuelve un mensaje detallado que describe la excepción actual. 
                 //Por motivos de seguridad, no se recomienda devolver Exception.Message a los usuarios finales de 
                 //entornos de producción. Sería más aconsejable poner un mensaje de error genérico. 

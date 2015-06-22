@@ -7,7 +7,7 @@
     margin:auto;
     text-align:center;
     font-family:Tahoma;
-    font-size:2em;
+    font-size:1.9em;
     }
     </style>
 </asp:Content>
@@ -30,14 +30,14 @@
                     </tr>
                     <tr>
                         <td>
-                <asp:TextBox ID="Txt_Precio" runat="server" CssClass="Txt_info" placeholder="Precio de Producto en Q"></asp:TextBox>
+                <asp:TextBox ID="Txt_Precio" runat="server" CssClass="Txt_info" placeholder="Precio de Producto en Q" Width="450px"></asp:TextBox>
                         </td>
                         <td>
                             &nbsp;</td>
                     </tr>
                     <tr>
                         <td>
-                <asp:TextBox ID="Txt_Libras" runat="server" CssClass="Txt_info" placeholder="Peso en Libras"></asp:TextBox>
+                <asp:TextBox ID="Txt_Libras" runat="server" CssClass="Txt_info" placeholder="Peso en Libras" Width="450px"></asp:TextBox>
                         </td>
                         <td>
                             <asp:FileUpload ID="Flu_Archivo" CssClass="TxtGen" runat="server" />
@@ -45,15 +45,14 @@
                     </tr>
                     <tr>
                         <td>
-               <asp:DropDownList ID="Ddl_Tipo_Impuesto" CssClass="Txt_info" runat="server" Width="344px"></asp:DropDownList>
+               <asp:DropDownList ID="Ddl_Tipo_Impuesto" CssClass="Txt_info" runat="server" Width="450px"></asp:DropDownList>
                         </td>
                         <td>
-                            <asp:Label ID="Lbl_Mensaje" runat="server"  CssClass="TxtCod"></asp:Label>
-                        </td>
+                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:TextBox ID="Txt_Casilla" CssClass="Txt_info" runat="server" placeholder="Casilla de Cliente"></asp:TextBox>
+                            <asp:TextBox ID="Txt_Casilla" CssClass="Txt_info" runat="server" placeholder="Casilla de Cliente" Width="450px"></asp:TextBox>
                         </td>
                         <td>
                             &nbsp;</td>
@@ -72,7 +71,9 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                            <asp:Label ID="Lbl_Mensaje" runat="server"  CssClass="TxtCod"></asp:Label>
+                        </td>
             <td>&nbsp;</td>
         </tr>
     </table>

@@ -75,6 +75,18 @@ namespace ProyectoIPC2
                                 drtabla[4]+","+drtabla[5]+"<br/>" + drtabla[3];
                         }
                     }
+                    else
+                    {
+                       Lbl_Usuario.Text = Session["Cod_Empleado"].ToString() + Session["DPI"].ToString();
+                    }
+                    if (Session["Cod_Rol_Usuario"] == null)
+                    {
+                        Btn_Login_out.Text = "Login";
+                    }
+                    else
+                    {
+                        Btn_Login_out.Text = "Logout";
+                    }
                 }
             }
         }
@@ -90,7 +102,7 @@ namespace ProyectoIPC2
         }
         public void Logout()
         {
-            if ((Session["Usuario"] == null) && (Session["Cod_Usuario"] == null) && (Session["Cod_Rol_Usuario"] == null))
+            if  (Session["Cod_Rol_Usuario"] == null)
             {
                 Response.Redirect("~/Login.aspx");
             }

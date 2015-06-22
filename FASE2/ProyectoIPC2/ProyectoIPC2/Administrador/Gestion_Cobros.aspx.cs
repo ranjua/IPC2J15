@@ -46,7 +46,7 @@ namespace ProyectoIPC2.Administrador
                 Cbx_Comision_DHab.Checked = cobro.comision.habilitado;
                 Cbx_Peso_DHab.Checked = cobro.cobro_Libra.habilitado;
             }
-            catch(Exception e) 
+            catch
             { }
         }
 

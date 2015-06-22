@@ -70,21 +70,6 @@
 <colAssociation fkAssociation="4A656E9A-9EA6-2B64-6F3A-98C8AF630E50" referredColumn="A8473DD3-3EED-D438-0CE4-12CFB064F50E"/>
 </associations>
 </Column>
-<Column name="PAQUETE_cod_paquete" id="5366021B-E1B2-74F0-D8C3-5BD41F23CD5D">
-<createdBy>randyfernando</createdBy>
-<createdTime>2015-06-20 07:07:39 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Diagrama ER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="23321323-994E-3D86-91E5-5B27042A8E33" referredColumn="DDE61B78-011E-799B-DFB7-B98F81A4C377"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="247E46DB-0DDA-6009-EFF2-E166E1E21348" name="LOTE_PK">
@@ -108,17 +93,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="CE43CD99-1059-6E9E-36A1-ADC836C23B3B"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="0CAF156C-C656-C9A9-7198-CF911AC32D26" name="cod_paquete_FKv1">
-<createdBy>randyfernando</createdBy>
-<createdTime>2015-06-20 07:07:39 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Diagrama ER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="5366021B-E1B2-74F0-D8C3-5BD41F23CD5D"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

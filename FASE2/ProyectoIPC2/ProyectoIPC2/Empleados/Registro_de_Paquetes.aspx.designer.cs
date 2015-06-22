@@ -67,15 +67,6 @@ namespace ProyectoIPC2.Empleados {
         protected global::System.Web.UI.WebControls.DropDownList Ddl_Tipo_Impuesto;
         
         /// <summary>
-        /// Lbl_Mensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Mensaje;
-        
-        /// <summary>
         /// Txt_Casilla control.
         /// </summary>
         /// <remarks>
@@ -101,5 +92,14 @@ namespace ProyectoIPC2.Empleados {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_Cargar_CSV;
+        
+        /// <summary>
+        /// Lbl_Mensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_Mensaje;
     }
 }

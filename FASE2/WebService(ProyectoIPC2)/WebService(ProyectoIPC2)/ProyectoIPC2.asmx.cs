@@ -22,5 +22,10 @@ namespace WebService_ProyectoIPC2_
         {
             return "Hello World";
         }
+        [WebMethod]
+        public string Fecha()
+        {
+            return "26/08/2015";
+        }
     }
 }

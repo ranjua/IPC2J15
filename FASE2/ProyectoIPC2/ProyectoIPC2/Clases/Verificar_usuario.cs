@@ -34,14 +34,16 @@ namespace ProyectoIPC2.Clases
             }
             if (Sesion_aceptada == true)
             {
-
+                HttpContext.Current.Session["Cod_Empleado"] = "";
+                HttpContext.Current.Session["Cod_Suc_Dep"] = "";
+                HttpContext.Current.Session["DPI"] = "";
                 HttpContext.Current.Session["Cod_Rol_Usuario"] = registro.SelectUnValorQry("Select cod_rol from ProyectoIPC2.dbo.Usuarios where usuario = '" + usuario + "'");
                 int op = Convert.ToInt32(HttpContext.Current.Session["Cod_Rol_Usuario"]);
                 switch(op)
                 {
                     case 1:
                         //Administrador
-
+                        
                         break;
                     case 2:
                         //Director

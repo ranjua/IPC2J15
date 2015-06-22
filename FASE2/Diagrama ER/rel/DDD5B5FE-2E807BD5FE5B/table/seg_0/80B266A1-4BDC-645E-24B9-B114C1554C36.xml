@@ -16,7 +16,7 @@
 <ownerDesignName>Diagrama ER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -38,7 +38,7 @@
 <ownerDesignName>Diagrama ER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -61,7 +61,7 @@
 <ownerDesignName>Diagrama ER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -146,7 +146,7 @@
 <colUsage columnID="D766436D-F9BC-3B4D-44BE-F518C0B6AEBE"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7D54DEB2-3B49-E61F-636D-02638E445635" name="cod_sucursal_FKv1">
+<ind_PK_UK id="7D54DEB2-3B49-E61F-636D-02638E445635" name="cod_sucursal_FK">
 <createdBy>randyfernando</createdBy>
 <createdTime>2015-06-20 07:06:34 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
