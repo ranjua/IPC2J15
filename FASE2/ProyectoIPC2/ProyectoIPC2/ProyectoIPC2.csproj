@@ -70,6 +70,8 @@
     <Content Include="Director\Consultar_Equipo.aspx" />
     <Content Include="Director\Contratacion.aspx" />
     <Content Include="Empleados\Facturacion.aspx" />
+    <Content Include="Empleados\Registro_de_Paquetes.aspx" />
+    <Content Include="Empleados\Reportar_Paquete_Perdido.aspx" />
     <Content Include="JS\Login.js" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">
@@ -99,6 +101,7 @@
     </Compile>
     <Compile Include="Clases\Base_de_Datos.cs" />
     <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Paquete.cs" />
     <Compile Include="Clases\Verificar_usuario.cs" />
     <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Cliente\Cotizacion.aspx.cs">
@@ -142,6 +145,20 @@
     </Compile>
     <Compile Include="Empleados\Facturacion.aspx.designer.cs">
       <DependentUpon>Facturacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Registro_de_Paquetes.aspx.cs">
+      <DependentUpon>Registro_de_Paquetes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Registro_de_Paquetes.aspx.designer.cs">
+      <DependentUpon>Registro_de_Paquetes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Reportar_Paquete_Perdido.aspx.cs">
+      <DependentUpon>Reportar_Paquete_Perdido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Reportar_Paquete_Perdido.aspx.designer.cs">
+      <DependentUpon>Reportar_Paquete_Perdido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
