@@ -109,9 +109,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4C25D70F-F1F5-1A93-D2DE-C570448DD0F7" referredColumn="8FF8E774-28E7-4297-43CD-6381A5F7FA60"/>
-</associations>
 </Column>
 <Column name="LOTE_cod_lote" id="A552C5C0-3D8F-5D90-C154-1AC8FBF06EF3">
 <createdBy>randyfernando</createdBy>
@@ -173,17 +170,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B0D11D19-7CF5-0EAC-AF47-3A76597FAA58"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="27EF1863-ACC6-9FA5-96EE-F3F38BE7608D" name="cod_pedido_FK">
-<createdBy>randyfernando</createdBy>
-<createdTime>2015-06-20 07:08:43 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Diagrama ER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="88A81D8F-7609-0535-7A10-2F5A4C1ACB0B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BB9C2D8F-B348-CEA7-BDCD-E4F72F2265F5" name="cod_lote_FKv2">

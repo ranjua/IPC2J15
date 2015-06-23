@@ -61,7 +61,7 @@ namespace ProyectoIPC2
 
                         Mnu_P.Items.Add(menuItem);
                     }
-                    if(Session["Cod_Rol_Usuario"].Equals("3"))
+                    if (Session["Cod_Rol_Usuario"].Equals("3") || Session["Cod_Rol_Usuario"].Equals("2"))
                     {
                         Base_de_Datos base_de_Datos = new Base_de_Datos();
                         DataTable tabla = new DataTable();

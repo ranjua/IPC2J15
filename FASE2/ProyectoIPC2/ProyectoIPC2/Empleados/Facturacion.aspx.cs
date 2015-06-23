@@ -1,4 +1,6 @@
-﻿using ProyectoIPC2.Clases;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using ProyectoIPC2.Clases;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 namespace ProyectoIPC2.Empleados
 {
@@ -33,7 +36,7 @@ namespace ProyectoIPC2.Empleados
                 {
                     foreach (DataRow drtabla in tabla.Rows)
                     {
-                        ListItem Newitem = new ListItem();
+                        System.Web.UI.WebControls.ListItem Newitem = new System.Web.UI.WebControls.ListItem();
                         Newitem.Value = drtabla[0].ToString();
                         Newitem.Text = "Q." + drtabla[1].ToString() + " - " + drtabla[2].ToString();
                         if (x == 1)
@@ -53,7 +56,13 @@ namespace ProyectoIPC2.Empleados
 
         protected void Btn_Facturar_Click(object sender, EventArgs e)
         {
-
+            Factura factura = new Factura(Ddl_Paquetes.SelectedValue);
+            Btn_Facturar.Visible = false;
+            Ddl_Paquetes.Visible = false;
+            factura.A_PDF(factura);
+            
         }
+
+        
     }
 }

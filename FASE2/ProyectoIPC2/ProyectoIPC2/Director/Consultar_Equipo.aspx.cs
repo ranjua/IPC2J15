@@ -17,6 +17,7 @@ namespace ProyectoIPC2.Director
             if(!IsPostBack)
             {
                 getEmpleados();
+                LlenarSucDep();
             }
         }
 
@@ -86,8 +87,8 @@ namespace ProyectoIPC2.Director
             string suc_dep_emp = base_de_datos.SelectUnValorQry("select cod_suc_dep from ProyectoIPC2.dbo.Empleados where cod_empleado = " + Txt_Cod_Empleado.Text);
             if (suc_dep_dir.Equals(suc_dep_emp))
             {
-                base_de_datos.Upd_New_DelUnValorQry("update Proyecto.dbo.Empleados set sueldo = " + Txt_Sueldo.Text +
-                    ", cod_suc_dep = " + Ddl_Suc_Dep.SelectedValue + " where cod_empleado = " + Txt_Cod_Empleado);
+                base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Empleados set sueldo = " + Txt_Sueldo.Text +
+                    ", cod_suc_dep = " + Ddl_Suc_Dep.SelectedValue + " where cod_empleado = " + Txt_Cod_Empleado.Text);
                 getEmpleados();
             }
         }
@@ -99,8 +100,8 @@ namespace ProyectoIPC2.Director
             string suc_dep_emp = base_de_datos.SelectUnValorQry("select cod_suc_dep from ProyectoIPC2.dbo.Empleados where cod_empleado = " + Txt_Cod_Empleado.Text);
             if (suc_dep_dir.Equals(suc_dep_emp))
             {
-                base_de_datos.Upd_New_DelUnValorQry("Delete from Proyecto.dbo.Usuario where usuario = " + Txt_Cod_Empleado);
-                base_de_datos.Upd_New_DelUnValorQry("Delete from Proyecto.dbo.Empleados where cod_empleado = " + Txt_Cod_Empleado);
+                base_de_datos.Upd_New_DelUnValorQry("Delete from ProyectoIPC2.dbo.Usuario where usuario = " + Txt_Cod_Empleado.Text);
+                base_de_datos.Upd_New_DelUnValorQry("Delete from ProyectoIPC2.dbo.Empleados where cod_empleado = " + Txt_Cod_Empleado.Text);
                 getEmpleados();
             }
         }

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -130,11 +131,22 @@ namespace ProyectoIPC2.Clases
         public bool Agregar_Empleado(Empleado empleado)
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            base_de_datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Usuarios values('','empleado','" + empleado.nombre +
-                "','" + empleado.apellido + "',0000000,'correo','Guatemala',3 )");
+            DataTable tabla = new DataTable();
+            tabla = base_de_datos.FillTableData("select * from ProyectoIPC2.dbo.Usuarios u, ProyectoIPC2.dbo.Empleados e where e.cod_usuario=u.cod_usuario and u.cod_rol=2 and e.cod_suc_dep = "+ empleado.cod_Suc_Dep);
+            
+            if (tabla.Rows.Count==0)
+            {
+                base_de_datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Usuarios values('','empleado','" + empleado.nombre +
+                    "','" + empleado.apellido + "',0000000,'correo','Guatemala',2 )");
+            }
+            else
+            {
+                base_de_datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Usuarios values('','empleado','" + empleado.nombre +
+                    "','" + empleado.apellido + "',0000000,'correo','Guatemala',3 )");
+            }
             base_de_datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Empleados values('" + empleado.sueldo +
                 "', " + empleado.cod_Suc_Dep + ", (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios))");
-            base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Usuarios set usuario = (Select cod_empleado from ProyectoIPC2.dbo.Empleados where cod_usuario = (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios))");
+            base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Usuarios set usuario = (Select cod_empleado from ProyectoIPC2.dbo.Empleados where cod_usuario = (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios)) where cod_usuario = (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios)");
             return true;
         }
 

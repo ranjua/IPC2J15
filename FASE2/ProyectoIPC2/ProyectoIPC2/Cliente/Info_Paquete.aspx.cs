@@ -13,16 +13,24 @@ namespace ProyectoIPC2.Cliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-            {
+            
                 LlenarGrd(Session["Paquete"].ToString());
-            }
+            
+        }
+        
+        protected void Devolucion(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            base_de_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set estado = 'Devolucion' where cod_paquete = " + btn.ID);
+            LlenarGrd(Session["Paquete"].ToString());
         }
 
         public void LlenarGrd(string cod_paquete)
         {
             try
             {
+                Pnl_Detalles.Controls.Clear();
                 Panel pnl_cod = new Panel();
                 pnl_cod.CssClass = "pnl_track";
                 Label lbl_cod = new Label();
@@ -78,8 +86,9 @@ namespace ProyectoIPC2.Cliente
                     Pnl_Detalles.Controls.Add(pnl_imp);
                     Pnl_Detalles.Controls.Add(pnl_peso);
 
-                    if (drtabla[3].ToString().Equals("EEUU") || drtabla[3].ToString().Equals("Aduana") || 
-                        drtabla[3].ToString().Equals("Guatemala"))
+                    if (drtabla[3].ToString().Equals("EEUU") || drtabla[3].ToString().Equals("Aduana") ||
+                        drtabla[3].ToString().Equals("Guatemala") || drtabla[3].ToString().Equals("Facturado") ||
+                        drtabla[3].ToString().Equals("Devolucion") || drtabla[3].ToString().Equals("Devuelto"))
                     {
                         DataTable Stabla = new DataTable();
                         Stabla = base_de_Datos.FillTableData("Select fecha_salida from ProyectoIPC2.dbo.Lotes where cod_lote= " + drtabla[4].ToString());
@@ -98,7 +107,8 @@ namespace ProyectoIPC2.Cliente
                             Pnl_Detalles.Controls.Add(pnl_EEUU);
                         }
                     }
-                    if (drtabla[3].ToString().Equals("Aduana") || drtabla[3].ToString().Equals("Guatemala"))
+                    if (drtabla[3].ToString().Equals("Aduana") || drtabla[3].ToString().Equals("Guatemala") || drtabla[3].ToString().Equals("Facturado") ||
+                        drtabla[3].ToString().Equals("Devolucion") || drtabla[3].ToString().Equals("Devuelto"))
                     {
                         DataTable Stabla = new DataTable();
                         Stabla = base_de_Datos.FillTableData("Select fecha_aduana from ProyectoIPC2.dbo.Lotes where cod_lote= " + drtabla[4].ToString());
@@ -117,7 +127,8 @@ namespace ProyectoIPC2.Cliente
                             Pnl_Detalles.Controls.Add(pnl_Aduana);
                         }
                     }
-                    if (drtabla[3].ToString().Equals("Guatemala"))
+                    if (drtabla[3].ToString().Equals("Guatemala") || drtabla[3].ToString().Equals("Facturado")||
+                        drtabla[3].ToString().Equals("Devolucion") || drtabla[3].ToString().Equals("Devuelto"))
                     {
                         DataTable Stabla = new DataTable();
                         Stabla = base_de_Datos.FillTableData("Select fecha_llegada from ProyectoIPC2.dbo.Lotes where cod_lote= " + drtabla[4].ToString());
@@ -135,6 +146,42 @@ namespace ProyectoIPC2.Cliente
                             pnl_Guatemala.Controls.Add(lbl_Guatemala_P);
                             Pnl_Detalles.Controls.Add(pnl_Guatemala);
                         }
+                    }
+                    if (drtabla[3].ToString().Equals("Facturado"))
+                    {
+                        Panel pnl_Guatemala = new Panel();
+                        pnl_Guatemala.CssClass = "pnl_track";
+                        Label lbl_Guatemala = new Label();
+                        lbl_Guatemala.Text = "Facturado";
+                        lbl_Guatemala.CssClass = "lbl_track";
+                        Button btn = new Button();
+                        btn.Text = "Solicitar Devolucion";
+                        btn.ID = ""+cod_paquete;
+                        btn.Click += new EventHandler(Devolucion);
+                        btn.CssClass = "lbl_P_track";
+                        pnl_Guatemala.Controls.Add(btn);
+                        pnl_Guatemala.Controls.Add(lbl_Guatemala);
+                        Pnl_Detalles.Controls.Add(pnl_Guatemala);
+                    }
+                    if (drtabla[3].ToString().Equals("Devolucion"))
+                    {
+                        Panel pnl_Guatemala = new Panel();
+                        pnl_Guatemala.CssClass = "pnl_track";
+                        Label lbl_Guatemala = new Label();
+                        lbl_Guatemala.Text = "En Proceso de Devolucion";
+                        lbl_Guatemala.CssClass = "lbl_Ctrack";
+                        pnl_Guatemala.Controls.Add(lbl_Guatemala);
+                        Pnl_Detalles.Controls.Add(pnl_Guatemala);
+                    }
+                    if (drtabla[3].ToString().Equals("Devuelto"))
+                    {
+                        Panel pnl_Guatemala = new Panel();
+                        pnl_Guatemala.CssClass = "pnl_track";
+                        Label lbl_Guatemala = new Label();
+                        lbl_Guatemala.Text = "Devuelto a sede EEUU";
+                        lbl_Guatemala.CssClass = "lbl_Ctrack";
+                        pnl_Guatemala.Controls.Add(lbl_Guatemala);
+                        Pnl_Detalles.Controls.Add(pnl_Guatemala);
                     }
 
                 }

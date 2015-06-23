@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -60,6 +63,7 @@
     <Content Include="Administrador\Carga_Masiva.aspx" />
     <Content Include="Administrador\CSS\Admin.css" />
     <Content Include="Administrador\Gestion_Cobros.aspx" />
+    <Content Include="Administrador\Sucursal_Departamento.aspx" />
     <Content Include="Cliente\Cotizacion.aspx" />
     <Content Include="Cliente\CSS\Perfil.css" />
     <Content Include="Cliente\Info_Paquete.aspx" />
@@ -70,11 +74,13 @@
     <Content Include="CSS\Login.css" />
     <Content Include="Director\Consultar_Equipo.aspx" />
     <Content Include="Director\Contratacion.aspx" />
+    <Content Include="Empleados\Devolucion.aspx" />
     <Content Include="Empleados\Facturacion.aspx" />
     <Content Include="Empleados\Registro_de_Paquetes.aspx" />
     <Content Include="Empleados\Reportar_Paquete_Perdido.aspx" />
     <Content Include="JS\Login.js" />
     <Content Include="Login.aspx" />
+    <Content Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,8 +106,16 @@
     <Compile Include="Administrador\Gestion_Cobros.aspx.designer.cs">
       <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\Sucursal_Departamento.aspx.cs">
+      <DependentUpon>Sucursal_Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Sucursal_Departamento.aspx.designer.cs">
+      <DependentUpon>Sucursal_Departamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Base_de_Datos.cs" />
     <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Factura.cs" />
     <Compile Include="Clases\Paquete.cs" />
     <Compile Include="Clases\Verificar_usuario.cs" />
     <Compile Include="Cliente\Cliente.cs" />
@@ -146,6 +160,13 @@
     </Compile>
     <Compile Include="Director\Contratacion.aspx.designer.cs">
       <DependentUpon>Contratacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Devolucion.aspx.cs">
+      <DependentUpon>Devolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Devolucion.aspx.designer.cs">
+      <DependentUpon>Devolucion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados\Facturacion.aspx.cs">
       <DependentUpon>Facturacion.aspx</DependentUpon>

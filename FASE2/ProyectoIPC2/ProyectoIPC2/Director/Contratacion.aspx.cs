@@ -41,7 +41,8 @@ namespace ProyectoIPC2.Director
 
         protected void Btn_Contratar_Click1(object sender, EventArgs e)
         {
-            Empleado empleado = new Empleado(Txt_Apellido.Text, Txt_Nombre.Text, Convert.ToDouble(Txt_Sueldo.Text), Convert.ToInt32(Session["Cod_Suc_Dep"].ToString()));
+            string sucdep = Session["Cod_Suc_Dep"].ToString();
+            Empleado empleado = new Empleado(Txt_Apellido.Text, Txt_Nombre.Text, Convert.ToDouble(Txt_Sueldo.Text), Convert.ToInt32(sucdep));
             empleado.Agregar_Empleado(empleado);
         }
     }
