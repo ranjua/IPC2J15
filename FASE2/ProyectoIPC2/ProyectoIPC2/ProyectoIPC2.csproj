@@ -75,6 +75,7 @@
     <Content Include="Director\Consultar_Equipo.aspx" />
     <Content Include="Director\Contratacion.aspx" />
     <Content Include="Empleados\Devolucion.aspx" />
+    <Content Include="Empleados\Estado_Lote.aspx" />
     <Content Include="Empleados\Facturacion.aspx" />
     <Content Include="Empleados\Registro_de_Paquetes.aspx" />
     <Content Include="Empleados\Reportar_Paquete_Perdido.aspx" />
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="Empleados\Devolucion.aspx.designer.cs">
       <DependentUpon>Devolucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Estado_Lote.aspx.cs">
+      <DependentUpon>Estado_Lote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Estado_Lote.aspx.designer.cs">
+      <DependentUpon>Estado_Lote.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados\Facturacion.aspx.cs">
       <DependentUpon>Facturacion.aspx</DependentUpon>
