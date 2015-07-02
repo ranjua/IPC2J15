@@ -1,0 +1,42 @@
+﻿.pnl_track
+{
+    clear:both;
+
+}
+.pnl_G_track
+{
+    top:10%;
+    margin-left:auto; 
+    margin-right:auto;
+    width:40%;
+    font-size:1.3em;
+    font-family:Tahoma;
+    color:white;
+    background: rgba(255,175,75,1);
+    background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
+background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=0 );
+
+-webkit-box-shadow: 2px 30px 76px -12px rgba(0,0,0,1);
+-moz-box-shadow: 2px 30px 76px -12px rgba(0,0,0,1);
+box-shadow: 2px 1px 76px -12px rgba(0,0,0,0.3);
+
+}
+.lbl_track
+{
+    float:left;
+    
+}
+.lbl_P_track
+{
+    float:right;
+}
+.lbl_Ctrack
+{
+    margin:auto;
+    
+}

@@ -144,6 +144,7 @@ namespace Practica1IPC2_webservice_
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             DataTable tabla = base_de_Datos.FillTableData("Select cod_libro as Codigo, nombre as Titulo, COUNT(cod_libro) as Cantidad from Practica1IPC2.dbo.prestamos p, Practica1IPC2.dbo.libros l " +
             " where l.cod_registro=p.cod_registro_libro  group by l.cod_libro, l.nombre order by Cantidad desc");
+
             return DataTableToJSON(tabla);
         }
         [WebMethod]
@@ -180,6 +181,21 @@ namespace Practica1IPC2_webservice_
             }
             return false;
         }
+        private bool Miembro_Exist(int cod_miembro)
+        {
+            try
+            {
+                Base_de_Datos base_de_Datos = new Base_de_Datos();
+                base_de_Datos.SelectUnValorQry("select carnet from Practica1IPC2.dbo.clientes where carnet= " + cod_miembro);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
 
         private string DataTableToJSON(DataTable table)
         {
@@ -198,19 +214,7 @@ namespace Practica1IPC2_webservice_
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             return serializer.Serialize(list);
         }
-        private bool Miembro_Exist(int cod_miembro)
-        {
-            try
-            {
-                Base_de_Datos base_de_Datos = new Base_de_Datos();
-                base_de_Datos.SelectUnValorQry("select carnet from Practica1IPC2.dbo.clientes where carnet= " + cod_miembro);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        
 
     }
 
