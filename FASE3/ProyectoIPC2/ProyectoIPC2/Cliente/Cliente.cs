@@ -60,7 +60,7 @@ namespace ProyectoIPC2.Cliente
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
             bool correcto = base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Clientes set NIT='" + cliente.NIT + "', num_tarjeta_C_D='" + cliente.tarjeta +
-                "', cod_sucursal=" + cliente.cod_sucursal + ", DPI_entrega='" + cliente.DPI_Entrega+"' where DPI = " + cliente.DPI);
+                "', cod_sucursal=" + cliente.cod_sucursal + ", DPI_entrega='" + cliente.DPI_Entrega+"' where DPI = '" + cliente.DPI+"'");
            if(correcto) 
            {
                return base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Usuarios set nombre = '" + cliente.nombre + "', apellidos='" + cliente.apellido +

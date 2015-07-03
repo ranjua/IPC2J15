@@ -33,7 +33,7 @@ namespace ProyectoIPC2.Empleados
                 {
                     ListItem Newitem = new ListItem();
                     Newitem.Value = "" + itemlist.cod_impuesto;
-                    Newitem.Text = itemlist.nombre + "-" + itemlist.porcentaje * 100.00;
+                    Newitem.Text = itemlist.nombre + " -> (" + itemlist.porcentaje * 100.00 +"%)";
                     if (x == 1)
                     {
                         Newitem.Selected = true;

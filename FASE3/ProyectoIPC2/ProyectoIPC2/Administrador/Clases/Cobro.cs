@@ -38,6 +38,7 @@ namespace ProyectoIPC2.Administrador
                     Convert.ToDouble(porcentaje)/100.00);
                 Agregar_Impuestos(impuesto);
             }
+            streamreader.Close();
         }
 
         public void ObtenerCobro ()

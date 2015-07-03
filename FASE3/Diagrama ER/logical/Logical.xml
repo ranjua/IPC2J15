@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="AF3CF125-3563-927B-2B38-5E464DE8E453" mainViewID="6C8CA6F7-D5E6-5ED4-E95B-C0564667BB89">
-<createdBy>randyfernando</createdBy>
-<createdTime>2015-06-20 05:39:40 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Diagrama ER</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</LogicalDesign>

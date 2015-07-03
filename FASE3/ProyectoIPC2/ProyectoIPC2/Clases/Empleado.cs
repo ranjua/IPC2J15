@@ -51,14 +51,15 @@ namespace ProyectoIPC2.Clases
                     int dep = Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_departamento from ProyectoIPC2.dbo.Departamentos where nombre = '" + values[4] + "'"));
                     base_de_datos.SelectUnValorQry("select cod_Suc_Dep from ProyectoIPC2.dbo.SucDep where cod_sucursal = '" +
                         suc + "' and cod_departamento = " + dep);
-                    return true;
+                    
                 }
+                streamreader.Close();
+                return true;
             }
             catch
             {
                 return false;
             }
-            return false;
         }
 
         public Empleado()
@@ -83,6 +84,7 @@ namespace ProyectoIPC2.Clases
                     Empleado empleado = new Empleado(values[0], values[1], Convert.ToInt32(values[2]), suc_dep);
                     Agregar_Empleado(empleado);
                 }
+                streamreader.Close();
                 return true;
             }
             else
@@ -94,32 +96,32 @@ namespace ProyectoIPC2.Clases
         public int getSucursal()
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_sucursal from ProyectoIPC2.dbo.SucDep," +
+            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_sucursal from ProyectoIPC2.dbo.SucDep" +
                 "  where cod_suc_dep= " + cod_Suc_Dep));
         }
         public int getDepartamento()
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_departamento from ProyectoIPC2.dbo.SucDep," +
+            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_departamento from ProyectoIPC2.dbo.SucDep" +
                 "  where cod_suc_dep= " + cod_Suc_Dep));
         }
         public int getSucursal(int cod_Suc_Dep)
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_sucursal from ProyectoIPC2.dbo.SucDep," +
+            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_sucursal from ProyectoIPC2.dbo.SucDep" +
                 "  where cod_suc_dep= " + cod_Suc_Dep));
         }
         public int getDepartamento(int cod_Suc_Dep)
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_departamento from ProyectoIPC2.dbo.SucDep," +
+            return Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_departamento from ProyectoIPC2.dbo.SucDep" +
                 "  where cod_suc_dep= " + cod_Suc_Dep));
         }
 
         public bool actualizarEmpleado(int cod_empleado, string puesto, double sueldo, int cod_Departamento, int cod_Sucursal)
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
-            int cod_Suc_Dep = Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_suc_dep from ProyectoIPC2.dbo.SucDep," +
+            int cod_Suc_Dep = Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_suc_dep from ProyectoIPC2.dbo.SucDep" +
                 "  where cod_sucursal= " + cod_Sucursal + " and cod_departamento=" + cod_Departamento));
             base_de_datos.Upd_New_DelUnValorQry("Update ProyectoIPC2.dbo.SucDep set cod_sucursal =" + cod_Sucursal +
                 ", cod_departamento=" + cod_Departamento + " where cod_empleado = " + cod_empleado);

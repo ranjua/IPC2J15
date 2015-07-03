@@ -22,6 +22,8 @@
                     <tr>
 
                         <td>
+                            <asp:Label ID="Lbl_Mensaje" runat="server" ></asp:Label>
+                            <br />
                             <asp:TextBox ID="Txt_Cod_Empleado" runat="server" placeholder="ID Empleado" CssClass=" TxtGen"></asp:TextBox></td>
                         <td rowspan="12">
                             <asp:DropDownList ID="Ddl_Departamento" runat="server" OnSelectedIndexChanged="Ddl_Departamento_SelectedIndexChanged" AutoPostBack="true" CssClass="TxtGen"></asp:DropDownList>

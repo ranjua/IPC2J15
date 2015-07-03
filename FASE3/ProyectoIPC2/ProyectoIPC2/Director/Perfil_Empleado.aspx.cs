@@ -47,7 +47,7 @@ namespace ProyectoIPC2.Director
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             DataTable tabla = new DataTable();
             tabla = base_de_Datos.FillTableData("select he.cod_empleado as Empleado, he.cod_director as Director, he.sueldo as Sueldo, " + 
-                " s.nombre as Sucursal, d.nombre as Departamento from ProyectoIPC2.dbo.Historial_E he, ProyectoIPC2.dbo.Departamentos d, "+
+                " s.nombre as Sucursal, d.nombre as Departamento, he.fecha as Fecha, he.hora as Hora from ProyectoIPC2.dbo.Historial_E he, ProyectoIPC2.dbo.Departamentos d, "+
                 " ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.SucDep sd where d.cod_departamento=sd.cod_departamento and " + 
                 " s.cod_sucursal=sd.cod_sucursal and sd.cod_Suc_Dep = he.cod_suc_dep and he.cod_empleado = " + cod_Empleado);
 

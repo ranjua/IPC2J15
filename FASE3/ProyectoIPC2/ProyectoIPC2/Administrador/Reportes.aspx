@@ -13,12 +13,13 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:DropDownList ID="Ddl_Reporte" runat="server" CssClass="button-flat-primary">
+                <asp:DropDownList ID="Ddl_Reporte" runat="server" CssClass="button-flat-primary button-jumbo">
                     <asp:ListItem Selected="True" Value="1">Paquetes por Categoria de Impuesto</asp:ListItem>
                     <asp:ListItem Value="2">Paquetes por Sucursal</asp:ListItem>
                     <asp:ListItem Value="3">Resumen de Empleados</asp:ListItem>
                     <asp:ListItem Value="4">Top 5 Categoria de Impuestos</asp:ListItem>
                 </asp:DropDownList>
+                <br />
             </td>
             <td>&nbsp;</td>
         </tr>

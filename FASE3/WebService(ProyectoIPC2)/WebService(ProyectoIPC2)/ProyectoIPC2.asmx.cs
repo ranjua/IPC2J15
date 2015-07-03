@@ -21,7 +21,7 @@ namespace WebService_ProyectoIPC2_
         [WebMethod]
         public string Fecha()
         {
-            return "26/08/2015";
+            return "26/06/2015";
         }
 
         //Verificar_usuairo.cs

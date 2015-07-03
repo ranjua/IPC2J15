@@ -122,10 +122,28 @@
     <Compile Include="Administrador\Clases\Cobro.cs" />
     <Compile Include="Administrador\Clases\Comision_Libra.cs" />
     <Compile Include="Administrador\Clases\Impuesto.cs" />
+    <Compile Include="Administrador\CrystalReports\Empleado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empleado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Administrador\CrystalReports\Paquete_por_Impuesto.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Paquete_por_Impuesto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrystalReports\Paquete_por_Sucursal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paquete_por_Sucursal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Administrador\CrystalReports\Top5_Impuestos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Top5_Impuestos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Administrador\Gestion_Cobros.aspx.cs">
@@ -372,9 +390,21 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Administrador\CrystalReports\Empleado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Empleado.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\CrystalReports\Paquete_por_Impuesto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Paquete_por_Impuesto.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrystalReports\Paquete_por_Sucursal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Paquete_por_Sucursal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrystalReports\Top5_Impuestos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Top5_Impuestos.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

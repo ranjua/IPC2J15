@@ -94,6 +94,10 @@ namespace ProyectoIPC2.Director
                     ", "+Ddl_Suc_Dep.SelectedValue+", '"+Txt_Sueldo.Text+"', '"+FH.Fecha()+"','"+FH.Hora()+"' )");
                 getEmpleados();
             }
+            else
+            {
+                Lbl_Mensaje.Text = "No pertenece a tu direccion";   
+            }
         }
 
         protected void Btn_Despedir_Click(object sender, EventArgs e)

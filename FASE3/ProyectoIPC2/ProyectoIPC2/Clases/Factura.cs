@@ -37,15 +37,16 @@ namespace ProyectoIPC2.Clases
             " where c.cod_sucursal=s.cod_sucursal and c.DPI=p.cod_cliente and p.cod_impuesto=i.cod_impuesto and cod_paquete = " + cod_paquete);
             foreach (DataRow drtabla in tabla.Rows)
             {
-                this.comision = Convert.ToDouble(drtabla[0].ToString());
-                this.costo_libra = Convert.ToDouble(drtabla[1].ToString());
-                this.impuesto = Convert.ToDouble(drtabla[2].ToString());
+                this.comision = Convert.ToDouble(drtabla[0].ToString().Replace(".",","));
+                this.costo_libra = Convert.ToDouble(drtabla[1].ToString().Replace(".", ","));
+                this.impuesto = Convert.ToDouble(drtabla[2].ToString().Replace(".", ","));
                 this.NIT = drtabla[3].ToString();
-                this.precio = Convert.ToDouble(drtabla[4].ToString());
-                this.libras = Convert.ToInt32(drtabla[5].ToString());
+                this.precio = Convert.ToDouble(drtabla[4].ToString().Replace(".", ","));
+                this.libras = Convert.ToInt32(drtabla[5].ToString().Replace(".", ","));
             }
 
-            base_de_Datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Facturas values('" + comision + "','" + costo_libra + "','" + impuesto + "'," +
+            base_de_Datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Facturas values('" + comision.ToString().Replace(",", ".")
+                + "','" + costo_libra.ToString().Replace(",", ".") + "','" + impuesto.ToString().Replace(",", ".") + "'," +
                 "'" + fecha + "','" + hora + "'," + this.cod_paquete + "," + HttpContext.Current.Session["Cod_Empleado"].ToString() + ")");
             this.cod_factura = base_de_Datos.SelectUnValorQry("select Max(cod_factura) from ProyectoIPC2.dbo.Facturas");
             base_de_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set estado = 'Facturado' where cod_paquete = " + cod_paquete);

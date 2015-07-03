@@ -35,21 +35,21 @@ namespace ProyectoIPC2.Administrador
             WebSProyectoIPC2.ProyectoIPC2 WSS = new WebSProyectoIPC2.ProyectoIPC2();
             DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Reporte_Paquete_Sucursal(), (typeof(DataTable)));
 
-            ExportPDFEXCWR(tabla, "Reporte de Paquete por Impuesto", "~/Administrador/CrystalReports/Paquete_por_Sucursal.rpt");
+            ExportPDFEXCWR(tabla, "Reporte de Paquete por Sucursal", "~/Administrador/CrystalReports/Paquete_por_Sucursal.rpt");
         }
         private void Reporte_Empleado()
         {
             WebSProyectoIPC2.ProyectoIPC2 WSS = new WebSProyectoIPC2.ProyectoIPC2();
             DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Reporte_Empleados(), (typeof(DataTable)));
 
-            ExportPDFEXCWR(tabla, "Reporte de Paquete por Impuesto", "~/Administrador/CrystalReports/Empleado.rpt");
+            ExportPDFEXCWR(tabla, "Reporte de Empleados", "~/Administrador/CrystalReports/Empleado.rpt");
         }
         private void Reporte_Top5_Impuestos()
         {
             WebSProyectoIPC2.ProyectoIPC2 WSS = new WebSProyectoIPC2.ProyectoIPC2();
             DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Reporte_Top5_Impuestos(), (typeof(DataTable)));
 
-            ExportPDFEXCWR(tabla, "Reporte de Paquete por Impuesto", "~/Administrador/CrystalReports/Top5_Impuestos.rpt");
+            ExportPDFEXCWR(tabla, "Reporte Top 5 Impuestos", "~/Administrador/CrystalReports/Top5_Impuestos.rpt");
         }
 
 
@@ -60,10 +60,6 @@ namespace ProyectoIPC2.Administrador
             rpd.SetDataSource(tabla);
             rpd.ExportToHttpResponse
             (CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, nombre);
-            rpd.ExportToHttpResponse
-            (CrystalDecisions.Shared.ExportFormatType.ExcelRecord, Response, true, nombre);
-            rpd.ExportToHttpResponse
-            (CrystalDecisions.Shared.ExportFormatType.WordForWindows, Response, true, nombre);
         }
 
         protected void Btn_Reporte_Click(object sender, EventArgs e)
