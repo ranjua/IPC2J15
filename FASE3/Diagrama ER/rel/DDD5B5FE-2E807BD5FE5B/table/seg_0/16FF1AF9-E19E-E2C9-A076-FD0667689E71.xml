@@ -1,0 +1,168 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="16FF1AF9-E19E-E2C9-A076-FD0667689E71" name="FACTURA">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 05:45:59 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_factura" id="9FE3883D-20B0-2824-BE01-D2702AE4CAB1">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:23:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comision" id="44DA4F80-86C0-4611-DF65-474DF81AFEDC">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:11:47 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo_libra" id="4EEB48BA-47C1-A204-4780-7744A9151288">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:14:40 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="impuesto" id="748A5388-2FBF-2C4D-DFAC-D13DDE54DB87">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-21 02:15:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="53ABC311-FE0E-220C-5465-1855D399B682">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:23:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hora" id="9E13B2F5-0378-2EA1-9D8D-4828C840D0CD">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:23:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PEDIDO_cod_pedido" id="C8F0D8C3-F8BD-3D9C-7081-F526251D6569">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:09:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMPLEADO_cod_empleado" id="A5741C31-96E7-110A-7A56-D616F11F91A5">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:10:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="193565A9-8CD2-721A-DC64-ECE9EC1A3305" referredColumn="DE568BFA-FBF3-9ACE-02A5-E17ED1392908"/>
+</associations>
+</Column>
+<Column name="total" id="51491E09-92E0-54B2-6485-B8DCE9D6CD82">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:14:40 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PAQUETE_cod_paquete" id="5EF7E7E3-A440-5140-6DEE-1DF15CF986C8">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-23 04:11:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7C9744D6-D472-6040-70E2-AC73FC3B29E0" referredColumn="DDE61B78-011E-799B-DFB7-B98F81A4C377"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CB84EF50-6060-7003-EDD8-0F793814684A" name="FACTURA_PK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 06:23:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FE3883D-20B0-2824-BE01-D2702AE4CAB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3870288C-6F59-CD05-A85D-5FF0B3B40C20" name="cod_facturador_FK">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-20 07:10:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5741C31-96E7-110A-7A56-D616F11F91A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D335DF42-66E1-5695-D34E-E50959C07DC2" name="cod_paquete_FKv3">
+<createdBy>randyfernando</createdBy>
+<createdTime>2015-06-23 04:11:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Diagrama ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EF7E7E3-A440-5140-6DEE-1DF15CF986C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

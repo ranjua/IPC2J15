@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="80B266A1-4BDC-645E-24B9-B114C1554C36" name="CLIENTE" seqName="seg_0"/>
+   <object objectType="Table" objectID="D13D4C61-7D35-1E56-C74B-2D93C5B009D8" name="DEPARTAMENTO" seqName="seg_0"/>
+   <object objectType="Table" objectID="306D0A71-CEDD-74EB-6FBE-AC935372D60C" name="DEVOLUCION" seqName="seg_0"/>
+   <object objectType="Table" objectID="CE2199A4-B505-505D-89C6-4E507D9690EB" name="EMPLEADO" seqName="seg_0"/>
+   <object objectType="Table" objectID="16FF1AF9-E19E-E2C9-A076-FD0667689E71" name="FACTURA" seqName="seg_0"/>
+   <object objectType="Table" objectID="883E36BB-9C72-5276-C40C-41090ED84025" name="IMPUESTO" seqName="seg_0"/>
+   <object objectType="Table" objectID="8B5194DD-715B-3698-1288-6522F739B561" name="LOTE" seqName="seg_0"/>
+   <object objectType="Table" objectID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E" name="PAQUETE" seqName="seg_0"/>
+   <object objectType="Table" objectID="D92A4363-4D61-47F9-44E1-2BEA2D004DE8" name="PERDIDO" seqName="seg_0"/>
+   <object objectType="Table" objectID="5100BF06-9396-A74F-8C00-812BB588C33B" name="ROL" seqName="seg_0"/>
+   <object objectType="Table" objectID="4DF83792-A8EA-3494-8243-D64E4D53B209" name="SUCURSAL" seqName="seg_0"/>
+   <object objectType="Table" objectID="578D375C-D94D-C7A9-BCE7-87B8344A6AC7" name="SUCURSAL_DEPARTAMENTO" seqName="seg_0"/>
+   <object objectType="Table" objectID="20829D5B-3702-FEBA-02BA-BCF33DEA55B3" name="USUARIO" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="7C9744D6-D472-6040-70E2-AC73FC3B29E0" name="cod_paquete_FKv3" seqName="seg_0" containerID="16FF1AF9-E19E-E2C9-A076-FD0667689E71" refContainerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E"/>
+   <object objectType="FKIndexAssociation" objectID="4C2F3128-9B8E-8F97-9F19-30CA949CFD8E" name="cod_autorizador_PK" seqName="seg_0" containerID="80B266A1-4BDC-645E-24B9-B114C1554C36" refContainerID="CE2199A4-B505-505D-89C6-4E507D9690EB"/>
+   <object objectType="FKIndexAssociation" objectID="EEB7A1FC-2596-8069-394F-C12CC58124BB" name="cod_cliente_FK" seqName="seg_0" containerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E" refContainerID="80B266A1-4BDC-645E-24B9-B114C1554C36"/>
+   <object objectType="FKIndexAssociation" objectID="31B5FE74-C1BD-967B-BD79-9DBC68F80331" name="cod_departamento_FK" seqName="seg_0" containerID="578D375C-D94D-C7A9-BCE7-87B8344A6AC7" refContainerID="D13D4C61-7D35-1E56-C74B-2D93C5B009D8"/>
+   <object objectType="FKIndexAssociation" objectID="946CC68C-BBFB-BD5E-85AD-A2E89FA18C01" name="cod_empleado_FK" seqName="seg_0" containerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E" refContainerID="CE2199A4-B505-505D-89C6-4E507D9690EB"/>
+   <object objectType="FKIndexAssociation" objectID="193565A9-8CD2-721A-DC64-ECE9EC1A3305" name="cod_facturador_FK" seqName="seg_0" containerID="16FF1AF9-E19E-E2C9-A076-FD0667689E71" refContainerID="CE2199A4-B505-505D-89C6-4E507D9690EB"/>
+   <object objectType="FKIndexAssociation" objectID="2377B354-8037-C485-0E65-4B55CB8484BC" name="cod_impuesto_FK" seqName="seg_0" containerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E" refContainerID="883E36BB-9C72-5276-C40C-41090ED84025"/>
+   <object objectType="FKIndexAssociation" objectID="220907A0-01AD-0DC0-6089-02C3175D7D36" name="cod_lote_FK" seqName="seg_0" containerID="D92A4363-4D61-47F9-44E1-2BEA2D004DE8" refContainerID="8B5194DD-715B-3698-1288-6522F739B561"/>
+   <object objectType="FKIndexAssociation" objectID="D13CB592-36BF-B090-24DA-8EB1F35C8CF8" name="cod_lote_FKv2" seqName="seg_0" containerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E" refContainerID="8B5194DD-715B-3698-1288-6522F739B561"/>
+   <object objectType="FKIndexAssociation" objectID="64D339E4-A77D-0F07-0905-3609D7250527" name="cod_paquete_FK" seqName="seg_0" containerID="D92A4363-4D61-47F9-44E1-2BEA2D004DE8" refContainerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E"/>
+   <object objectType="FKIndexAssociation" objectID="6577EF8E-30A4-43F9-5CCC-BEC3D7C827F3" name="cod_paquete_FK" seqName="seg_0" containerID="306D0A71-CEDD-74EB-6FBE-AC935372D60C" refContainerID="E8BF3920-DA8D-CD6F-2F73-44F6B697B29E"/>
+   <object objectType="FKIndexAssociation" objectID="93B42345-8738-6E1E-7DAC-B08DB6EE03A4" name="cod_roL_FK" seqName="seg_0" containerID="20829D5B-3702-FEBA-02BA-BCF33DEA55B3" refContainerID="5100BF06-9396-A74F-8C00-812BB588C33B"/>
+   <object objectType="FKIndexAssociation" objectID="407EA6CE-E81A-F0CC-6CD3-B105B6DA1B49" name="cod_suc_dep_FK" seqName="seg_0" containerID="CE2199A4-B505-505D-89C6-4E507D9690EB" refContainerID="578D375C-D94D-C7A9-BCE7-87B8344A6AC7"/>
+   <object objectType="FKIndexAssociation" objectID="38C05C94-BCAB-80B0-3429-E4D27DD37C9D" name="cod_sucursal_FK" seqName="seg_0" containerID="80B266A1-4BDC-645E-24B9-B114C1554C36" refContainerID="4DF83792-A8EA-3494-8243-D64E4D53B209"/>
+   <object objectType="FKIndexAssociation" objectID="4A656E9A-9EA6-2B64-6F3A-98C8AF630E50" name="cod_sucursal_FK" seqName="seg_0" containerID="8B5194DD-715B-3698-1288-6522F739B561" refContainerID="4DF83792-A8EA-3494-8243-D64E4D53B209"/>
+   <object objectType="FKIndexAssociation" objectID="8B8F2FE5-C324-C147-B0F3-5BFC550B3E09" name="cod_sucursal_FK" seqName="seg_0" containerID="578D375C-D94D-C7A9-BCE7-87B8344A6AC7" refContainerID="4DF83792-A8EA-3494-8243-D64E4D53B209"/>
+   <object objectType="FKIndexAssociation" objectID="313346AB-CFEA-1312-AAD0-E164E7050D1A" name="cod_usuario_FK" seqName="seg_0" containerID="80B266A1-4BDC-645E-24B9-B114C1554C36" refContainerID="20829D5B-3702-FEBA-02BA-BCF33DEA55B3"/>
+   <object objectType="FKIndexAssociation" objectID="7205D662-AED1-B4F5-C527-04D4714FB26F" name="cod_usuario_FK" seqName="seg_0" containerID="CE2199A4-B505-505D-89C6-4E507D9690EB" refContainerID="20829D5B-3702-FEBA-02BA-BCF33DEA55B3"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

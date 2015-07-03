@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Services;
 
 namespace WebService_ProyectoIPC2_
@@ -122,6 +123,92 @@ namespace WebService_ProyectoIPC2_
                 "', " + cod_Suc_Dep + ", (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios))");
             base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Usuarios set usuario = (Select cod_empleado from ProyectoIPC2.dbo.Empleados where cod_usuario = (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios)) where cod_usuario = (select MAX(cod_usuario) from ProyectoIPC2.dbo.Usuarios)");
             return true;
+        }
+
+
+        //Reportes
+        [WebMethod]
+        public string Reporte_Paquete_Impuesto()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = new DataTable();
+            tabla = base_de_Datos.FillTableData("Select i.categoria, Count(p.cod_paquete) as Recibidos, sum(case when p.estado = 'Perdido' then 1 else 0 end) as Perdidos, "
+            + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') then 1 else 0 end) as Entregados, "
+            + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
+            + " then ((Convert(float,p.costo) * Convert(float,i.porcentaje))) else 0 end) as Impuestos, "
+            + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
+            + " then ((Convert(float,p.libras)* Convert(float,s.costo_lb))) else 0 end) as Costo_Libra, "
+            + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
+            + " then ((Convert(float,p.costo)* Convert(float,s.comision))) else 0 end) as Comisiones "
+            + " from ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Impuestos i, ProyectoIPC2.dbo.Lotes l, ProyectoIPC2.dbo.Sucursales s "
+            + " where p.cod_impuesto=i.cod_impuesto and p.cod_lote=l.cod_lote and l.cod_sucursal= s.cod_sucursal  group by i.categoria; ");
+
+            return DataTableToJSON(tabla);//Tranforma el datatable a un string formato JSON
+        }
+        [WebMethod]
+        public string Reporte_Paquete_Sucursal()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = new DataTable();
+            tabla = base_de_Datos.FillTableData("Select s.nombre, Count(p.cod_paquete) as Recibidos, sum(case when p.estado = 'Perdido' then 1 else 0 end) as Perdidos, " +
+            " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') then 1 else 0 end) as Entregados, " +
+            " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
+            " then ((Convert(float,p.costo) * Convert(float,i.porcentaje))) else 0 end) as Impuestos, " +
+            " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
+            " then ((Convert(float,p.libras)* Convert(float,s.costo_lb))) else 0 end) as Costo_Libra, " +
+            " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
+            " then ((Convert(float,p.costo)* Convert(float,s.comision))) else 0 end) as Comisiones " +
+            " from ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Impuestos i, ProyectoIPC2.dbo.Lotes l, ProyectoIPC2.dbo.Sucursales s " +
+            " where p.cod_impuesto=i.cod_impuesto and p.cod_lote=l.cod_lote and l.cod_sucursal= s.cod_sucursal  group by s.nombre; ");
+
+            return DataTableToJSON(tabla);//Tranforma el datatable a un string formato JSON
+        }
+        [WebMethod]
+        public string Reporte_Empleados()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = new DataTable();
+            tabla = base_de_Datos.FillTableData("select s.nombre as Sucursal, d.nombre as Departamento, count(e.cod_empleado) as Empleados,  " +
+            " SUM(CONVERT(float,e.sueldo)) as Sueldos from ProyectoIPC2.dbo.Empleados e, ProyectoIPC2.dbo.Usuarios u,   " +
+            " ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.Departamentos d,ProyectoIPC2.dbo.SucDep sd " +
+            " where s.cod_sucursal = sd.cod_sucursal and d.cod_departamento =sd.cod_departamento and   " +
+            " e.cod_usuario = u.cod_usuario and sd.cod_Suc_Dep=e.cod_suc_dep group by s.nombre, d.nombre");
+
+            return DataTableToJSON(tabla);//Tranforma el datatable a un string formato JSON
+        }
+        [WebMethod]
+        public string Reporte_Top5_Impuestos()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = new DataTable();
+            tabla = base_de_Datos.FillTableData("select i.categoria, Count(p.cod_impuesto) as Cantidad_de_importacion," +
+            " Sum((convert(float,f.comision)* p.costo) + (convert(float,f.costo_libra)* p.libras)) as Ganancias" +
+            " from ProyectoIPC2.dbo.Impuestos i, ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.Facturas f " +
+            " where f.cod_paquete=p.cod_paquete and i.cod_impuesto=p.cod_impuesto and s.cod_sucursal = 1 " +
+            " group by i.categoria order by Count(p.cod_impuesto) desc;");
+
+            return DataTableToJSON(tabla);//Tranforma el datatable a un string formato JSON
+        }
+
+
+        private string DataTableToJSON(DataTable table)
+        {
+            var list = new List<Dictionary<string, object>>();
+
+
+            foreach (DataRow row in table.Rows)
+            {
+                var dict = new Dictionary<string, object>();
+
+
+                foreach (DataColumn col in table.Columns)
+                {
+                    dict[col.ColumnName] = row[col];
+                }
+                list.Add(dict);
+            }
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            return serializer.Serialize(list);
         }
     }
 

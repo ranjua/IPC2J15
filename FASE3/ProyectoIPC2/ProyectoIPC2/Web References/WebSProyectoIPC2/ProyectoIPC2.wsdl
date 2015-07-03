@@ -80,6 +80,46 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Reporte_Paquete_Impuesto">
+        <s:complexType />
+      </s:element>
+      <s:element name="Reporte_Paquete_ImpuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporte_Paquete_ImpuestoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporte_Paquete_Sucursal">
+        <s:complexType />
+      </s:element>
+      <s:element name="Reporte_Paquete_SucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporte_Paquete_SucursalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporte_Empleados">
+        <s:complexType />
+      </s:element>
+      <s:element name="Reporte_EmpleadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporte_EmpleadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporte_Top5_Impuestos">
+        <s:complexType />
+      </s:element>
+      <s:element name="Reporte_Top5_ImpuestosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporte_Top5_ImpuestosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="FechaSoapIn">
@@ -112,6 +152,30 @@
   <wsdl:message name="Agregar_EmpleadoSoapOut">
     <wsdl:part name="parameters" element="tns:Agregar_EmpleadoResponse" />
   </wsdl:message>
+  <wsdl:message name="Reporte_Paquete_ImpuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporte_Paquete_Impuesto" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_Paquete_ImpuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporte_Paquete_ImpuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_Paquete_SucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporte_Paquete_Sucursal" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_Paquete_SucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporte_Paquete_SucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_EmpleadosSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporte_Empleados" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_EmpleadosSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporte_EmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_Top5_ImpuestosSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporte_Top5_Impuestos" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_Top5_ImpuestosSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporte_Top5_ImpuestosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ProyectoIPC2Soap">
     <wsdl:operation name="Fecha">
       <wsdl:input message="tns:FechaSoapIn" />
@@ -132,6 +196,22 @@
     <wsdl:operation name="Agregar_Empleado">
       <wsdl:input message="tns:Agregar_EmpleadoSoapIn" />
       <wsdl:output message="tns:Agregar_EmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Paquete_Impuesto">
+      <wsdl:input message="tns:Reporte_Paquete_ImpuestoSoapIn" />
+      <wsdl:output message="tns:Reporte_Paquete_ImpuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Paquete_Sucursal">
+      <wsdl:input message="tns:Reporte_Paquete_SucursalSoapIn" />
+      <wsdl:output message="tns:Reporte_Paquete_SucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Empleados">
+      <wsdl:input message="tns:Reporte_EmpleadosSoapIn" />
+      <wsdl:output message="tns:Reporte_EmpleadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Top5_Impuestos">
+      <wsdl:input message="tns:Reporte_Top5_ImpuestosSoapIn" />
+      <wsdl:output message="tns:Reporte_Top5_ImpuestosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ProyectoIPC2Soap" type="tns:ProyectoIPC2Soap">
@@ -181,6 +261,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Reporte_Paquete_Impuesto">
+      <soap:operation soapAction="http://tempuri.org/Reporte_Paquete_Impuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Paquete_Sucursal">
+      <soap:operation soapAction="http://tempuri.org/Reporte_Paquete_Sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Empleados">
+      <soap:operation soapAction="http://tempuri.org/Reporte_Empleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Top5_Impuestos">
+      <soap:operation soapAction="http://tempuri.org/Reporte_Top5_Impuestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ProyectoIPC2Soap12" type="tns:ProyectoIPC2Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -222,6 +338,42 @@
     </wsdl:operation>
     <wsdl:operation name="Agregar_Empleado">
       <soap12:operation soapAction="http://tempuri.org/Agregar_Empleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Paquete_Impuesto">
+      <soap12:operation soapAction="http://tempuri.org/Reporte_Paquete_Impuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Paquete_Sucursal">
+      <soap12:operation soapAction="http://tempuri.org/Reporte_Paquete_Sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Empleados">
+      <soap12:operation soapAction="http://tempuri.org/Reporte_Empleados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_Top5_Impuestos">
+      <soap12:operation soapAction="http://tempuri.org/Reporte_Top5_Impuestos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

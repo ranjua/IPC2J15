@@ -54,6 +54,10 @@
       <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,6 +79,7 @@
     <Content Include="Administrador\Carga_Masiva.aspx" />
     <Content Include="Administrador\CSS\Admin.css" />
     <Content Include="Administrador\Gestion_Cobros.aspx" />
+    <Content Include="Administrador\Reportes.aspx" />
     <Content Include="Administrador\Sucursal_Departamento.aspx" />
     <Content Include="Cliente\Cotizacion.aspx" />
     <Content Include="Cliente\CSS\Perfil.css" />
@@ -117,12 +122,25 @@
     <Compile Include="Administrador\Clases\Cobro.cs" />
     <Compile Include="Administrador\Clases\Comision_Libra.cs" />
     <Compile Include="Administrador\Clases\Impuesto.cs" />
+    <Compile Include="Administrador\CrystalReports\Paquete_por_Impuesto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paquete_por_Impuesto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Administrador\Gestion_Cobros.aspx.cs">
       <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Administrador\Gestion_Cobros.aspx.designer.cs">
       <DependentUpon>Gestion_Cobros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Sucursal_Departamento.aspx.cs">
       <DependentUpon>Sucursal_Departamento.aspx</DependentUpon>
@@ -352,6 +370,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Administrador\CrystalReports\Paquete_por_Impuesto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Paquete_por_Impuesto.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
