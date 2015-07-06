@@ -10,13 +10,29 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>
+                <asp:Label ID="Label1" runat="server" Text="Devolucion de Paquetes Facturados" CssClass="Titulo"></asp:Label>
                 <br />
                 <br />
-                <asp:DropDownList ID="Ddl_Paquetes" runat="server" CssClass="TxtGen" Visible="false">
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <asp:DropDownList ID="Ddl_Paquetes" runat="server" CssClass="TxtGen" Visible="false" Height="30px" Width="219px">
                 </asp:DropDownList>
 
-                <br />
                 <br />
                 <br />
 

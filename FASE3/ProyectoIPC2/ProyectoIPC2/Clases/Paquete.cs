@@ -39,9 +39,10 @@ namespace ProyectoIPC2.Clases
             if (precio.Equals(""))
             {
                 Estado = "Sin Precio";
+                lote = "0";
             }
             bool correcto = base_de_datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Paquetes values('" + precio + "', '" + peso + "', '"+Estado+"'"
-                        + ", '" + DPI + "', " + HttpContext.Current.Session["Cod_Empleado"] + ", " + impuesto + ", NULL, " + lote + ",'' )");
+                        + ", '" + DPI + "', " + HttpContext.Current.Session["Cod_Empleado"] + ", " + impuesto + ", NULL, " + lote + ",'','','','' )");
             if(correcto)
             {
                 Fecha_Hora FH = new Fecha_Hora();

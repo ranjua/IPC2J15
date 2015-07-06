@@ -26,7 +26,7 @@
                 <td colspan="3">
                     <div >
                     <asp:Menu ID="Mnu_P" runat="server" BackColor="#7db500"
-                            DynamicHorizontalOffset="2" ForeColor="white" StaticSubMenuIndent="10px" Orientation="Horizontal" Font-Names="Tahoma" Font-Size="13pt">
+                            DynamicHorizontalOffset="2" ForeColor="white" StaticSubMenuIndent="10px" Orientation="Horizontal" Font-Names="Tahoma" Font-Size="11pt">
                             <DynamicHoverStyle BackColor="#A5DF27" ForeColor="White" />
                             <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="10px" />
                             <DynamicMenuStyle BackColor="#7db500" />

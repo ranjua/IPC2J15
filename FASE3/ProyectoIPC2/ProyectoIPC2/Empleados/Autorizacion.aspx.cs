@@ -14,6 +14,7 @@ namespace ProyectoIPC2.Empleados
         {
             if(!IsPostBack)
             {
+                Departamento dep = new Departamento();
                 Llenar_Ddl();
             }
         }
@@ -38,18 +39,21 @@ namespace ProyectoIPC2.Empleados
             Base_de_Datos base_de_datos = new Base_de_Datos();
             Cliente.Cliente cliente = new Cliente.Cliente();
             cliente = cliente.GetCliente(cod_cliente);
-            Lbl_Usuario.Text = "Usuario: " + cliente.DPI;
-            Lbl_NIT.Text = "NIT: " + cliente.NIT;
-            Lbl_Tarjeta.Text = "Tarjeta: " + cliente.tarjeta;
-            Lbl_DPI_Entrega.Text = "DPI para Entrega: " + cliente.DPI_Entrega;
-            Lbl_Nombre.Text = "Nombres: " + cliente.nombre;
-            Lbl_Apellido.Text = "Apellidos: " + cliente.apellido;
-            Lbl_Telefono.Text = "Telefono: " + cliente.telefono;
-            Lbl_Correo.Text = "Correo: " + cliente.correo;
-            Lbl_Domicilio.Text = "Domicilio: " + cliente.domicilio;
-            if (cliente.cod_sucursal != 0)
+            if (!cliente.DPI.Equals(""))
             {
-                Lbl_Sucursal.Text = "Sucursal: " + base_de_datos.SelectUnValorQry("select nombre from ProyectoIPC2.dbo.Sucursales where cod_sucursal= " + cliente.cod_sucursal);
+                Lbl_Usuario.Text = "Usuario: " + cliente.DPI;
+                Lbl_NIT.Text = "NIT: " + cliente.NIT;
+                Lbl_Tarjeta.Text = "Tarjeta: " + cliente.tarjeta;
+                Lbl_DPI_Entrega.Text = "DPI para Entrega: " + cliente.DPI_Entrega;
+                Lbl_Nombre.Text = "Nombres: " + cliente.nombre;
+                Lbl_Apellido.Text = "Apellidos: " + cliente.apellido;
+                Lbl_Telefono.Text = "Telefono: " + cliente.telefono;
+                Lbl_Correo.Text = "Correo: " + cliente.correo;
+                Lbl_Domicilio.Text = "Domicilio: " + cliente.domicilio;
+                if (cliente.cod_sucursal != 0)
+                {
+                    Lbl_Sucursal.Text = "Sucursal: " + base_de_datos.SelectUnValorQry("select nombre from ProyectoIPC2.dbo.Sucursales where cod_sucursal= " + cliente.cod_sucursal);
+                }
             }
         }
 

@@ -15,6 +15,7 @@ namespace ProyectoIPC2.Director
         {
             if (!IsPostBack)
             {
+                Departamento dep = new Departamento();
                 Llenar_Ddl();
             }
         }
@@ -60,7 +61,12 @@ namespace ProyectoIPC2.Director
         protected void Btn_Agregar_Click(object sender, EventArgs e)
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
-            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set estado = 'EEUU' where cod_paquete = " + Ddl_Paquetes.SelectedValue);
+            Paquete paquete = new Paquete();
+            Empleado empleado = new Empleado();
+            string sucursal = base_de_Datos.SelectUnValorQry("select c.cod_sucursal from ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.clientes c "+
+                " where c.DPI=p.cod_cliente and p.cod_paquete=" + Ddl_Paquetes.SelectedValue);
+            string lote = paquete.getCodLote(sucursal);
+            bool correcto = base_de_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set estado = 'EEUU', cod_lote='" + lote + "' where cod_paquete = " + Ddl_Paquetes.SelectedValue);
             if (correcto)
             {
                 Fecha_Hora FH = new Fecha_Hora();

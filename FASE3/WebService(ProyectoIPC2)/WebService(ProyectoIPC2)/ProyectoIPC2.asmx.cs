@@ -134,12 +134,12 @@ namespace WebService_ProyectoIPC2_
             DataTable tabla = new DataTable();
             tabla = base_de_Datos.FillTableData("Select i.categoria, Count(p.cod_paquete) as Recibidos, sum(case when p.estado = 'Perdido' then 1 else 0 end) as Perdidos, "
             + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') then 1 else 0 end) as Entregados, "
+            + " sum(case when (p.estado='Guatemala' or p.estado='Aduana' or p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
+            + " then (ROUND((Convert(float,p.costo) * Convert(float,p.impuesto)),2)) else 0 end) as Impuestos, "
             + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
-            + " then ((Convert(float,p.costo) * Convert(float,i.porcentaje))) else 0 end) as Impuestos, "
+            + " then (ROUND((Convert(float,p.libras)* Convert(float,p.costo_libra)),2)) else 0 end) as Costo_Libra, "
             + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
-            + " then ((Convert(float,p.libras)* Convert(float,s.costo_lb))) else 0 end) as Costo_Libra, "
-            + " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') "
-            + " then ((Convert(float,p.costo)* Convert(float,s.comision))) else 0 end) as Comisiones "
+            + " then (ROUND((Convert(float,p.costo)* Convert(float,p.comision)),2)) else 0 end) as Comisiones "
             + " from ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Impuestos i, ProyectoIPC2.dbo.Lotes l, ProyectoIPC2.dbo.Sucursales s "
             + " where p.cod_impuesto=i.cod_impuesto and p.cod_lote=l.cod_lote and l.cod_sucursal= s.cod_sucursal  group by i.categoria; ");
 
@@ -152,12 +152,12 @@ namespace WebService_ProyectoIPC2_
             DataTable tabla = new DataTable();
             tabla = base_de_Datos.FillTableData("Select s.nombre, Count(p.cod_paquete) as Recibidos, sum(case when p.estado = 'Perdido' then 1 else 0 end) as Perdidos, " +
             " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto') then 1 else 0 end) as Entregados, " +
+            " sum(case when (p.estado='Guatemala' or p.estado='Aduana' or p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
+            " then (ROUND((Convert(float,p.costo) * Convert(float,p.impuesto)),2)) else 0 end) as Impuestos, " +
             " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
-            " then ((Convert(float,p.costo) * Convert(float,i.porcentaje))) else 0 end) as Impuestos, " +
+            " then (ROUND((Convert(float,p.libras)* Convert(float,p.costo_libra)),2)) else 0 end) as Costo_Libra, " +
             " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
-            " then ((Convert(float,p.libras)* Convert(float,s.costo_lb))) else 0 end) as Costo_Libra, " +
-            " sum(case when (p.estado='Facturado' or p.estado='Devolucion' or p.estado='Devuelto')  " +
-            " then ((Convert(float,p.costo)* Convert(float,s.comision))) else 0 end) as Comisiones " +
+            " then (ROUND((Convert(float,p.costo)* Convert(float,p.comision)),2)) else 0 end) as Comisiones " +
             " from ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Impuestos i, ProyectoIPC2.dbo.Lotes l, ProyectoIPC2.dbo.Sucursales s " +
             " where p.cod_impuesto=i.cod_impuesto and p.cod_lote=l.cod_lote and l.cod_sucursal= s.cod_sucursal  group by s.nombre; ");
 
@@ -169,7 +169,7 @@ namespace WebService_ProyectoIPC2_
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             DataTable tabla = new DataTable();
             tabla = base_de_Datos.FillTableData("select s.nombre as Sucursal, d.nombre as Departamento, count(e.cod_empleado) as Empleados,  " +
-            " SUM(CONVERT(float,e.sueldo)) as Sueldos from ProyectoIPC2.dbo.Empleados e, ProyectoIPC2.dbo.Usuarios u,   " +
+            " ROUND(SUM(CONVERT(float,e.sueldo)),2) as Sueldos from ProyectoIPC2.dbo.Empleados e, ProyectoIPC2.dbo.Usuarios u,   " +
             " ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.Departamentos d,ProyectoIPC2.dbo.SucDep sd " +
             " where s.cod_sucursal = sd.cod_sucursal and d.cod_departamento =sd.cod_departamento and   " +
             " e.cod_usuario = u.cod_usuario and sd.cod_Suc_Dep=e.cod_suc_dep group by s.nombre, d.nombre");
@@ -182,7 +182,7 @@ namespace WebService_ProyectoIPC2_
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             DataTable tabla = new DataTable();
             tabla = base_de_Datos.FillTableData("select i.categoria, Count(p.cod_impuesto) as Cantidad_de_importacion," +
-            " Sum((convert(float,f.comision)* p.costo) + (convert(float,f.costo_libra)* p.libras)) as Ganancias" +
+            " ROUND(Sum((convert(float,f.comision)* p.costo) + (convert(float,f.costo_libra)* p.libras)),2) as Ganancias" +
             " from ProyectoIPC2.dbo.Impuestos i, ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.Facturas f " +
             " where f.cod_paquete=p.cod_paquete and i.cod_impuesto=p.cod_impuesto and s.cod_sucursal = 1 " +
             " group by i.categoria order by Count(p.cod_impuesto) desc;");

@@ -16,7 +16,10 @@ namespace ProyectoIPC2.Empleados
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                Departamento dep = new Departamento();
+            }
         }
 
         protected void Btn_Buscar_Click(object sender, EventArgs e)

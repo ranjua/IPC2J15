@@ -99,8 +99,10 @@
     <Content Include="Empleados\Devolucion.aspx" />
     <Content Include="Empleados\Estado_Lote.aspx" />
     <Content Include="Empleados\Facturacion.aspx" />
+    <Content Include="Empleados\Portada.aspx" />
     <Content Include="Empleados\Registro_de_Paquetes.aspx" />
     <Content Include="Empleados\Reportar_Paquete_Perdido.aspx" />
+    <Content Include="Img\Q.jpg" />
     <Content Include="JS\Login.js" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -168,6 +170,7 @@
       <DependentUpon>Sucursal_Departamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Base_de_Datos.cs" />
+    <Compile Include="Clases\Departamento.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Factura.cs" />
     <Compile Include="Clases\Fecha_Hora.cs" />
@@ -272,6 +275,13 @@
     <Compile Include="Empleados\Facturacion.aspx.designer.cs">
       <DependentUpon>Facturacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Empleados\Portada.aspx.cs">
+      <DependentUpon>Portada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Portada.aspx.designer.cs">
+      <DependentUpon>Portada.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Empleados\Registro_de_Paquetes.aspx.cs">
       <DependentUpon>Registro_de_Paquetes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -330,7 +340,6 @@
     <Folder Include="Archivos\" />
     <Folder Include="Director\CSS\" />
     <Folder Include="Empleados\CSS\" />
-    <Folder Include="Img\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -352,33 +361,6 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="PAGEOBJECTMODELLib">
-      <Guid>{C09A8BE8-615E-4958-A09B-4352A28BECD0}</Guid>
-      <VersionMajor>14</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="PROMPTINGLib">
-      <Guid>{C0EB9B45-4B07-4243-BCB1-BCFD871BE6E1}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="SAXSERIALIZELib">
-      <Guid>{C0E6BB1B-A856-4A2E-B75D-7DCE6CA31DB5}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="stdole">
       <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>2</VersionMajor>

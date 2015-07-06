@@ -19,14 +19,24 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>
                 <table style="width:100%;">
                     <tr>
                         <td class="auto-style3">
-                            <asp:Label ID="Label1" runat="server" CssClass="Txt_info" Text="Reportar Paquete Perdido"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" CssClass="TxtGen" Text="Reportar Paquete Perdido"></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="Label2" runat="server" CssClass="Txt_info" Text="Cargar CSV con Paquetes Reales"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" CssClass="TxtGen" Text="Cargar CSV con Paquetes Reales"></asp:Label>
                         </td>
                     </tr>
                     <tr>

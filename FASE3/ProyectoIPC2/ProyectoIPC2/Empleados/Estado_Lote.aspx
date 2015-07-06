@@ -21,8 +21,9 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:DropDownList ID="Ddl_lote" runat="server">
-                </asp:DropDownList>
+                <asp:Label ID="Label2" runat="server" CssClass="Titulo" Text="Cambiar Estado de Lote"></asp:Label>
+                <br />
+                <br />
                 <br />
             </td>
             <td>&nbsp;</td>
@@ -30,7 +31,17 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="Btn_Siguiente_Estado" runat="server" CssClass="button-flat-primary" Text="Siguiente Estado" OnClick="Btn_Siguiente_Estado_Click"  />
+                <asp:DropDownList ID="Ddl_lote" runat="server" CssClass="TxtGen" Height="30px" Width="378px">
+                </asp:DropDownList>
+                <br />
+                <br />
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <asp:Button ID="Btn_Siguiente_Estado" runat="server" CssClass="button-jumbo button-flat-primary" Text="Siguiente Estado(Tracking)" OnClick="Btn_Siguiente_Estado_Click"  />
             </td>
             <td>&nbsp;</td>
         </tr>

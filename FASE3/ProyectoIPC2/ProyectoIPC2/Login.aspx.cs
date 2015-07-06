@@ -33,11 +33,11 @@ namespace ProyectoIPC2
                         break;
                     case 2:
                         //Director
-                        Response.Redirect("Director/Contratacion.aspx");
+                        Response.Redirect("Director/Consultar_Equipo.aspx");
                         break;
                     case 3:
                         //Empleado
-                        Response.Redirect("Empleados/Registro_de_Paquetes.aspx");
+                        Response.Redirect("Empleados/Portada.aspx");
                         break;
                     case 4:
                         //Cliente

@@ -15,6 +15,21 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><asp:Label ID="Label1" runat="server" Text="Agregar Precios a Paquetes" CssClass="Titulo"></asp:Label></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>
                 <asp:DropDownList ID="Ddl_Paquetes" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Ddl_Paquetes_SelectedIndexChanged">
                 </asp:DropDownList>

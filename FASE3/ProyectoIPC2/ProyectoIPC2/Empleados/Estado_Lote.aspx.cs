@@ -51,6 +51,7 @@ namespace ProyectoIPC2.Empleados
         protected void Btn_Siguiente_Estado_Click(object sender, EventArgs e)
         {
             Base_de_Datos base_de_datos = new Base_de_Datos();
+            DataTable tabla = new DataTable();
             //Selecciona estado de paquetes del lote seleccionado en Ddl
             string estado_actual = base_de_datos.SelectUnValorQry("select estado from ProyectoIPC2.dbo.Paquetes where cod_lote=" + 
                 Ddl_lote.SelectedValue );
@@ -59,6 +60,12 @@ namespace ProyectoIPC2.Empleados
             {
                 case "EEUU":
                     estado_Nuevo = "Aduana";
+                    tabla = base_de_datos.FillTableData("select cod_paquete, cod_impuesto from ProyectoIPC2.dbo.Paquetes where cod_lote="+Ddl_lote.SelectedValue);
+                    foreach (DataRow drtabla in tabla.Rows)
+                    {
+                        string impuesto = base_de_datos.SelectUnValorQry("select porcentaje from ProyectoIPC2.dbo.Impuestos where cod_impuesto=" + drtabla[1].ToString());
+                        base_de_datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set impuesto = '" + impuesto + "'  where cod_paquete=" + drtabla[0]);
+                    }
                     break;
                 case "Aduana":
                     estado_Nuevo = "Guatemala";
@@ -73,7 +80,7 @@ namespace ProyectoIPC2.Empleados
             string hora = "" + ((Convert.ToInt32(DateTime.Now.Hour.ToString()) < 10) ? "0" + DateTime.Now.Hour.ToString() : DateTime.Now.Hour.ToString()) + ":"
                         + ((Convert.ToInt32(DateTime.Now.Minute.ToString()) < 10) ? "0" + DateTime.Now.Minute.ToString() : DateTime.Now.Minute.ToString()) + ":"
                         + ((Convert.ToInt32(DateTime.Now.Second.ToString()) < 10) ? "0" + DateTime.Now.Second.ToString() : DateTime.Now.Second.ToString());
-            DataTable tabla = new DataTable();
+            tabla = new DataTable();
             tabla = base_de_datos.FillTableData("select cod_paquete from ProyectoIPC2.dbo.Paquetes where cod_lote="+Ddl_lote.SelectedValue);
             foreach (DataRow drtabla in tabla.Rows)
             {

@@ -30,14 +30,14 @@
                     </tr>
                     <tr>
                         <td>
-                <asp:TextBox ID="Txt_Precio" runat="server" CssClass="Txt_info" placeholder="Precio de Producto en Q" Width="450px"></asp:TextBox>
+                <asp:TextBox ID="Txt_Precio" runat="server" CssClass="TxtGen" placeholder="Precio de Producto en Q" Width="450px"></asp:TextBox>
                         </td>
                         <td>
                             &nbsp;</td>
                     </tr>
                     <tr>
                         <td>
-                <asp:TextBox ID="Txt_Libras" runat="server" CssClass="Txt_info" placeholder="Peso en Libras" Width="450px"></asp:TextBox>
+                <asp:TextBox ID="Txt_Libras" runat="server" CssClass="TxtGen" placeholder="Peso en Libras" Width="450px"></asp:TextBox>
                         </td>
                         <td>
                             <asp:FileUpload ID="Flu_Archivo" CssClass="TxtGen" runat="server" />
@@ -45,14 +45,14 @@
                     </tr>
                     <tr>
                         <td>
-               <asp:DropDownList ID="Ddl_Tipo_Impuesto" CssClass="Txt_info" runat="server" Width="450px"></asp:DropDownList>
+               <asp:DropDownList ID="Ddl_Tipo_Impuesto" CssClass="TxtGen" runat="server" Width="450px"></asp:DropDownList>
                         </td>
                         <td>
                             &nbsp;</td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:TextBox ID="Txt_Casilla" CssClass="Txt_info" runat="server" placeholder="Casilla de Cliente" Width="450px"></asp:TextBox>
+                            <asp:TextBox ID="Txt_Casilla" CssClass="TxtGen" runat="server" placeholder="Casilla de Cliente" Width="450px"></asp:TextBox>
                         </td>
                         <td>
                             &nbsp;</td>

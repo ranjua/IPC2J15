@@ -49,7 +49,8 @@ namespace ProyectoIPC2.Clases
                 + "','" + costo_libra.ToString().Replace(",", ".") + "','" + impuesto.ToString().Replace(",", ".") + "'," +
                 "'" + fecha + "','" + hora + "'," + this.cod_paquete + "," + HttpContext.Current.Session["Cod_Empleado"].ToString() + ")");
             this.cod_factura = base_de_Datos.SelectUnValorQry("select Max(cod_factura) from ProyectoIPC2.dbo.Facturas");
-            base_de_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set estado = 'Facturado' where cod_paquete = " + cod_paquete);
+            base_de_Datos.Upd_New_DelUnValorQry("update ProyectoIPC2.dbo.Paquetes set estado = 'Facturado', comision ='" + comision.ToString().Replace(",", ".") +
+                "', costo_libra='" + costo_libra.ToString().Replace(",", ".") + "' where cod_paquete = " + cod_paquete);
             
             base_de_Datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Historial_P values(" + cod_paquete +
                     ", " + HttpContext.Current.Session["Cod_Empleado"].ToString() + ", 'Facturado', '" + FH.Fecha() + "', '" + FH.Hora() + "' ) ");

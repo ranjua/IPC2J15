@@ -34,6 +34,16 @@ namespace ProyectoIPC2.Clases
             }
             if (Sesion_aceptada == true)
             {
+                /*
+                 * Empleados
+                 * 104 Registro
+                 * 105 Bodega 
+                 * 111 Servicio Al Cliente
+                 * Directores
+                 * 103 Registro
+                 * 108 Bodega 
+                 * 107 Servicio Al Cliente
+                 */
                 HttpContext.Current.Session["Cod_Empleado"] = "";
                 HttpContext.Current.Session["Cod_Suc_Dep"] = "";
                 HttpContext.Current.Session["DPI"] = "";

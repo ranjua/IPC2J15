@@ -27,7 +27,7 @@ namespace ProyectoIPC2.Cliente
             Base_de_Datos base_de_datos = new Base_de_Datos();
             DataTable tabla = new DataTable();
             tabla = base_de_datos.FillTableData("select p.cod_paquete, i.categoria from ProyectoIPC2.dbo.Paquetes p, ProyectoIPC2.dbo.Impuestos i "+
-                                                " where i.cod_impuesto=p.cod_impuesto and p.estado='Sin Precio' ");
+                                                " where i.cod_impuesto=p.cod_impuesto and p.estado='Sin Precio' and p.cod_cliente='" + HttpContext.Current.Session["DPI"].ToString()+"'");
             int x = 1;
             Ddl_Paquetes.Items.Clear();
             try
@@ -66,7 +66,7 @@ namespace ProyectoIPC2.Cliente
                     {
                         Fecha_Hora FH = new Fecha_Hora();
                         base_de_Datos.Upd_New_DelUnValorQry("insert into ProyectoIPC2.dbo.Historial_P values(" + Ddl_Paquetes.SelectedValue +
-                                ", " + HttpContext.Current.Session["Cod_Empleado"].ToString() + ", 'Foto Agregada', '" + FH.Fecha() + "', '" + FH.Hora() + "' ) ");
+                                ", " + HttpContext.Current.Session["DPI"].ToString() + ", 'Foto Agregada', '" + FH.Fecha() + "', '" + FH.Hora() + "' ) ");
                         Mensaje.Text = "Imagen Cargada Correctamente";
                     }
                 }

@@ -15,6 +15,7 @@ namespace ProyectoIPC2.Empleados
         {
             if(!IsPostBack)
             {
+                Departamento dep = new Departamento();
                 LLenar();
             }
         }

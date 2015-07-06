@@ -38,12 +38,10 @@
         <div id="SubC_LRF">
             
             <div id="Login" class="slide active_slide" >
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="Image1" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Img/Q.jpg" Height="110px" Width="80px" />
+                <br /><br />
                 <asp:Panel ID="Panel1" runat="server" defaultbutton="Btn_Login" >
                 <div class="Contenido">
                     <asp:TextBox ID="Txt_Correo" CssClass="Txt_Login_Pass" runat="server" placeholder="Usuario" ></asp:TextBox>
