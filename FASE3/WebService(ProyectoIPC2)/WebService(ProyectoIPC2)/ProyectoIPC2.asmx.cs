@@ -21,7 +21,7 @@ namespace WebService_ProyectoIPC2_
         [WebMethod]
         public string Fecha()
         {
-            return "26/06/2015";
+            return "26/08/2015";
         }
 
         //Verificar_usuairo.cs
@@ -168,11 +168,24 @@ namespace WebService_ProyectoIPC2_
         {
             Base_de_Datos base_de_Datos = new Base_de_Datos();
             DataTable tabla = new DataTable();
-            tabla = base_de_Datos.FillTableData("select s.nombre as Sucursal, d.nombre as Departamento, count(e.cod_empleado) as Empleados,  " +
+            tabla = base_de_Datos.FillTableData("select s.nombre as Sucursal, count(e.cod_empleado) as Empleados,  " +
             " ROUND(SUM(CONVERT(float,e.sueldo)),2) as Sueldos from ProyectoIPC2.dbo.Empleados e, ProyectoIPC2.dbo.Usuarios u,   " +
             " ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.Departamentos d,ProyectoIPC2.dbo.SucDep sd " +
             " where s.cod_sucursal = sd.cod_sucursal and d.cod_departamento =sd.cod_departamento and   " +
-            " e.cod_usuario = u.cod_usuario and sd.cod_Suc_Dep=e.cod_suc_dep group by s.nombre, d.nombre");
+            " e.cod_usuario = u.cod_usuario and sd.cod_Suc_Dep=e.cod_suc_dep group by s.nombre");
+
+            return DataTableToJSON(tabla);//Tranforma el datatable a un string formato JSON
+        }
+        [WebMethod]
+        public string Reporte_EmpleadosDep()
+        {
+            Base_de_Datos base_de_Datos = new Base_de_Datos();
+            DataTable tabla = new DataTable();
+            tabla = base_de_Datos.FillTableData("select d.nombre as Departamento, count(e.cod_empleado) as Empleados,  " +
+            " ROUND(SUM(CONVERT(float,e.sueldo)),2) as Sueldos from ProyectoIPC2.dbo.Empleados e, ProyectoIPC2.dbo.Usuarios u,   " +
+            " ProyectoIPC2.dbo.Sucursales s, ProyectoIPC2.dbo.Departamentos d,ProyectoIPC2.dbo.SucDep sd " +
+            " where s.cod_sucursal = sd.cod_sucursal and d.cod_departamento =sd.cod_departamento and   " +
+            " e.cod_usuario = u.cod_usuario and sd.cod_Suc_Dep=e.cod_suc_dep group by d.nombre");
 
             return DataTableToJSON(tabla);//Tranforma el datatable a un string formato JSON
         }

@@ -130,6 +130,12 @@
       <DependentUpon>Empleado.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Administrador\CrystalReports\EmpleadoDep.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpleadoDep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Administrador\CrystalReports\Paquete_por_Impuesto.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -375,6 +381,10 @@
     <EmbeddedResource Include="Administrador\CrystalReports\Empleado.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Empleado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\CrystalReports\EmpleadoDep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmpleadoDep.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\CrystalReports\Paquete_por_Impuesto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -110,6 +110,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Reporte_EmpleadosDep">
+        <s:complexType />
+      </s:element>
+      <s:element name="Reporte_EmpleadosDepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporte_EmpleadosDepResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Reporte_Top5_Impuestos">
         <s:complexType />
       </s:element>
@@ -170,6 +180,12 @@
   <wsdl:message name="Reporte_EmpleadosSoapOut">
     <wsdl:part name="parameters" element="tns:Reporte_EmpleadosResponse" />
   </wsdl:message>
+  <wsdl:message name="Reporte_EmpleadosDepSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporte_EmpleadosDep" />
+  </wsdl:message>
+  <wsdl:message name="Reporte_EmpleadosDepSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporte_EmpleadosDepResponse" />
+  </wsdl:message>
   <wsdl:message name="Reporte_Top5_ImpuestosSoapIn">
     <wsdl:part name="parameters" element="tns:Reporte_Top5_Impuestos" />
   </wsdl:message>
@@ -208,6 +224,10 @@
     <wsdl:operation name="Reporte_Empleados">
       <wsdl:input message="tns:Reporte_EmpleadosSoapIn" />
       <wsdl:output message="tns:Reporte_EmpleadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_EmpleadosDep">
+      <wsdl:input message="tns:Reporte_EmpleadosDepSoapIn" />
+      <wsdl:output message="tns:Reporte_EmpleadosDepSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Reporte_Top5_Impuestos">
       <wsdl:input message="tns:Reporte_Top5_ImpuestosSoapIn" />
@@ -281,6 +301,15 @@
     </wsdl:operation>
     <wsdl:operation name="Reporte_Empleados">
       <soap:operation soapAction="http://tempuri.org/Reporte_Empleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_EmpleadosDep">
+      <soap:operation soapAction="http://tempuri.org/Reporte_EmpleadosDep" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -365,6 +394,15 @@
     </wsdl:operation>
     <wsdl:operation name="Reporte_Empleados">
       <soap12:operation soapAction="http://tempuri.org/Reporte_Empleados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte_EmpleadosDep">
+      <soap12:operation soapAction="http://tempuri.org/Reporte_EmpleadosDep" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -45,6 +45,8 @@ namespace ProyectoIPC2.WebSProyectoIPC2 {
         
         private System.Threading.SendOrPostCallback Reporte_EmpleadosOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Reporte_EmpleadosDepOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Reporte_Top5_ImpuestosOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -108,6 +110,9 @@ namespace ProyectoIPC2.WebSProyectoIPC2 {
         
         /// <remarks/>
         public event Reporte_EmpleadosCompletedEventHandler Reporte_EmpleadosCompleted;
+        
+        /// <remarks/>
+        public event Reporte_EmpleadosDepCompletedEventHandler Reporte_EmpleadosDepCompleted;
         
         /// <remarks/>
         public event Reporte_Top5_ImpuestosCompletedEventHandler Reporte_Top5_ImpuestosCompleted;
@@ -361,6 +366,33 @@ namespace ProyectoIPC2.WebSProyectoIPC2 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Reporte_EmpleadosDep", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Reporte_EmpleadosDep() {
+            object[] results = this.Invoke("Reporte_EmpleadosDep", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Reporte_EmpleadosDepAsync() {
+            this.Reporte_EmpleadosDepAsync(null);
+        }
+        
+        /// <remarks/>
+        public void Reporte_EmpleadosDepAsync(object userState) {
+            if ((this.Reporte_EmpleadosDepOperationCompleted == null)) {
+                this.Reporte_EmpleadosDepOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReporte_EmpleadosDepOperationCompleted);
+            }
+            this.InvokeAsync("Reporte_EmpleadosDep", new object[0], this.Reporte_EmpleadosDepOperationCompleted, userState);
+        }
+        
+        private void OnReporte_EmpleadosDepOperationCompleted(object arg) {
+            if ((this.Reporte_EmpleadosDepCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Reporte_EmpleadosDepCompleted(this, new Reporte_EmpleadosDepCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Reporte_Top5_Impuestos", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string Reporte_Top5_Impuestos() {
             object[] results = this.Invoke("Reporte_Top5_Impuestos", new object[0]);
@@ -601,6 +633,32 @@ namespace ProyectoIPC2.WebSProyectoIPC2 {
         private object[] results;
         
         internal Reporte_EmpleadosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void Reporte_EmpleadosDepCompletedEventHandler(object sender, Reporte_EmpleadosDepCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Reporte_EmpleadosDepCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Reporte_EmpleadosDepCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

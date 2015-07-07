@@ -42,7 +42,14 @@ namespace ProyectoIPC2.Administrador
             WebSProyectoIPC2.ProyectoIPC2 WSS = new WebSProyectoIPC2.ProyectoIPC2();
             DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Reporte_Empleados(), (typeof(DataTable)));
 
-            ExportPDFEXCWR(tabla, "Reporte de Empleados", "~/Administrador/CrystalReports/Empleado.rpt");
+            ExportPDFEXCWR(tabla, "Reporte de Empleados por Sucursal", "~/Administrador/CrystalReports/Empleado.rpt");
+        }
+        private void Reporte_EmpleadoDep()
+        {
+            WebSProyectoIPC2.ProyectoIPC2 WSS = new WebSProyectoIPC2.ProyectoIPC2();
+            DataTable tabla = (DataTable)JsonConvert.DeserializeObject(WSS.Reporte_EmpleadosDep(), (typeof(DataTable)));
+
+            ExportPDFEXCWR(tabla, "Reporte de Empleados por Departamento", "~/Administrador/CrystalReports/EmpleadoDep.rpt");
         }
         private void Reporte_Top5_Impuestos()
         {
@@ -77,6 +84,9 @@ namespace ProyectoIPC2.Administrador
                     break;
                 case "4":
                     Reporte_Top5_Impuestos();
+                    break;
+                case "5":
+                    Reporte_EmpleadoDep();
                     break;
             }
         }

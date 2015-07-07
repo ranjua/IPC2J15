@@ -96,6 +96,7 @@ namespace ProyectoIPC2.Clases
                     int impuesto = Convert.ToInt32(base_de_datos.SelectUnValorQry("select cod_impuesto from ProyectoIPC2.dbo.Impuestos where categoria = '" + values[0] + "'"));
                     Registrar(impuesto, Convert.ToInt32(values[1]), values[2], values[3]);
                 }
+                streamreader.Close();
                 return true;
             }
             else
